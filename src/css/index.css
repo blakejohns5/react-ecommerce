@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+  
+  background-image: url('../assets/img/bg4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(47, 98%, 47%, 0.1);
+  background-position: center center;
+  background-blend-mode: multiply;
+}
+
+main {
+  margin: 2% 8%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+.product__card {
+  border-radius: 0.75rem;
+}
+
+.btn__add {
+  background-color: #72cfc4;  
+}
+
+.btn__add:hover {
+  background-color: #3c9cc8;
+}
+
+.btn__checkout {
+  background-color: #3c9cc8;
+}
+
+.btn__checkout:hover {
+  background-color: #13ba93;
+  
+}
