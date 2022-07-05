@@ -4,15 +4,16 @@ import { products } from "../../products.js";
 
 
 const ProductDash = () => {
-  const title = 'Retro sneakers';
+  const title = 'Top-selling Sneakers';
+
+  // const cart = document.getElementById("cartItems");
   
   return (
     <>
       <section className="col-9">
-        <h1>{ title }</h1>
-        
+        <h1>{ title }</h1>        
         <article className="d-flex flex-wrap gap-4">
-          {products.map((product) => <ProductCard key={product.id} img={product.img} name={product.name} price={product.price}/>)}
+          {products.map((product) => <ProductCard key={product.id} id={product.id} img={product.img} name={product.name} price={product.price} />)}
         </article>
       </section>
       
