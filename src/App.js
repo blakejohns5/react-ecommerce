@@ -6,14 +6,17 @@ import { useState } from 'react';
 
 function App () {
   const [cart, setCartItems] = useState([]);
+  const [count, setCount] = useState((value = 0) => {    
+    return value;
+  });
 
 
   return (
     <>
     <NavBar />
     <main className='d-flex mt-5'>
-      <ProductDash cart={cart} setCartItems={setCartItems} />
-      <ShoppingCart cart={cart} />
+      <ProductDash cart={cart} setCartItems={setCartItems} count={count} setCount={setCount} />
+      <ShoppingCart cart={cart} count={count} setCount={setCount}/>
       
     </main>
     </>

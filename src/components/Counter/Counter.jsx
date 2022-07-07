@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-function Counter() {
+function Counter({ qty }) {
   // running as function keeps it from running more than once
-  const [count, setCount] = useState((value = 0) => {    
+  const [count, setCount] = useState((value = qty) => {    
     return value;
   });
+  
   
   function decreaseCount() {
     if (count === 0) return;

@@ -9,7 +9,7 @@ const ShoppingCart = ({ cart }) => {
     <>
       <section className="col-3">
         <h1 className="fw-bold">{ title }</h1>
-        {cart.map((item) => <ShoppingCard key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} cart={cart} />)}
+        {cart.map((item) => <ShoppingCard key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} qty={item.qty} cart={cart}  />)}
         <div className="mt-5">
         <CheckoutBtn />
         </div>

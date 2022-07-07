@@ -3,7 +3,7 @@ import { products } from "../../products.js";
 
 
 
-const ProductDash = ({ cart, setCartItems }) => {
+const ProductDash = ({ cart, setCartItems, }) => {
   const title = 'Top-selling Sneakers';
     
   return (

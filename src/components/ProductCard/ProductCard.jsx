@@ -18,7 +18,7 @@ function ProductCard(props) {
           <p className="fs-5">{price} {currency}</p>
           </div>
           <div className="h-100 d-flex flex-column justify-self-end mt-2">
-            <AddBtn key={id} id={id} img={img} name={name} price={price} cart={cart} setCartItems={setCartItems}        
+            <AddBtn key={id} id={id} img={img} name={name} price={price} cart={cart} setCartItems={setCartItems}         
              />
           </div>
         </div>

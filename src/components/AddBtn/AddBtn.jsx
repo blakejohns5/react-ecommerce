@@ -6,24 +6,37 @@ function AddBtn(props) {
 
   const addToStorage = () => {
     // const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    let newCart = cart.map(item => {
+      if (item.id === id) {
+        return {...item, qty: item.qty += 1}
+      } 
+      return item;
+    })
 
     setCartItems((prevCart) => {
-      return (
-        [
-          ...cart, 
-          {'key': id, 'id': id, 'name': name, 'price': price, 'img': img, 'qty': 1}
-        ]
-      );
+      if (cart.some(product => product.id === id)) {
+        return (
+          [
+            ...newCart
+          ]
+        )
+      } else {
+        return (
+          [
+            ...cart, 
+            {'key': id, 'id': id, 'name': name, 'price': price, 'img': img, 'qty': 1}
+          ]
+        );
+      }
+      
     })
     localStorage.setItem('cart',JSON.stringify(cart));
   }
 
   // let storedCart = JSON.parse(localStorage.getItem('cart'));
-  // console.log(storedCart);
+  console.log(cart);
   
-  useEffect(() => {
-    console.log('useEffect run');
-  }, [cart])
+  
 
   return (
     <>
