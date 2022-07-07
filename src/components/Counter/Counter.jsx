@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 function Counter() {
-
-  const [count, setCount] = useState((value = 0) => {
-    // running as function keeps it from running more than once
+  // running as function keeps it from running more than once
+  const [count, setCount] = useState((value = 0) => {    
     return value;
   });
   
   function decreaseCount() {
-    if (count > 0) setCount(prevCount => prevCount - 1);
+    if (count === 0) return;
+    setCount(prevCount => prevCount - 1);
   }
 
   function increaseCount() {
@@ -17,13 +17,12 @@ function Counter() {
 
   return (
     <>
-    <article className="d-flex gap-4 align-items-center">
-          <button className="btn btn-danger" onClick={decreaseCount}>-</button>
-          <span className="fw-bold fs-5"> {count} </span>
-          <button className="btn btn-success" onClick={increaseCount}>+</button>
-        </article>
+    <article className="h-100 cart__counter d-flex gap-2 align-items-center">
+      <button className="counter__btn bg-transparent border-0 counter__add fw-bold" onClick={increaseCount}>+</button>
+      <span className="fw-bold mt-1">{count}</span>
+      <button className="mb-2 counter__btn counter__remove bg-transparent border-0 fw-bold" onClick={decreaseCount}>-</button>
+    </article>
     </>
-    
   )
 }
 

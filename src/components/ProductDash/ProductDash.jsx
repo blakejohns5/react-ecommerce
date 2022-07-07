@@ -3,21 +3,17 @@ import { products } from "../../products.js";
 
 
 
-const ProductDash = () => {
+const ProductDash = ({ cart, setCartItems }) => {
   const title = 'Top-selling Sneakers';
-
-  // const cart = document.getElementById("cartItems");
-  
+    
   return (
     <>
       <section className="col-9">
-        <h1>{ title }</h1>        
-        <article className="d-flex flex-wrap gap-4">
-          {products.map((product) => <ProductCard key={product.id} id={product.id} img={product.img} name={product.name} price={product.price} />)}
+        <h1 className="fw-bold">{ title }</h1>        
+        <article className="d-flex flex-wrap flex-shrink flex-grow me-5 mr-5 px-5">
+          {products.map((product) => <ProductCard key={product.id} id={product.id} img={product.img} name={product.name} price={product.price} cart={cart} setCartItems={setCartItems} />)}
         </article>
       </section>
-      
-      
     </>
   );
 }
