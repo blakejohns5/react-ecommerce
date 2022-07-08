@@ -2,7 +2,7 @@ import React from 'react'
 import Counter from '../Counter/Counter';
 
 function ShoppingCard(props) {
-  const { id, img, name, price, qty, cart } = props;
+  const { id, img, name, price, qty, cart, setCartItems } = props;
   const cartIsEmpty = cart.length === 0;
   
 
@@ -19,7 +19,7 @@ function ShoppingCard(props) {
             <div>{name}</div>
             <div className='d-flex align-items-center'>
             <div className='col-3'>{price}</div> 
-            <div className="mx-2 col-5 justify-self-end mb-1"><Counter qty={qty} /></div>
+            <div className="mx-2 col-5 justify-self-end mb-1"><Counter qty={qty} cart={cart} setCartItems={setCartItems} /></div>
             <button className="btn__remove col-2 border-0 bg-dark">X</button>
             </div>
               

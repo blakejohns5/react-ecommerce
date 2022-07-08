@@ -16,27 +16,17 @@ function AddBtn(props) {
     setCartItems((prevCart) => {
       if (cart.some(product => product.id === id)) {
         return (
-          [
-            ...newCart
-          ]
+          [...newCart]
         )
       } else {
         return (
-          [
-            ...cart, 
-            {'key': id, 'id': id, 'name': name, 'price': price, 'img': img, 'qty': 1}
-          ]
+          [...cart, {'key': id, 'id': id, 'name': name, 'price': price, 'img': img, 'qty': 1}]
         );
       }
       
     })
     localStorage.setItem('cart',JSON.stringify(cart));
   }
-
-  // let storedCart = JSON.parse(localStorage.getItem('cart'));
-  console.log(cart);
-  
-  
 
   return (
     <>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Counter({ qty }) {
+function Counter({ qty, cart }) {
   // running as function keeps it from running more than once
   const [count, setCount] = useState((value = qty) => {    
     return value;
@@ -15,6 +15,12 @@ function Counter({ qty }) {
   function increaseCount() {
     setCount(prevCount => prevCount + 1);
   }
+
+  useEffect((qty = 1) => {
+    console.log(cart);
+    setCount(qty)
+  }, [cart])
+  
 
   return (
     <>
