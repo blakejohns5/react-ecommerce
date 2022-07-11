@@ -1,10 +1,11 @@
 import AddBtn from "../AddBtn/AddBtn";
 
 function ProductCard(props) {
-  let price = props.price;
-  price = price.toFixed(2);
+  const price = props.price;
+  // price = price.toFixed(2);
   const currency = '€';
-  const {id, img, name, cart, setCartItems} = props;
+  const {id, img, name} = props;
+  
   
   return (
     <>
@@ -15,10 +16,11 @@ function ProductCard(props) {
           <h3 className="my-2 fs-5">{name}</h3>  
           </div>
           <div className="h-100 d-flex flex-column justify-self-end mt-2">
-          <p className="fs-5">{price} {currency}</p>
+          <p className="fs-5">{price.toFixed(2)} {currency}</p>
           </div>
           <div className="h-100 d-flex flex-column justify-self-end mt-2">
-            <AddBtn key={id} id={id} img={img} name={name} price={price} cart={cart} setCartItems={setCartItems}         
+            <AddBtn key={id} {...props} 
+            
              />
           </div>
         </div>

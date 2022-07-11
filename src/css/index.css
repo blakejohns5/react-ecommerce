@@ -7,13 +7,15 @@
   box-sizing: border-box;
 }
 
+.navbar {
+  background-color: #13ba93;
+  /* background-color: #ffdaa8; */
+}
 
 body {
   /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
   /* font-family: 'Raleway', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
-  
-  
+  font-family: 'Montserrat', sans-serif;  
   background-image: url('../assets/img/bg2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,7 +35,7 @@ code {
 
 
 .product__card {
-  border-radius: 0.75rem;
+  /* border-radius: 0.25rem; */
 }
 
 .btn__add, .btn__checkout {

@@ -1,10 +1,17 @@
 import React from 'react'
 import Counter from '../Counter/Counter';
+import DeleteBtn from '../DeleteBtn/DeleteBtn';
 
 function ShoppingCard(props) {
-  const { id, img, name, price, qty, cart, setCartItems } = props;
-  const cartIsEmpty = cart.length === 0;
-  
+  const { id, img, name, qty, price, cart, addToStorage, removeFromStorage } = props;
+  const product = {
+    id: id,
+    name: name,
+    price: price,
+    img: img,
+    qty: qty
+  }
+  const cartIsEmpty = cart.length === 0;  
 
   if (cartIsEmpty) {
     return;
@@ -18,16 +25,12 @@ function ShoppingCard(props) {
           <div className="col-8 d-flex flex-column justify-content-center">
             <div>{name}</div>
             <div className='d-flex align-items-center'>
-            <div className='col-3'>{price}</div> 
-            <div className="mx-2 col-5 justify-self-end mb-1"><Counter qty={qty} cart={cart} setCartItems={setCartItems} /></div>
-            <button className="btn__remove col-2 border-0 bg-dark">X</button>
+            <div className='col-3'>{price.toFixed(2)}</div> 
+            <div className="mx-2 col-5 justify-self-end mb-1"><Counter product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
+            <DeleteBtn key={id} product={product} />
             </div>
-              
-            
           </div>
         </div>
-        
-        
       </section>
     )
   }
