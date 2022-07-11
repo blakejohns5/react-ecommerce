@@ -3,7 +3,7 @@ import Counter from '../Counter/Counter';
 import DeleteBtn from '../DeleteBtn/DeleteBtn';
 
 function ShoppingCard(props) {
-  const { id, img, name, qty, price, cart, addToStorage, removeFromStorage } = props;
+  const { id, img, name, qty, price, cart, addToStorage, removeFromStorage, setCartItems } = props;
   const product = {
     id: id,
     name: name,
@@ -27,7 +27,7 @@ function ShoppingCard(props) {
             <div className='d-flex align-items-center'>
             <div className='col-3'>{price.toFixed(2)}</div> 
             <div className="mx-2 col-5 justify-self-end mb-1"><Counter product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
-            <DeleteBtn key={id} product={product} />
+            <DeleteBtn key={id} product={product} setCartItems={setCartItems} cart={cart} />
             </div>
           </div>
         </div>
