@@ -1,8 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import './css/App.css';
 import NavBar from './components/NavBar/NavBar';
-import ProductDash from './components/ProductDash/ProductDash';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import { useState } from 'react';
+
+// Pages
+import Home from './pages/Home/Home';
+import Checkout from './pages/Checkout/Checkout';
+import Login from './pages/Login/Login';
+import Product from './pages/Product/Product';
+
 
 function App () {
   const [cart, setCartItems] = useState([]);
@@ -29,13 +35,15 @@ function App () {
   };
 
   return (
-    <>
-    <NavBar />
-    <main className='d-flex mt-5'>
-      <ProductDash cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} />
-      <ShoppingCart cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
-    </main>
-    </>
+      <>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Home cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />} exact />
+        <Route path='/product' element={<Product />}  />
+        <Route path='/checkout' element={<Checkout />}  />
+        <Route path='/login' element={<Login />}  />
+      </Routes>
+      </>
   )
 }
 
