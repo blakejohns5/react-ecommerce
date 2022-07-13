@@ -12,7 +12,7 @@
   /* background-color: black; */
   border-bottom: 0.2rem solid;
   /* border-image: linear-gradient(to right, #240352 10%, #2dd1ab 30%, #2dd1ab 70%, #240352 90%) 1; */
-  border-image: linear-gradient(to right, black 10%, #979797 20%, #979797 80%, black 90%) 1;
+  border-image: linear-gradient(to right, black 30%, #979797 40%, #979797 60%, black 70%) 1;
   
 }
 
@@ -66,13 +66,20 @@ h3 {
 .product__card {
   /* border-radius: 0.25rem; */
   font-size: 1rem;
+  border: 0.1rem solid;
+  border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
 }
+
+
 
 .btn__add, .btn__checkout, .btn__search {
   /* background-color: #13ba93; */
   /* background-color: #72cfc4;   */
   background-color: #2dd1ab;
+  outline: outset 0.1rem #2dd1ab;
+  border: none;
   /* border-radius: 1rem; */
+  /* border: none; */
 }
 
 .btn__add:hover, .btn__checkout:hover, .btn__search:hover {

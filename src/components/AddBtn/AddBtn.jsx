@@ -13,7 +13,7 @@ function AddBtn(props) {
 
   return (
     <>
-      <button className="btn__add text-light font-weight-bold btn-md px-4 py-2 mb-2 border fw-bold " onClick={() => addToStorage(product)} >Add to Cart</button>
+      <button className="btn__add text-light font-weight-bold px-4 py-2 mb-2 fw-bold" onClick={() => addToStorage(product)} >Add to Cart</button>
     </>
   )
 }
