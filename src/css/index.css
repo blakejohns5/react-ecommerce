@@ -8,8 +8,34 @@
 }
 
 .navbar {
-  background-color: #13ba93;
+  background-color: #2dd1ab;
+  /* background-color: black; */
+  border-bottom: 0.2rem solid;
+  /* border-image: linear-gradient(to right, #240352 10%, #2dd1ab 30%, #2dd1ab 70%, #240352 90%) 1; */
+  border-image: linear-gradient(to right, black 10%, #979797 20%, #979797 80%, black 90%) 1;
   
+}
+
+.cart__icon {
+  
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.badge__items {
+  margin-top: -1.5rem;
+  margin-left: -1.25rem;
+    
+  /* background-color: #3c9cc8; */
+  background-color:hsl(47, 100%, 58%);
+  color: #3c9cc8;
+  /* margin-left: 0.5rem; */
+  /* color: hsl(47, 100%, 58%); */
+  /* color:hsl(47, 100%, 58%); */
+  font-size: 1rem;
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 0 .5rem;
 }
 
 body {
@@ -19,7 +45,7 @@ body {
   background-image: url('../assets/img/bg2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(47, 98%, 47%, 0.1);  
+  background-color: hsla(47, 98%, 47%, 0.2);  
   background-position: 50% center ;
   background-blend-mode: luminosity;
 }
@@ -33,18 +59,23 @@ code {
     monospace;
 }
 
+h3 {
+  font-size: 1.1rem;
+}
 
 .product__card {
   /* border-radius: 0.25rem; */
+  font-size: 1rem;
 }
 
-.btn__add, .btn__checkout {
+.btn__add, .btn__checkout, .btn__search {
+  /* background-color: #13ba93; */
   /* background-color: #72cfc4;   */
-  background-color: #13ba93;
+  background-color: #2dd1ab;
   /* border-radius: 1rem; */
 }
 
-.btn__add:hover, .btn__checkout:hover {
+.btn__add:hover, .btn__checkout:hover, .btn__search:hover {
   background-color: #3c9cc8;
 }
 
@@ -76,4 +107,22 @@ code {
   font-size: 0.85rem;
   border-radius: 50%;
   color: white;
+}
+
+.product__main {
+  margin-top: 10%;
+}
+
+.product__frame {
+  border: 0.15rem solid;
+  border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
+  padding: 2rem;
+  background-color: hsla(0, 0%, 100%, 0.6);  
+  height: 50%;
+  margin-right: 3rem;
+  /* border-radius: 0.2rem; */
+}
+
+.product__cart {
+  margin-left: 3rem;
 }

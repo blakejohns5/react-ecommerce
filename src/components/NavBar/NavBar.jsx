@@ -24,10 +24,12 @@ function NavBar() {
               </li>
 
             </ul>
-            <form className="d-flex">
-              <Link to='/checkout' className="nav-link">{cartIcon}</Link>
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+            <form className="d-flex align-items-center">
+              
+              <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn__search btn-outline-light px-3 text-light me-4 border border-light border-2" type="submit"> Go! </button>
+              <Link to='/checkout' className="nav-link cart__icon text-light fs-5">{cartIcon}</Link>
+              <div className="badge__items fw-bold">3</div>
             </form>
           </div>
         </div>

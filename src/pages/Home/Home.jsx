@@ -3,8 +3,7 @@ import ProductDash from '../../components/ProductDash/ProductDash';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 
 function Home({ cart, setCartItems, addToStorage, removeFromStorage}) {
-  return (
-    
+  return (    
       <>
       <main className='d-flex mt-5'>
       <ProductDash cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} />

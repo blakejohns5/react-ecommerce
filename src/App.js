@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import Checkout from './pages/Checkout/Checkout';
 import Login from './pages/Login/Login';
 import Product from './pages/Product/Product';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App () {
@@ -21,7 +22,7 @@ function App () {
         setCartItems([...cart, {...product, qty: 1}]);
     }
     localStorage.setItem('cart',JSON.stringify(cart));
-    
+    console.log(cart)
   }
   
   const removeFromStorage = (product) => {
@@ -39,9 +40,10 @@ function App () {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />} exact />
-        <Route path='/product' element={<Product />}  />
+        <Route path='/product/:id' element={<Product cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />}  />
         <Route path='/checkout' element={<Checkout />}  />
         <Route path='/login' element={<Login />}  />
+        <Route path='*' element={<NotFound />}  />
       </Routes>
       </>
   )
