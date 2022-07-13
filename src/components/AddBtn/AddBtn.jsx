@@ -1,7 +1,7 @@
 
 
 function AddBtn(props) {
-  const { id, name, price, img, addToStorage, test } = props;  
+  const { id, name, price, img, addToStorage } = props;  
   const product = {
     id: id,
     name: name,

@@ -12,7 +12,7 @@
   /* background-color: black; */
   border-bottom: 0.2rem solid;
   /* border-image: linear-gradient(to right, #240352 10%, #2dd1ab 30%, #2dd1ab 70%, #240352 90%) 1; */
-  border-image: linear-gradient(to right, black 30%, #979797 40%, #979797 60%, black 70%) 1;
+  border-image: linear-gradient(to right,  black 10%, #979797 25%,  #979797 75%, black 90%) 1;
   
 }
 
@@ -42,12 +42,12 @@ body {
   /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Montserrat', sans-serif;  
-  background-image: url('../assets/img/bg2.jpg');
+  background-image: url('../assets/img/bg1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(47, 98%, 47%, 0.2);  
-  background-position: 50% center ;
-  background-blend-mode: luminosity;
+  background-color: hsla(0, 0%, 100%, 0.75);  
+  background-position: 50% center;
+  background-blend-mode: color-burn;
 }
 
 main {
@@ -116,16 +116,22 @@ h3 {
   color: white;
 }
 
-.product__main {
+
+.margin5 {
+  margin-top: 5%;
+}
+
+.margin10 {
   margin-top: 10%;
 }
+
 
 .product__frame {
   border: 0.15rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
-  padding: 2rem;
+  padding: 0;
   background-color: hsla(0, 0%, 100%, 0.6);  
-  height: 50%;
+  /* height: 50%; */
   margin-right: 3rem;
   /* border-radius: 0.2rem; */
 }

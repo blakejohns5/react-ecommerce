@@ -11,8 +11,12 @@ function ShoppingCard(props) {
     img: img,
     qty: qty
   }
-  // price = parseFloat(price).toFixed(2);
   const cartIsEmpty = cart.length === 0;  
+  const currency = '€';
+
+  const pullCounter = (counter) => {
+    return counter
+  }
 
   if (cartIsEmpty) {
     return;
@@ -26,8 +30,9 @@ function ShoppingCard(props) {
           <div className="col-8 d-flex flex-column justify-content-center">
             <div>{name}</div>
             <div className='d-flex align-items-center'>
-            <div className='col-3'>{parseInt(price).toFixed(2)}</div> 
-            <div className="mx-2 col-5 justify-self-end mb-1"><Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
+            <div className='col-4'>{price.toFixed(2)} {currency}</div> 
+            <div className="mx-2 col-5 justify-self-end mb-1">
+            <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
             <DeleteBtn key={id} product={product} setCartItems={setCartItems} cart={cart} />
             </div>
           </div>

@@ -22,7 +22,6 @@ function App () {
         setCartItems([...cart, {...product, qty: 1}]);
     }
     localStorage.setItem('cart',JSON.stringify(cart));
-    console.log(cart)
   }
   
   const removeFromStorage = (product) => {

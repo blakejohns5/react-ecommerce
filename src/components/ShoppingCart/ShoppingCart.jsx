@@ -9,13 +9,13 @@ const ShoppingCart = ({ cart, setCartItems, addToStorage, removeFromStorage }) =
 
   return (
     <>
-      <section className="col-3 mt-4">
-        <h1 className="fw-bold">{ title }</h1>
-        <div className="pt-4">
+      <section className="col-3">
+        <h1 className="fw-bold mb-5">{ title }</h1>
+        
         {cart.map((cartItem) => <ShoppingCard key={cartItem.id} id={cartItem.id} img={cartItem.img} name={cartItem.name} price={cartItem.price} qty={cartItem.qty} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />)}
-        </div>
+        
         <div className="mt-5">
-        <CheckoutBtn />
+        <CheckoutBtn cart={cart} />
         </div>
       </section>
     </>
