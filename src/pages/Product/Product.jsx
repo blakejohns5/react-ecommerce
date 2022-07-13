@@ -20,10 +20,10 @@ function Product({ cart, setCartItems, addToStorage, removeFromStorage }) {
           <h4><strong>{product.name}</strong></h4>            
           </header>
           <p className="fs-5">{product.price.toFixed(2)} {currency}</p>
-          <AddBtn key={product.id} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
+          <AddBtn key={product.id} id={product.id} name={product.name} price={product.price} img={product.img} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
         </section>
         <section className='product__cart col-12'>
-          <ShoppingCart key={product.id} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
+          <ShoppingCart key={'cp'+product.id} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
         </section>
         
       </main>

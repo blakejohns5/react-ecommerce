@@ -4,6 +4,7 @@ import ShoppingCard from "../ShoppingCard/ShoppingCard";
 
 const ShoppingCart = ({ cart, setCartItems, addToStorage, removeFromStorage }) => {
   const title = 'Shopping Cart';
+  console.log(cart);
 
 
   return (
