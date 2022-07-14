@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './css/App.css';
 import NavBar from './components/NavBar/NavBar';
 
@@ -13,6 +13,13 @@ import NotFound from './pages/NotFound/NotFound';
 
 function App () {
   const [cart, setCartItems] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
+  const [totalCost, setTotalCost] = useState(0);  
+
+  useEffect(() => {
+    setCartQty(cart);
+    setCartTotal(cart);
+  }, [cart])
 
   const addToStorage = (product) => {
     const isInCart = cart.find((item) => item.id === product.id);    
@@ -34,13 +41,25 @@ function App () {
     };
   };
 
+  function setCartQty (cart) {
+    setTotalItems(cart.reduce(function (accumulator, currentItem) {
+      return accumulator += currentItem.qty
+    }, 0))
+  }
+ 
+  function setCartTotal (cart) {
+    setTotalCost(cart.reduce(function (accumulator, currentItem) {
+      return accumulator += (currentItem.price * currentItem.qty)
+    }, 0))
+  }
+
   return (
       <>
-      <NavBar />
+      <NavBar totalItems={totalItems} />
       <Routes>
-        <Route path='/' element={<Home cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />} exact />
-        <Route path='/product/:id' element={<Product cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />}  />
-        <Route path='/checkout' element={<Checkout />}  />
+        <Route path='/' element={<Home cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
+        <Route path='/product/:id' element={<Product cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
+        <Route path='/checkout' element={<Checkout cart={cart} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />}  />
         <Route path='/login' element={<Login />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>

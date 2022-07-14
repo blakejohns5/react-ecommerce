@@ -18,13 +18,13 @@
 
 .cart__icon {
   
-  border-radius: 50%;
-  padding: 0.5rem;
+  /* border-radius: 50%;
+  padding: 0.5rem; */
 }
 
 .badge__items {
-  margin-top: -1.5rem;
-  margin-left: -1.25rem;
+  margin-top: -1.25rem;
+  margin-left: -.75rem;
     
   /* background-color: #3c9cc8; */
   background-color:hsl(47, 100%, 58%);
@@ -32,10 +32,11 @@
   /* margin-left: 0.5rem; */
   /* color: hsl(47, 100%, 58%); */
   /* color:hsl(47, 100%, 58%); */
-  font-size: 1rem;
+  /* font-size: 1rem; */
   border: solid 1px white;
   border-radius: 50%;
   padding: 0 .5rem;
+  resize: none;
 }
 
 body {
@@ -70,7 +71,14 @@ h3 {
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
 }
 
-
+.btn__add {
+  /* position: absolute; */
+  align-self: end;
+  text-align: center;
+  /* bottom: 0; */
+  /* height: 10%; */
+  /* width: 100%; */
+}
 
 .btn__add, .btn__checkout, .btn__search {
   /* background-color: #13ba93; */
@@ -106,6 +114,7 @@ h3 {
 .counter__add {
   color: #59ceb3;
   margin-bottom: 0.5rem;
+ 
 }
 
 .btn__remove {

@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-function NavBar() {
+function NavBar({ totalItems }) {
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />
+  console.log(totalItems)
   
 
   return (
@@ -25,15 +26,16 @@ function NavBar() {
 
             </ul>
             <form className="d-flex align-items-center">
-              
               <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn__search btn-outline-light px-3 text-light me-4 border border-light border-2" type="submit"> Go! </button>
-              <Link to='/checkout' className="nav-link cart__icon text-light fs-5">{cartIcon}</Link>
-              <div className="badge__items fw-bold">3</div>
+              <Link to='/checkout' className="d-flex nav-link align-items-center">
+                <div className="cart__icon text-light fs-5 fw-bold">{cartIcon}</div>
+                <div className="badge__items fw-bold">{totalItems}</div>
+              </Link>
             </form>
           </div>
         </div>
-      </nav>    
+      </nav>
     </>
   )
 }

@@ -1,9 +1,7 @@
 
 function Counter(props) {
   const { product, addToStorage, removeFromStorage } = props;
-  console.log(product.qty);   
-  // console.log(parseInt(product.qty))
-
+  
   return (
     <>
     <article className="h-100 cart__counter d-flex gap-2 align-items-center">
