@@ -14,10 +14,6 @@ function ShoppingCard(props) {
   const cartIsEmpty = cart.length === 0;  
   const currency = '€';
 
-  const pullCounter = (counter) => {
-    return counter
-  }
-
   if (cartIsEmpty) {
     return;
   } 

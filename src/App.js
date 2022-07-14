@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+// Styles
 import './css/App.css';
+// Components
 import NavBar from './components/NavBar/NavBar';
-
 // Pages
 import Home from './pages/Home/Home';
 import Checkout from './pages/Checkout/Checkout';
@@ -12,9 +13,38 @@ import NotFound from './pages/NotFound/NotFound';
 
 
 function App () {
+  const url = 'http://localhost:5000/products';
+  const [products, setProducts] = useState([]);
   const [cart, setCartItems] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [totalCost, setTotalCost] = useState(0);  
+  
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(url);
+        const data = await res.json();        
+        setProducts(data);        
+      }
+      catch (error) {
+        console.log(error)
+      }
+    } 
+    fetchProducts();
+  }, [])
+
+  // Alternate useEffect for products array with fetcth then method
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(data => {
+  //       setProducts(data)
+  //       console.log(data)
+  //     })
+  // }, [])
 
   useEffect(() => {
     setCartQty(cart);
@@ -41,13 +71,13 @@ function App () {
     };
   };
 
-  function setCartQty (cart) {
+  const setCartQty = (cart) => {
     setTotalItems(cart.reduce(function (accumulator, currentItem) {
       return accumulator += currentItem.qty
     }, 0))
   }
  
-  function setCartTotal (cart) {
+  const setCartTotal = (cart) => {
     setTotalCost(cart.reduce(function (accumulator, currentItem) {
       return accumulator += (currentItem.price * currentItem.qty)
     }, 0))
@@ -57,7 +87,7 @@ function App () {
       <>
       <NavBar totalItems={totalItems} />
       <Routes>
-        <Route path='/' element={<Home cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
+        <Route path='/' element={<Home products={products} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
         <Route path='/product/:id' element={<Product cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
         <Route path='/checkout' element={<Checkout cart={cart} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />}  />
         <Route path='/login' element={<Login />}  />

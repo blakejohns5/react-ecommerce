@@ -7,7 +7,7 @@ function CheckoutTable({ cart, addToStorage, removeFromStorage }) {
 
   return (
     <>
-      <table className="h-100 col-9 text-start me-5">
+      <table className="col-9 text-start me-5">
       <thead className="border-dark border-3 border-top-0 border-start-0 border-end-0">
         <tr className="fs-5 py-2">
           <th className="col-1 py-2"></th>

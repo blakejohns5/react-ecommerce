@@ -4,9 +4,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 function NavBar({ totalItems }) {
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />
-  console.log(totalItems)
   
-
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-2 sticky-top">
