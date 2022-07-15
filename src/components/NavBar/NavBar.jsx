@@ -21,11 +21,14 @@ function NavBar({ totalItems }) {
               <li className="nav-item">
                 <Link to='/checkout' className="nav-link">Checkout</Link>
               </li>
-
             </ul>
+            <div className="nav-item">
+              <button className="btn__search btn-outline-light px-3 text-light mx-4 border border-light fw-bold border-2" type="submit"> Sign In </button>
+            </div>
+            
             <form className="d-flex align-items-center">
               <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn__search btn-outline-light px-3 text-light me-4 border border-light border-2" type="submit"> Go! </button>
+              <button className="btn__search btn-outline-light px-3 text-light fw-bold ms-2 me-4 border border-light border-2" type="submit"> Go! </button>
               <Link to='/checkout' className="d-flex nav-link align-items-center">
                 <div className="cart__icon text-light fs-5 fw-bold">{cartIcon}</div>
                 <div className="badge__items fw-bold">{totalItems}</div>
