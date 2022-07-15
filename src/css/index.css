@@ -35,7 +35,7 @@ body {
   background-image: url('../../public/img/bg1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(0, 0%, 100%, 0.75);  
+  background-color: hsla(0, 0%, 100%, 0.8);  
   background-position: 50% center;
   background-blend-mode: color-burn;
 }
@@ -71,7 +71,7 @@ h3 {
 
 .btn__add, .btn__checkout, .btn__search {
   background-color: #2dd1ab;
-  outline: outset 0.1rem #2dd1ab;
+  
   border: none;
 }
 

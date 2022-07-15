@@ -22,7 +22,7 @@ function ShoppingCard(props) {
     return (
       <section className='shopping__card mt-4 col-12'>
         <div className="my-3 d-flex gap-3">
-          <img src={img} className="col-4 cart__img img-thumbnail rounded-end rounded-pill" alt="pair of shoes" />
+          <img src={img} className="col-4 cart__img rounded-end rounded-pill" alt="pair of shoes" />
           <div className="col-8 d-flex flex-column justify-content-center">
             <div>{name}</div>
             <div className='d-flex align-items-center'>

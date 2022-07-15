@@ -82,13 +82,13 @@ function App () {
       return accumulator += (currentItem.price * currentItem.qty)
     }, 0))
   }
-
+console.log(products)
   return (
       <>
       <NavBar totalItems={totalItems} />
       <Routes>
         <Route path='/' element={<Home products={products} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
-        <Route path='/product/:id' element={<Product cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
+        <Route path='/product/:id' element={<Product products={products} cart={cart} setCartItems={setCartItems} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
         <Route path='/checkout' element={<Checkout cart={cart} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />}  />
         <Route path='/login' element={<Login />}  />
         <Route path='*' element={<NotFound />}  />
