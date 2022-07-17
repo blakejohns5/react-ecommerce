@@ -8,7 +8,7 @@ function Home({ products, addToStorage, removeFromStorage, totalItems, totalCost
 
   return (    
       <>
-      <main className='home  vh-100 d-flex margin5'>
+      <main className='home d-flex mt-5 pt-2'>
       <ProductDash products={products} addToStorage={addToStorage} />
       <ShoppingCart addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />
       </main>

@@ -6,8 +6,8 @@ function Breadcrumbs() {
       <div>
         <div className="checkout__progress py-4">
           <ul className="d-flex align-items-center justify-content-between">
-            <li id="step-1" className="current"></li>
-            <li id="step-2"></li>
+            <li id="step-1" className="done" ></li>
+            <li id="step-2" className="done"></li>
             <li id="step-3"></li>
             <li id="step-4"></li>
             

@@ -23,9 +23,9 @@ function Checkout({ addToStorage, removeFromStorage, totalItems, totalCost }) {
     return (
       <> 
       <Breadcrumbs />
-       <main className='d-flex vh-100 flex-column col-10 justify-content-start mt-5 pt-5 align-items-start gap-5'>
-       <h1 className="mb-5 text-info fw-bold">Welcome to Checkout</h1>
-        <section className="d-flex opaque-bg">
+       <main className='d-flex vh-100 flex-column col-10 justify-content-start mt-5 pt-2 align-items-start'>
+       <h1 className="mb-3 text-info fw-bold">Welcome to Checkout</h1>
+        <section className="d-flex opaque-bg rounded-pill">
           <div className="d-flex">
             <CheckoutTable addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
             <OrderSummary totalItems={totalItems} totalCost={totalCost} />
