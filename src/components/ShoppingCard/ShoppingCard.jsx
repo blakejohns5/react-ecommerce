@@ -4,7 +4,7 @@ import DeleteBtn from '../DeleteBtn/DeleteBtn';
 import CartContext from '../../context/CartProvider';
 
 function ShoppingCard(props) {
-  const { cart, setCartItems } = useContext(CartContext);
+  const { cart  } = useContext(CartContext);
   const { id, img, name, qty, price, addToStorage, removeFromStorage } = props;
   const product = {
     id: id,

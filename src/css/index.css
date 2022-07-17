@@ -161,7 +161,83 @@ h3 {
 
 .errmsg {
   color: #f32c5a;
-  background-color: #ffb9c9;
+  background-color: #ffb9c9; 
+}
+
+.opaque-bg {
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border-radius:3rem;
+  padding: 2rem 5rem;
   
-  
+}
+
+.checkout__progress {
+  position: relative;
+  max-width: 60%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.checkout__progress ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.checkout__progress ul li {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #979797;
+  z-index: 200;
+  position: relative;
+}
+
+.checkout__progress ul li.current {
+  color: black;  
+  background-color: #3c9cc8;
+}
+
+.checkout__progress ul li::after {
+  position: absolute;
+  top: 2rem;
+  left: -0.3rem;
+  font-size: 0.85rem;
+  /* width: 5px; */
+}
+
+#step-1::after {
+  content: "Order";
+  justify-self: center;
+}
+
+#step-2::after {
+  content: "Sign In";
+  text-align: center;
+}
+
+#step-3::after {
+  content: "Payment";
+  left: -1rem
+}
+
+#step-4::after {
+  content: "Order Complete";
+  left: -1.25rem;
+}
+
+.checkout__progress .progress {
+  height: 0.3rem;
+  width: 100%;
+  top: 1.9rem;
+  position: absolute;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.progress-bar {
+  background-color: #3c9cc8;
+  width: 33.33%;
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import ProductDash from '../../components/ProductDash/ProductDash';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
-import CartContext from '../../context/CartProvider';
-import { useContext } from 'react';
+
 
 function Home({ products, addToStorage, removeFromStorage, totalItems, totalCost }) {
-  const { cart, setCartItems } = useContext(CartContext);
+  
 
   return (    
       <>
