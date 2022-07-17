@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import CheckoutTable from "../../components/CheckoutTable/CheckoutTable";
-// import { useLocation } from 'react-router-dom';
 import OrderSummary from "../../components/OrderSummary/OrderSummary";
+import CartContext from '../../context/CartProvider';
 
-function Checkout({ cart, addToStorage, removeFromStorage, totalItems, totalCost }) {
+function Checkout({ addToStorage, removeFromStorage, totalItems, totalCost }) {
+  const { cart } = useContext(CartContext);
 
   if (cart.length === 0) {
     return (
@@ -19,8 +21,8 @@ function Checkout({ cart, addToStorage, removeFromStorage, totalItems, totalCost
        <main className='d-flex vh-100 flex-column col-10 justify-content-start mt-5 pt-5 align-items-start gap-5'>
        <h1 className="mb-5 text-info fw-bold">Welcome to Checkout</h1>
         <section className="d-flex">
-          <CheckoutTable cart={cart} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
-          <OrderSummary cart={cart} totalItems={totalItems} totalCost={totalCost} set/>
+          <CheckoutTable addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
+          <OrderSummary totalItems={totalItems} totalCost={totalCost} set/>
         </section>
   
        </main>

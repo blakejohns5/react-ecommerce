@@ -1,9 +1,11 @@
-import React from 'react'
+import { useContext } from 'react';
 import Counter from '../Counter/Counter';
 import DeleteBtn from '../DeleteBtn/DeleteBtn';
+import CartContext from '../../context/CartProvider';
 
 function ShoppingCard(props) {
-  const { id, img, name, qty, price, cart, addToStorage, removeFromStorage, setCartItems } = props;
+  const { cart, setCartItems } = useContext(CartContext);
+  const { id, img, name, qty, price, addToStorage, removeFromStorage } = props;
   const product = {
     id: id,
     name: name,
@@ -29,7 +31,7 @@ function ShoppingCard(props) {
             <div className='col-4'>{price.toFixed(2)} {currency}</div> 
             <div className="mx-2 col-5 justify-self-end mb-1">
             <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
-            <DeleteBtn key={id} product={product} setCartItems={setCartItems} cart={cart} />
+            <DeleteBtn key={id} product={product}/>
             </div>
           </div>
         </div>

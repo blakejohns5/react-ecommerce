@@ -9,9 +9,7 @@ import Logout from '../Logout/Logout';
 function NavBar({ totalItems }) {
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />
   const { auth, LoggedIn } = useContext(AuthContext);
-  console.log( auth, LoggedIn)
-  console.log(Object.keys(auth).length)
-  
+    
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-3 sticky-top">

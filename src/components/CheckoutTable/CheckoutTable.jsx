@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Counter from '../Counter/Counter';
+import CartContext from '../../context/CartProvider';
 
-function CheckoutTable({ cart, addToStorage, removeFromStorage }) {
+function CheckoutTable({ addToStorage, removeFromStorage }) {
+  const { cart } = useContext(CartContext);
   const currency = '€';
   console.log((cart))
 

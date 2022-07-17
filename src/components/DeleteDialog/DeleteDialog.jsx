@@ -1,9 +1,11 @@
+import { useContext } from 'react';
+import CartContext from '../../context/CartProvider';
 
-
-function DeleteDialog({ product, cart, setCartItems }) {
+function DeleteDialog({ product }) {
+  const { cart, setCartItems } = useContext(CartContext);
 
   function deleteItem (product) {
-    // alert('Are you sure you want to delete?');
+    
     setCartItems(cart.filter((item) => item.id !== product.id));
     
   }

@@ -2,8 +2,7 @@ import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
 
 const Logout = () => {
-  const { auth, setAuth } = useContext(AuthContext);
-  console.log(auth, setAuth);
+  const { setAuth } = useContext(AuthContext);
   const logoutUser = () => {
     setAuth({});
   }
