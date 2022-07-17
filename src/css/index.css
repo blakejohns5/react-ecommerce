@@ -5,10 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Cardo&family=Fira+Sans&family=Fjalla+One&family=Karla&family=Lato&family=Mulish&family=Oswald&family=Oxygen&family=PT+Sans&family=PT+Serif&display=swap');
 
 
+
 * {
   padding: 0;
   margin: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 .navbar {
@@ -39,13 +40,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: hsla(0, 0%, 100%, 0.7);
-  background-position: 50% center;
+  background-position: top right;
   background-blend-mode: color-burn;
   
 }
 
 main {
-  margin: 2% 8%;
+  margin: 2% 10%;
 }
 
 
@@ -63,9 +64,11 @@ h3 {
 }
 
 .home {
-  /* overflow-x: hidden; */
-  height: 100vh;
-  /* height: calc(<viewport-height>(1,0)) */
+  
+  /* height: calc(100vh - 10.35rem) ; */
+  height: 82vh;
+box-sizing: border-box;
+
 }
 .product__card {
   /* border-radius: 0.25rem; */
@@ -85,7 +88,6 @@ h3 {
 
 .btn__add, .btn__checkout, .btn__search {
   background-color: #2dd1ab;
-
   border: none;
 }
 

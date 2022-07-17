@@ -21,9 +21,7 @@ function ProductCard(props) {
             </div>
           </Link>          
           <div className="h-100 d-flex mt-2">
-            <AddBtn key={id} {...props} 
-            
-             />
+            <AddBtn key={id} {...props} />
           </div>
         </div>
       </div>
