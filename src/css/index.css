@@ -1,6 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* import fonts for testing */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Cardo&family=Fira+Sans&family=Fjalla+One&family=Karla&family=Lato&family=Mulish&family=Oswald&family=Oxygen&family=PT+Sans&family=PT+Serif&display=swap');
+
+
 * {
   padding: 0;
   margin: 0;
@@ -10,10 +14,10 @@
 .navbar {
   background-color: #2dd1ab;
   /* background-color: black; */
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.1rem solid;
   /* border-image: linear-gradient(to right, #240352 10%, #2dd1ab 30%, #2dd1ab 70%, #240352 90%) 1; */
   border-image: linear-gradient(to right,  black 10%, #979797 25%,  #979797 75%, black 90%) 1;
-  
+
 }
 
 
@@ -30,12 +34,27 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-family: 'Fira Sans', sans-serif; */
+  font-family: 'Oxygen', sans-serif;
+  /* font-family: 'PT Serif', serif; */
+  /* font-family: 'Mulish', sans-serif; */
   /* font-family: 'Montserrat', sans-serif;   */
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Oswald', sans-serif; */
+
+
+  /* font-family: 'Alegreya Sans', sans-serif; */
+  /* font-family: 'Cardo', serif; */
+  /* font-family: 'Fjalla One', sans-serif; */
+  /* font-family: 'Karla', sans-serif; */
+  /* font-family: 'PT Sans', sans-serif; */
+
   background-image: url('../../public/img/bg1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(0, 0%, 100%, 0.8);  
+  background-color: hsla(0, 0%, 100%, 0.5);
+  /* background-color: hsla(199, 56%, 51%, 0.1); */
   background-position: 50% center;
   background-blend-mode: color-burn;
 }
@@ -56,7 +75,7 @@ h3 {
 .product__card {
   /* border-radius: 0.25rem; */
   font-size: 1rem;
-  border: 0.1rem solid;
+  border: 0.05rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
 }
 
@@ -71,7 +90,7 @@ h3 {
 
 .btn__add, .btn__checkout, .btn__search {
   background-color: #2dd1ab;
-  
+
   border: none;
 }
 
@@ -93,13 +112,13 @@ h3 {
 .counter__remove {
   color: #ff84a1;
   margin-top: -0.25rem;
-  
+
 }
 
 .counter__add {
   color: #59ceb3;
   margin-bottom: 0.5rem;
- 
+
 }
 
 .btn__remove {
@@ -124,7 +143,7 @@ h3 {
   border: 0.15rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
   padding: 0;
-  background-color: hsla(0, 0%, 100%, 0.6);  
+  background-color: hsla(0, 0%, 100%, 0.6);
   /* height: 50%; */
   margin-right: 3rem;
   /* border-radius: 0.2rem; */
@@ -132,4 +151,19 @@ h3 {
 
 .product__cart {
   margin-left: 3rem;
+}
+
+.dialog__login {
+  position: fixed;
+  top: 5%;
+  right: 20%;
+  border: solid .2rem #2dd1ab;
+  width: 35%;
+}
+
+.errmsg {
+  color: #f32c5a;
+  background-color: #ffb9c9;
+  
+  
 }

@@ -6,9 +6,7 @@ import ProductCard from "../ProductCard/ProductCard.jsx";
 
 const ProductDash = ({ products, cart, setCartItems, addToStorage }) => {
   const title = 'Top-selling Sneakers';
-  console.log(products)
-
-
+  
   return (
     <>
       <section className="col-9">
