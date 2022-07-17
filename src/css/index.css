@@ -39,16 +39,10 @@ body {
   font-family: 'Oxygen', sans-serif;
   /* font-family: 'PT Serif', serif; */
   /* font-family: 'Mulish', sans-serif; */
-  /* font-family: 'Montserrat', sans-serif;   */
+  
   /* font-family: 'Lato', sans-serif; */
-  /* font-family: 'Oswald', sans-serif; */
-
-
-  /* font-family: 'Alegreya Sans', sans-serif; */
-  /* font-family: 'Cardo', serif; */
-  /* font-family: 'Fjalla One', sans-serif; */
-  /* font-family: 'Karla', sans-serif; */
-  /* font-family: 'PT Sans', sans-serif; */
+  
+    
 
   background-image: url('../../public/img/bg1.jpg');
   background-size: cover;
@@ -67,6 +61,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* .pr-font {
+  font-family: 'Montserrat', sans-serif;  
+} */
 
 h3 {
   font-size: 1.1rem;
@@ -154,11 +152,11 @@ h3 {
 }
 
 .dialog__login {
-  position: fixed;
-  top: 5%;
-  right: 20%;
+  /* position: ; */
+  top: 35vh;
+  margin: auto;  
   border: solid .2rem #2dd1ab;
-  width: 35%;
+  width: 50%;
 }
 
 .errmsg {
