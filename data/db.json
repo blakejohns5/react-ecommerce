@@ -4,66 +4,76 @@
     "id": 1001,
     "name": "Adidas Intercontinental 80",
     "price": 104.99,
-    "img": "/img/img_01.jpg"
+    "img": "/img/img_01.jpg",
+    "sale": null
   },
   {
     "id": 1002,
     "name": "Nike Jordan 1 Low",
     "price": 109,
-    "img": "/img/img_02.jpg"
+    "img": "/img/img_02.jpg",
+    "sale": 92.25
   },
   {
     "id": 1003,
     "name": "New Balance WL574 State Fair",
     "price": 72,
-    "img": "/img/img_03.jpg"
+    "img": "/img/img_03.jpg",
+    "sale": null
   },
   {
     "id": 1004,
     "name": "Nike Cortez",
     "price": 89.90,
-    "img": "/img/img_04.jpg"
+    "img": "/img/img_04.jpg",
+    "sale": null
   },
   {
     "id": 1005,
     "name": "New Balance X-90",
     "price": 99,
-    "img": "/img/img_05.jpg"
+    "img": "/img/img_05.jpg",
+    "sale": null
   },  
   
   {
     "id": 1006,
     "name": "Vans Checkerboard SK8-HI Tapered",
     "price": 59.90,
-    "img": "/img/img_06.jpg"
+    "img": "/img/img_06.jpg",
+    "sale": null
   },
   
   {
     "id": 1007,
     "name": "New Balance 997H",
     "price": 76.95,
-    "img": "/img/img_07.jpg"
+    "img": "/img/img_07.jpg",
+    "sale": 60
   },
   
   {
     "id": 1008,
     "name": "Nike Blazer MID 77",
     "price": 75.20,
-    "img": "/img/img_08.jpg"
+    "img": "/img/img_08.jpg",
+    "sale": null
   },
   
   {
     "id": 1009,
     "name": "Converse Chuck Taylor All-Star",
     "price": 70,
-    "img": "/img/img_09.jpg"
+    "img": "/img/img_09.jpg",
+    "sale": 58.99
   },
   
   {
     "id": 1010,
     "name": "Reebok Club C 85 Montana",
     "price": 86,
-    "img": "/img/img_10.jpg"
+    "img": "/img/img_10.jpg",
+    
   }
   ],
   "users": [

@@ -5,13 +5,14 @@ import CartContext from '../../context/CartProvider';
 
 function ShoppingCard(props) {
   const { cart  } = useContext(CartContext);
-  const { id, img, name, qty, price, addToStorage, removeFromStorage } = props;
+  const { id, img, name, qty, price, sale, addToStorage, removeFromStorage } = props;
   const product = {
     id: id,
     name: name,
     price: price,
     img: img,
-    qty: qty
+    qty: qty,
+    sale: sale
   }
   const cartIsEmpty = cart.length === 0;  
   const currency = '€';
@@ -28,7 +29,11 @@ function ShoppingCard(props) {
           <div className="col-8 d-flex flex-column justify-content-center">
             <div>{name}</div>
             <div className='d-flex align-items-center'>
-            <div className='col-4'>{price.toFixed(2)} {currency}</div> 
+            { sale ? ( 
+              <div className='col-4 text-danger'>{sale.toFixed(2)} {currency}</div>
+            ) : ( 
+              <div className='col-4'>{price.toFixed(2)} {currency}</div> 
+            )}            
             <div className="mx-2 col-5 justify-self-end mb-1">
             <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
             <DeleteBtn key={id} product={product}/>

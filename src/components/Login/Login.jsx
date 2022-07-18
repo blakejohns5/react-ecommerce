@@ -12,7 +12,6 @@ const Login = () => {
   const [pwd, setPwd] = useState('');
   const [errMsg, setErrMsg] = useState(false);
   
-
   // Ref doesn't seem to work in this case, error
   // useEffect(() => {
   //   emailRef.current.focus();

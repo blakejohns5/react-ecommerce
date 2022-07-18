@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import LoginDialog from '../LoginDialog/LoginDialog';
 import { useContext} from 'react'
 import AuthContext from '../../context/AuthProvider';
 import Logout from '../Logout/Logout';
+import { FaShoppingCart } from 'react-icons/fa';
+
 
 function NavBar({ totalItems }) {
-  const cartIcon = <FontAwesomeIcon icon={faCartShopping} />
   const { auth, LoggedIn } = useContext(AuthContext);
     
   return (
@@ -43,7 +42,7 @@ function NavBar({ totalItems }) {
               <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn__search btn-outline-light px-3 text-light fw-bold ms-2 me-4 border border-light border-2" type="submit"> Go! </button>
               <Link to='/checkout' className="d-flex nav-link align-items-center">
-                <div className="cart__icon text-light fs-5 fw-bold">{cartIcon}</div>
+                <div className="cart__icon text-light fs-4 fw-bold"><FaShoppingCart /></div>
                 <div className="badge__items fw-bold">{totalItems}</div>
               </Link>
             </form>

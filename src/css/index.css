@@ -16,7 +16,6 @@
   background-color: #2dd1ab;
   border-bottom: 0.1rem solid;
   border-image: linear-gradient(to right,  black 10%, #979797 25%,  #979797 75%, black 90%) 1;
-
 }
 
 .badge__items {
@@ -42,11 +41,12 @@ body {
   background-color: hsla(0, 0%, 100%, 0.7);
   background-position: top right;
   background-blend-mode: color-burn;
-  
+
 }
 
 main {
   margin: 2% 10%;
+  
 }
 
 
@@ -56,7 +56,7 @@ code {
 }
 
 /* .pr-font {
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Montserrat', sans-serif;
 } */
 
 h3 {
@@ -64,9 +64,9 @@ h3 {
 }
 
 .home {
-  
+
   /* height: calc(100vh - 10.35rem) ; */
-  height: 82vh;
+  height: 80vh;
 box-sizing: border-box;
 
 }
@@ -97,7 +97,7 @@ box-sizing: border-box;
 
 
 .dash {
-  height: 80%;
+  height: 85%;
   overflow-y: scroll;
   margin-left: -1rem;
 }
@@ -119,7 +119,7 @@ box-sizing: border-box;
 
 
 
-.shopping__card { 
+.shopping__card {
   background-color: hsla(0, 0%, 100%, 0.8);
   padding-right: 1rem;
 }
@@ -145,7 +145,7 @@ box-sizing: border-box;
 .counter__add {
   color: #59ceb3;
   margin-bottom: 0.5rem;
-  
+
 }
 
 .btn__remove {
@@ -183,21 +183,29 @@ box-sizing: border-box;
 .dialog__login {
   /* position: ; */
   top: 35vh;
-  margin: auto;  
+  margin: auto;
   border: solid .2rem #2dd1ab;
   width: 50%;
 }
 
+.dialog__cart {
+  position: absolute;
+  top: 5vh;
+  right: 0;  
+  border: solid .2rem #2dd1ab;
+  
+}
+
 .errmsg {
   color: #f32c5a;
-  background-color: #ffb9c9; 
+  background-color: #ffb9c9;
 }
 
 .opaque-bg {
   background-color: hsla(0, 0%, 100%, 0.8);
   border-radius:3rem;
   padding: 2rem 5rem;
-  
+
 }
 
 .checkout__progress {
@@ -263,11 +271,17 @@ box-sizing: border-box;
   top: 1.9rem;
   position: absolute;
   background-color: #e0e0e0;
-  
+
   border-radius: 2rem;
 }
 
 .progress-bar {
   background-color: #3c9cc8;
   width: 33.33%;
+}
+
+.blue {
+  /* color: #3c9cc8; */
+  color: #f32c5a;
+
 }
