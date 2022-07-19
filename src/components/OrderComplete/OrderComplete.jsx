@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CartContext from '../../context/CartProvider';
 
 
-const OrderComplete = () => {
+const OrderComplete = ({ setCheckoutStage }) => {
   const { setCartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -12,7 +12,8 @@ const OrderComplete = () => {
     if (count > 0) {
       setTimeout(() => setCount(count - 1), 1000);
     } else {
-      setCartItems([])
+      setCartItems([]);
+      setCheckoutStage('order');
       navigate('/');
     }
   });

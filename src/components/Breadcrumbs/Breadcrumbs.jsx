@@ -2,25 +2,25 @@ import React from 'react'
 
 function Breadcrumbs({ checkoutStage }) {
   
-  let style = {};
+  let style = null;
   let stageNo = null;
   console.log('Breadcrumbs checkoutStage: ' + checkoutStage);
 
   switch (checkoutStage) {         
     case 'shipping': 
-      style = 'width: 33.33%';
+      style = { width: "33.33%" };
       stageNo = 2;
       break;
     case 'payment': 
-      style = 'width: 66.66%';
+      style = { width: "66.66%" };
       stageNo = 3;
       break;
     case 'complete': 
-      style='width: 100%';
+      style = { width: "100%" };
       stageNo = 4;
       break;  
     default: 
-      style='width: 0%';
+      style = { width: "0%" };
     
   }    
   
@@ -38,7 +38,7 @@ console.log(style)
             
           </ul>
           <div className="progress">
-            <div className="progress-bar" role="progressbar" style={{style}} aria-valuenow="33.33" aria-valuemin="0" 
+            <div className="progress-bar" role="progressbar" style={style} aria-valuenow="33.33" aria-valuemin="0" 
                 aria-valuemax="100"></div>
           </div>
         </div>

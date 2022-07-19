@@ -52,15 +52,15 @@ const Payment = ({ setCheckoutStage }) => {
           <fieldset className="d-flex gap-5 mb-4">
             <div className="form-set"> 
               <input type="radio" id="creditCard" name="payMethod" className="form-check-input me-2" />
-              <label htmlFor="creditCard" className="form-check-label" for="creditCard" checked>Credit Card:</label>
+              <label htmlFor="creditCard" className="form-check-label" checked>Credit Card:</label>
             </div>
             <div className="form-set">
               <input type="radio" id="debitCard" name="payMethod" className="form-check-input me-2" />
-              <label htmlFor="debitCard" className="form-check-label" for="debitCard">Debit Card:</label>
+              <label htmlFor="debitCard" className="form-check-label" >Debit Card:</label>
             </div>
             <div className="form-set">
               <input type="radio" id="payPal" name="payMethod" className="form-check-input me-2" />
-              <label htmlFor="payPal" className="form-check-label" for="payPal">PayPal:</label>
+              <label htmlFor="payPal" className="form-check-label">PayPal:</label>
             </div>              
           </fieldset>
           

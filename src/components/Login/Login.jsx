@@ -55,8 +55,9 @@ const Login = () => {
   }
 
   const togglePwd = () => {
-      setPwdVisible(!pwdVisible);
+      setPwdVisible(pwdVisible ? false: true);
     }
+
 
 
   return (
@@ -75,7 +76,7 @@ const Login = () => {
             </div>
             <div className="row d-flex">              
               <label htmlFor="loginPassword" className="col-3">Password:</label>
-              <input type={pwdVisible ? "text" : "password"} id="loginPassword" className="col-8 w-50" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
+              <input type={pwdVisible === true ? "text" : "password"} id="loginPassword" className="col-8 w-50" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
               <button type="button" onClick={togglePwd} form="loginForm" className="ms-2 col-1 fw-bold text-dark border-0 bg-light ">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
             </div>  
            
