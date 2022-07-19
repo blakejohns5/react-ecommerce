@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
 import Checkout from './pages/Checkout/Checkout';
 import Product from './pages/Product/Product';
+import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 // Context
 import CartContext from './context/CartProvider';
@@ -92,6 +93,7 @@ function App () {
         <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
         <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
         <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
+        <Route path='/user/' element={<User />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>
       </>

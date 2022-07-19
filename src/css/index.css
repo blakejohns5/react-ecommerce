@@ -297,3 +297,10 @@ box-sizing: border-box;
   color: #f32c5a;
 
 }
+
+
+.product__fav-btn {
+  z-index: 20;
+  position: absolute;
+  top: -1.1rem;
+}

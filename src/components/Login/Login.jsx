@@ -55,7 +55,7 @@ const Login = () => {
   }
 
   const togglePwd = () => {
-      setPwdVisible(pwdVisible ? false: true);
+      setPwdVisible(pwdVisible ? false : true);
     }
 
 
@@ -69,20 +69,16 @@ const Login = () => {
       ) : (
         <section>
           <p ref={errRef} className={errMsg ? "errmsg fw-bold" : "offscreen"} aria-live="assertive">{errMsg}</p>
-          <form id="loginForm" onSubmit={handleSubmit} className="ms-3 d-flex flex-column gap-3" animation={false} >
+          <form id="loginForm" onSubmit={handleSubmit} className="ms-3 d-flex flex-column gap-3" >
             <div className="row">
               <label htmlFor="loginEmail "className="col-3">Email:</label>
               <input type="email" id="loginEmail" ref={emailRef} className="col-8 w-50  " onChange={(e) => setEmail(e.target.value)} value={email} required />
             </div>
             <div className="row d-flex">              
               <label htmlFor="loginPassword" className="col-3">Password:</label>
-              <input type={pwdVisible === true ? "text" : "password"} id="loginPassword" className="col-8 w-50" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
+              <input type={pwdVisible ? "text" : "password"} id="loginPassword" className="col-8 w-50" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
               <button type="button" onClick={togglePwd} form="loginForm" className="ms-2 col-1 fw-bold text-dark border-0 bg-light ">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
             </div>  
-           
-              
-            
-            
             {/* btn separate from form         */}
           </form>
           <div className="modal-footer d-flex align-items-center justify-content-center mt-3">

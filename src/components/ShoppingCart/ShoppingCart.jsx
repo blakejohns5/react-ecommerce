@@ -8,10 +8,7 @@ import CartContext from "../../context/CartProvider";
 const ShoppingCart = ({ addToStorage, removeFromStorage, totalItems, totalCost }) => {
   const { cart } = useContext(CartContext);
   const title = 'Shopping Cart';
-  console.log(cart)
   
-
-
   return (
     <>
       <section className="col-3">
