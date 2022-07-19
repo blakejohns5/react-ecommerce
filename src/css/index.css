@@ -9,12 +9,13 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 .navbar {
-  background-color: #2dd1ab;
-  border-bottom: 0.1rem solid;
+  /* /* background-color: #2dd1ab; */
+  background: linear-gradient(to bottom, rgba(45, 209, 171, 0.9), rgba(124, 255, 224, 0.8) 95%);
+  border-bottom: 0.15rem solid;
   border-image: linear-gradient(to right,  black 10%, #979797 25%,  #979797 75%, black 90%) 1;
 }
 
@@ -32,20 +33,28 @@
 body {
   /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Fira Sans', sans-serif; */
-  font-family: 'Oxygen', sans-serif;
-  /* font-family: 'PT Serif', serif; */
+    /* font-family: 'PT Serif', serif; */
   /* font-family: 'Mulish', sans-serif; */
-  background-image: url('../../public/img/bg1.jpg');
+  font-family: 'Oxygen', sans-serif;
+
+  background-image: url('../../public/img/bg1.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(0, 0%, 100%, 0.7);
+  background-color: hsla(0, 0%, 100%, 0.8);
+  /* background-color: linear-gradient(to bottom right, #7cffe0 50%, #2dd1ab) 1; */
+  /* background: 
+    linear-gradient(217deg, rgba(45, 209, 171, 0.8), rgba(124, 255, 224, 0) 50.71%),
+    linear-gradient(127deg, rgba(60, 156, 200, 0.8), rgba(124, 255, 224, 0) 50.71%),
+    linear-gradient(336deg, rgba(0,0,255, 0.8), rgba(124, 255, 224, 0) 50.71%); */
+    /* linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%), */
+    
   background-position: top right;
   background-blend-mode: color-burn;
 
 }
 
 main {
-  margin: 2% 10%;
+  margin: 2% 8%;
   
 }
 
@@ -81,13 +90,17 @@ box-sizing: border-box;
   /* position: absolute; */
   align-self: end;
   text-align: center;
+  
   /* bottom: 0; */
   /* height: 10%; */
   /* width: 100%; */
 }
 
 .btn__add, .btn__checkout, .btn__search {
-  background-color: #2dd1ab;
+  /* background-color: #2dd1ab; */
+  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);;
+  box-shadow: 0.05rem 0.05rem 0.2rem #979797;
+  
   border: none;
 }
 
@@ -184,7 +197,6 @@ box-sizing: border-box;
   /* position: ; */
   top: 35vh;
   margin: auto;
-  border: solid .2rem #2dd1ab;
   width: 50%;
 }
 
@@ -192,7 +204,7 @@ box-sizing: border-box;
   position: absolute;
   top: 5vh;
   right: 0;  
-  border: solid .2rem #2dd1ab;
+  
   
 }
 
@@ -251,7 +263,7 @@ box-sizing: border-box;
 }
 
 #step-2::after {
-  content: "Sign In";
+  content: "Shipping";
   text-align: center;
 }
 
@@ -277,7 +289,7 @@ box-sizing: border-box;
 
 .progress-bar {
   background-color: #3c9cc8;
-  width: 33.33%;
+  /* width: 33.33%; */
 }
 
 .blue {

@@ -10,11 +10,14 @@ const Logout = () => {
   return (
     <>
     <div className="nav-item">
-    <button className="btn btn-outline-light px-3 text-light ms-2 me-4 border border-light fw-bold border-2" type="button" onClick={logoutUser}> Log out </button>
+    <button className="btn__search px-3 py-1 text-light mx-4 fw-bold border border-light" type="button" onClick={logoutUser}> Log out </button>
     </div>
     </>
   )
 }
+
+
+
 
 
 

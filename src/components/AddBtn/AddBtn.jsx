@@ -1,7 +1,9 @@
-import CartDialog from "../CartDialog/CartDialog";
+// import CartDialog from "../CartDialog/CartDialog";
 
 function AddBtn(props) {
-  const { id, name, price, img, sale, addToStorage, removeFromStorage, totalItems, totalCost } = props;  
+  const { id, name, price, img, sale, addToStorage
+    // , removeFromStorage, totalItems, totalCost
+   } = props;  
   const product = { id: id, name: name, price: price, img: img, sale: sale }
 
   return (

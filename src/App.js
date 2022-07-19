@@ -7,7 +7,6 @@ import NavBar from './components/NavBar/NavBar';
 // Pages
 import Home from './pages/Home/Home';
 import Checkout from './pages/Checkout/Checkout';
-import Login from './pages/Login/Login';
 import Product from './pages/Product/Product';
 import NotFound from './pages/NotFound/NotFound';
 // Context
@@ -19,7 +18,9 @@ function App () {
   const [products, setProducts] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [totalCost, setTotalCost] = useState(0);  
+  const [ checkoutStage, setCheckoutStage ] = useState('order');
   const { cart, setCartItems } = useContext(CartContext);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -90,8 +91,7 @@ function App () {
       <Routes>
         <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
         <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
-        <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />}  />
-        <Route path='/login' element={<Login />}  />
+        <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>
       </>

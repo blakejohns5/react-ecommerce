@@ -1,48 +1,51 @@
-import { useContext } from 'react';
+// import { useState } from 'react';
 
-import CheckoutTable from "../../components/CheckoutTable/CheckoutTable";
-import OrderSummary from "../../components/OrderSummary/OrderSummary";
-import CartContext from '../../context/CartProvider';
+// import CheckoutTable from "../../components/CheckoutTable/CheckoutTable";
+// import OrderSummary from "../../components/OrderSummary/OrderSummary";
+// import CartContext from '../../context/CartProvider';
 
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Order from '../../components/Order/Order';
+import Shipping from '../../components/Shipping/Shipping';
+import Payment from '../../components/Payment/Payment';
+import OrderComplete from '../../components/OrderComplete/OrderComplete';
 
-function Checkout({ addToStorage, removeFromStorage, totalItems, totalCost }) {
-  const { cart } = useContext(CartContext);
+function Checkout ({ addToStorage, removeFromStorage, totalItems, totalCost, checkoutStage, setCheckoutStage }) {
 
-  if (cart.length === 0) {
+  if (checkoutStage === 'order') { 
     return (
-      <>  
-      
-           
-      <main className='d-flex vh-100 flex-column col-8 pt-5 mt-5 align-items-center gap-5'>
-      <h1 className="mb-5 text-info fw-bold">Your Order</h1>
-      <h2 className="mb-5">You currently have no items in your shopping cart</h2>
-      </main>
+      <>
+      <div className='d-flex flex-column align-items-center'></div>
+      <Breadcrumbs checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
+      <Order addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} setCheckoutStagecheckoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
       </>
     )
-  } else {
+  }  
+  if (checkoutStage === 'shipping') {
     return (
-      <> 
-      <Breadcrumbs />
-       <main className='d-flex vh-100 flex-column col-10 justify-content-start mt-5 pt-2 align-items-start'>
-       <h1 className="mb-3 text-info fw-bold">Your Order</h1>
-        <section className="d-flex opaque-bg rounded-pill">
-          <div className="d-flex">
-            <CheckoutTable addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
-            <OrderSummary totalItems={totalItems} totalCost={totalCost} />
-          </div>
-        </section>
-        <section className='w-100 d-flex justify-content-center align-items-center gap-5'>
-          <button className='btn__add shadow text-light font-weight-bold px-4 py-2 mb-2 fw-bold fs-5 me-5'>Continue as Guest</button>
-          <button type="button" className='btn__add shadow text-light font-weight-bold px-4 py-2 mb-2 fw-bold fs-5' data-bs-toggle="modal" data-bs-target="#loginDialog">Sign in</button>
-        </section>
-  
-       </main>
+      <>
+        <Breadcrumbs checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
+        <Shipping addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} setCheckoutStagecheckoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
       </>
     )
   }
-
-  
+  if (checkoutStage === 'payment') {
+    return (
+      <>
+        <Breadcrumbs checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
+        <Payment addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} setCheckoutStagecheckoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
+      </>
+    )
+  }
+  if (checkoutStage === 'complete') {
+    return (
+      <>
+        {/* <Breadcrumbs checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} /> */}
+        <OrderComplete addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} setCheckoutStagecheckoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
+      </>
+    )
+  }
 }
+
 
 export default Checkout;

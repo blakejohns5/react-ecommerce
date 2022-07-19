@@ -24,7 +24,7 @@ function ShoppingCard(props) {
   if (!cartIsEmpty) {
     return (
       <section className='shopping__card col-12 rounded-pill pe-4'>
-        <div className="my-3 d-flex gap-3">
+        <div className="my-2 d-flex gap-3">
           <img src={img} className="col-4 cart__img rounded-end rounded-pill" alt="pair of shoes" />
           <div className="col-8 d-flex flex-column justify-content-center">
             <div>{name}</div>
