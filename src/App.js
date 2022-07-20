@@ -95,10 +95,10 @@ function App () {
 
   return (
       <>
-      <NavBar totalItems={totalItems} favState={favState} />
+      <NavBar totalItems={totalItems} favState={favState} favDispatch={favDispatch} />
       <Routes>
         <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} />} exact />
-        <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
+        <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />}  />
         <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
         <Route path='/user/' element={<User favState={favState} favDispatch={favDispatch} />}  />
         <Route path='*' element={<NotFound />}  />

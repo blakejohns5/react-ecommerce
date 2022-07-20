@@ -62,7 +62,7 @@
   
   {
     "id": 1009,
-    "name": "Converse Chuck Taylor All-Star",
+    "name": "Converse CT All-Star",
     "price": 70,
     "img": "/img/img_09.jpg",
     "sale": 58.99
@@ -73,7 +73,7 @@
     "name": "Reebok Club C 85 Montana",
     "price": 86,
     "img": "/img/img_10.jpg",
-    "sale": null    
+    "sale": null   
   }
   ],
   "users": [

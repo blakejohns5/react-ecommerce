@@ -32,10 +32,9 @@
 
 body {
   /* font-family: 'Raleway', sans-serif; */
-  /* font-family: 'Fira Sans', sans-serif; */
-    /* font-family: 'PT Serif', serif; */
   /* font-family: 'Mulish', sans-serif; */
-  font-family: 'Oxygen', sans-serif;
+  /* font-family: 'Oxygen', sans-serif; */
+  /* font-family: 'Montserrat', sans-serif; */
 
   background-image: url('../../public/img/bg1.jpg'); 
   background-size: cover;
@@ -50,6 +49,8 @@ body {
     
   background-position: top right;
   background-blend-mode: color-burn;
+  
+
 
 }
 
@@ -68,6 +69,10 @@ code {
   font-family: 'Montserrat', sans-serif;
 } */
 
+h1 {
+  font-size: 2.5rem;
+}
+
 h3 {
   font-size: 1.1rem;
 }
@@ -77,6 +82,12 @@ h3 {
   /* height: calc(100vh - 10.35rem) ; */
   height: 80vh;
 box-sizing: border-box;
+}
+
+.user {
+
+  height: 80vh;
+  box-sizing: border-box;
 
 }
 .product__card {
@@ -84,6 +95,7 @@ box-sizing: border-box;
   font-size: 1rem;
   border: 0.05rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
+  background-color: hsla(0, 0%, 100%, 0.7);
 }
 
 .btn__add {
@@ -98,7 +110,7 @@ box-sizing: border-box;
 
 .btn__add, .btn__checkout, .btn__search {
   /* background-color: #2dd1ab; */
-  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);;
+  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
   box-shadow: 0.05rem 0.05rem 0.2rem #979797;
   
   border: none;
@@ -110,7 +122,7 @@ box-sizing: border-box;
 
 
 .dash {
-  height: 85%;
+  height: 80%;
   overflow-y: scroll;
   margin-left: -1rem;
 }
@@ -183,7 +195,7 @@ box-sizing: border-box;
   border: 0.15rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
   padding: 0;
-  background-color: hsla(0, 0%, 100%, 0.6);
+  background-color: white;
   /* height: 50%; */
   margin-right: 3rem;
   /* border-radius: 0.2rem; */
@@ -245,7 +257,7 @@ box-sizing: border-box;
 }
 
 .checkout__progress ul li.done {
-  background-color: #3c9cc8;
+  background-color: #25aceb;
 }
 
 .checkout__progress ul li::after {
@@ -288,7 +300,7 @@ box-sizing: border-box;
 }
 
 .progress-bar {
-  background-color: #3c9cc8;
+  background-color: #25aceb;
   /* width: 33.33%; */
 }
 
@@ -300,12 +312,38 @@ box-sizing: border-box;
 
 
 .product__fav-btn {
-  z-index: 20;
+  z-index: 200;
   position: absolute;
-  top: .75rem;
+  top: .5rem;
   right: 0.25rem;
-  padding: 0.2rem 0.7rem;
+  padding: 0 0.7rem 0.3rem 0.7rem;
   background-color: white;
   border-radius: 50%;
 }
 
+.fav-icon {
+  
+  background-color: white;
+  
+}
+
+
+.detail__fav-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  transform: scale(1.4);
+}
+
+.favorites__dialog {
+  
+  position: absolute;
+  top: 4.75rem;
+  right: 0.75rem;
+  width: 100%;
+}
+
+.bg-green {
+  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
+  
+}

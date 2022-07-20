@@ -12,7 +12,7 @@ const favReducer = ( state = [], action ) => {
     case ACTIONS.ADD: 
       return [...state, action.payload];
     case ACTIONS.REMOVE:
-      return [...state.filter((product) => product === action.payload) ]
+      return [...state.filter((product) => product.id !== action.payload.id) ]
     default:
       console.log('Error from fav Reducer?')
       return state;    
