@@ -12,7 +12,7 @@ const ShoppingCart = ({ addToStorage, removeFromStorage, totalItems, totalCost }
   return (
     <>
       <section className="col-3">
-        <h1 className="fw-bold mb-5">{ title }</h1>        
+        <h1 className="fw-bold mb-5 mt-2">{ title }</h1>        
         {cart.map((cartItem) => <ShoppingCard key={cartItem.id} id={cartItem.id} img={cartItem.img} name={cartItem.name} price={cartItem.price} sale={cartItem.sale} qty={cartItem.qty} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />)}
         <OrderSummary totalItems={totalItems} totalCost={totalCost} />
         <div className="mt-5">

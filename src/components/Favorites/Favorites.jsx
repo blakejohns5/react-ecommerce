@@ -1,15 +1,18 @@
-import { useReducer, useState } from "react"
+import { useReducer } from "react"
 import favoritesReducer from "../../helpers/favoritesReducer"
 import { ACTIONS } from "../../helpers/favoritesReducer";
 
 
-const initialState = [];
 
 
 const Favorites = () => {
+  const initialState =   {
+    id: 1006,
+    name: "Vans Checkerboard SK8-HI Tapered",
+    
+  }
+  const [ favoritesState, dispatch ] = useReducer( favoritesReducer, initialState )
   
-  const [ state, dispatch ] = useReducer( favoritesReducer, initialState )
-  const [ entry, setEntry] = useState();
 
   // function handleAdd (e) {
   //   e.preventDefault();
@@ -23,13 +26,9 @@ const Favorites = () => {
     <hr />
     <div className='col-6'>
       <h4>Wishlist</h4>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
+      <ul><li> {favoritesState.name}</li>    
+    
+
       </ul>
       
     </div>

@@ -9,13 +9,14 @@ function ProductCard(props) {
   const currency = '€';
   const {id, img, name, sale} = props;
 
+
    
   return (
     <>
       <div className="col-4 p-2 ">
         <div className="h-100 product__card bg-light px-3 py-4 d-flex flex-column align-items-center text-center position-relative">
             <div className="product__fav-btn">
-              <FavoritesBtn />
+              <FavoritesBtn id={id} img={img} name={name} price={price} sale={sale} favoritesState={props.favoritesState} favoritesDispatch={props.favoritesDispatch}  />
             </div>
             <Link to={`/product/${id}`} className="text-decoration-none text-dark d-flex flex-column align-items-center text-center">
             <img src={img} alt="shoes_01" className="img-fluid mb-1" />

@@ -302,5 +302,10 @@ box-sizing: border-box;
 .product__fav-btn {
   z-index: 20;
   position: absolute;
-  top: -1.1rem;
+  top: .75rem;
+  right: 0.25rem;
+  padding: 0.2rem 0.7rem;
+  background-color: white;
+  border-radius: 50%;
 }
+

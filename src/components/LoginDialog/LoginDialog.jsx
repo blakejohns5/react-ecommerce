@@ -5,11 +5,7 @@ import AuthContext from '../../context/AuthProvider';
 
 function LoginDialog() {
   const { auth } = useContext(AuthContext);
-  // const loginDialog = document.getElementById('loginDialog');
-  // const fieldEmail = document.getElementById('email');
-  // loginDialog.addEventListener('shown.bs.modal', function () {
-  //   fieldEmail.focus()
-  // })
+
 
   return (
     <>

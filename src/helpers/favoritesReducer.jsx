@@ -1,19 +1,25 @@
 
 
 const ACTIONS = {
-  ADD_ITEM: 'add item',
-  REMOVE_ITEM: 'remove item'
+  ADD: 'add item',
+  REMOVE: 'remove item'
 }
 
 
-const favoritesReducer = ( initialState = [], action ) => {
-
+const favoritesReducer = ( state = [], action ) => {
+  console.log(state)
   switch ( action.type ) {
-    case ACTIONS.ADD_ITEM: 
-      return [ ...initialState, action.payload ];
     
+    case ACTIONS.ADD: 
+    console.log(state)
+      return [...state, action.payload];
+      
+    case ACTIONS.REMOVE:
+      console.log(state)
+      return [...state.filter((product) => product === action.payload) ]
     default:
-      return initialState;
+      console.log('Error from Favorites Reducer?')
+      return state;
     
   }
 

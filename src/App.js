@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useReducer } from 'react';
 // Styles
 import './css/App.css';
 // Components
@@ -13,6 +13,9 @@ import NotFound from './pages/NotFound/NotFound';
 // Context
 import CartContext from './context/CartProvider';
 
+// Reducer
+import favoritesReducer from './helpers/favoritesReducer';
+
 
 function App () {
   const url = 'http://localhost:5000/products';
@@ -21,6 +24,10 @@ function App () {
   const [totalCost, setTotalCost] = useState(0);  
   const [ checkoutStage, setCheckoutStage ] = useState('order');
   const { cart, setCartItems } = useContext(CartContext);
+
+
+  
+  const [ favoritesState, favoritesDispatch ] = useReducer( favoritesReducer, [] )
 
 
   useEffect(() => {
@@ -88,12 +95,12 @@ function App () {
 
   return (
       <>
-      <NavBar totalItems={totalItems} />
+      <NavBar totalItems={totalItems} favoritesState={favoritesState} />
       <Routes>
-        <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />} exact />
+        <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favoritesState={favoritesState} favoritesDispatch={favoritesDispatch} />} exact />
         <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
         <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
-        <Route path='/user/' element={<User />}  />
+        <Route path='/user/' element={<User favoritesState={favoritesState} favoritesDispatch={favoritesDispatch} />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>
       </>
