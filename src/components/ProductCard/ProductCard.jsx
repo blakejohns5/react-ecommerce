@@ -1,22 +1,20 @@
 import AddBtn from "../AddBtn/AddBtn";
 import { Link } from 'react-router-dom';
 import { MdLocalOffer } from 'react-icons/md';
-import FavoritesBtn from "../FavoritesBtn/FavoritesBtn";
+import FavBtn from "../FavBtn/FavBtn";
 
 
 function ProductCard(props) {
   const price = props.price;
   const currency = '€';
-  const {id, img, name, sale} = props;
+  const {id, img, name, sale, favState, favDispatch} = props;
 
-
-   
   return (
     <>
       <div className="col-4 p-2 ">
         <div className="h-100 product__card bg-light px-3 py-4 d-flex flex-column align-items-center text-center position-relative">
             <div className="product__fav-btn">
-              <FavoritesBtn id={id} img={img} name={name} price={price} sale={sale} favoritesState={props.favoritesState} favoritesDispatch={props.favoritesDispatch}  />
+              <FavBtn id={id} img={img} name={name} price={price} sale={sale} favState={favState} favDispatch={favDispatch}  />
             </div>
             <Link to={`/product/${id}`} className="text-decoration-none text-dark d-flex flex-column align-items-center text-center">
             <img src={img} alt="shoes_01" className="img-fluid mb-1" />

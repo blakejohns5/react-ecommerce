@@ -1,20 +1,24 @@
 import React from 'react'
 import Favorites from '../../components/Favorites/Favorites'
 
-function User () {
+function User ({ favState, favDispatch }) {
+ 
   return (
     <>
-    <main className='d-flex flex-column align-items-center justify-content-center col-10 mt-5 pt-3'>
+    <main className='d-flex flex-column align-items-center justify-content-center col-10 mt-5'>
       <h2>User Page Areas</h2>
-      <div className='d-flex gap-5 mt-5 pt-2'>
-        <Favorites />
+      <div className='d-flex gap-5 mt-5 pt-2 col-12 align-items-center justify-content-center'>
+        <div className=''>
+          <Favorites favState={favState} favDispatch={favDispatch} />
+        </div>
+        
         <div className='col-6'>
           <h4>User Details</h4>
           <form>
             <label htmlFor="firstName"></label>
-            <input type="text" value='FirstName' />
+            <input type="text" />
             <label htmlFor="lastName"></label>
-            <input type="text" value='lastName' />
+            <input type="text" />
           </form>
         </div>
       </div>

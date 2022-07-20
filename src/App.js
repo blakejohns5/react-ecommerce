@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound/NotFound';
 import CartContext from './context/CartProvider';
 
 // Reducer
-import favoritesReducer from './helpers/favoritesReducer';
+import favReducer from './helpers/favReducer';
 
 
 function App () {
@@ -27,7 +27,7 @@ function App () {
 
 
   
-  const [ favoritesState, favoritesDispatch ] = useReducer( favoritesReducer, [] )
+  const [ favState, favDispatch ] = useReducer( favReducer, [] )
 
 
   useEffect(() => {
@@ -95,12 +95,12 @@ function App () {
 
   return (
       <>
-      <NavBar totalItems={totalItems} favoritesState={favoritesState} />
+      <NavBar totalItems={totalItems} favState={favState} />
       <Routes>
-        <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favoritesState={favoritesState} favoritesDispatch={favoritesDispatch} />} exact />
+        <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} />} exact />
         <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />}  />
         <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
-        <Route path='/user/' element={<User favoritesState={favoritesState} favoritesDispatch={favoritesDispatch} />}  />
+        <Route path='/user/' element={<User favState={favState} favDispatch={favDispatch} />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>
       </>
