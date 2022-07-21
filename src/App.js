@@ -12,23 +12,19 @@ import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 // Context
 import CartContext from './context/CartProvider';
-
 // Reducer
 import favReducer from './helpers/favReducer';
 
-
 function App () {
   const url = 'http://localhost:5000/products';
-  const [products, setProducts] = useState([]);
-  const [totalItems, setTotalItems] = useState(0);
-  const [totalCost, setTotalCost] = useState(0);  
+  const [ products, setProducts ] = useState([]);
+  const [ totalItems, setTotalItems ] = useState(0);
+  const [ totalCost, setTotalCost ] = useState(0);  
   const [ checkoutStage, setCheckoutStage ] = useState('order');
   const { cart, setCartItems } = useContext(CartContext);
+  const [ searchTerms, setSearchTerms ] = useState();
 
-
-  
   const [ favState, favDispatch ] = useReducer( favReducer, [] )
-
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -95,9 +91,9 @@ function App () {
 
   return (
       <>
-      <NavBar totalItems={totalItems} favState={favState} favDispatch={favDispatch} />
+      <NavBar searchTerms={searchTerms} setSearchTerms={setSearchTerms} products={products} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />
       <Routes>
-        <Route path='/' element={<Home products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} />} exact />
+        <Route path='/' element={<Home products={products} searchTerms={searchTerms} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} />} exact />
         <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />}  />
         <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
         <Route path='/user/' element={<User favState={favState} favDispatch={favDispatch} />}  />

@@ -11,8 +11,8 @@ function ProductCard(props) {
 
   return (
     <>
-      <div className="col-4 p-2 ">
-        <div className="h-100 product__card px-3 pt-3 pb-2 d-flex flex-column align-items-center text-center position-relative">
+      <div className="col-lg-4 p-2 ">
+        <div className=" product__card col-lg-12 px-3 pt-3 pb-2 d-flex flex-column align-items-center text-center position-relative">
             <div className="product__fav-btn">
               <FavBtn id={id} img={img} name={name} price={price} sale={sale} favState={favState} favDispatch={favDispatch}  />
             </div>
@@ -34,7 +34,7 @@ function ProductCard(props) {
               </div>
             </div>
             </Link>          
-            <div className="h-100 d-flex mt-2">
+            <div className="h-100 d-flex mt-2 position-absolute bottom-0 mb-2">
               <AddBtn key={id} {...props} />
             </div>
         </div>

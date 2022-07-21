@@ -13,9 +13,10 @@ const FavBtn = (props) => {
   // gives toggle to visual affect with icons for fav
   const [ favorite, setFavorite ] = useState(isInFavs);     
 
-  const handleClick = () => {
-    setFavorite(favorite === true ? false : true);  // toggle fav icon
-    if (favorite === false) {
+  const manageReducer = () => {
+    // if (favorite === false) {
+    // using this version makes click much faster, more effective
+    if (!favorite) {     
       favDispatch({ 
         type: ACTIONS.ADD, 
         payload: clickedProduct
@@ -28,10 +29,15 @@ const FavBtn = (props) => {
       }) 
     }
   }
+
+  const handleClick = () => {
+    setFavorite(favorite === true ? false : true);  // toggle fav icon
+    manageReducer();
+  }
  
   return (
     
-      <button type="button" onClick={handleClick} className="border-0 fw-bold fs-4 fav-icon">{ isInFavs ? <FaHeart className='blue' /> : <FaRegHeart /> }</button>
+      <button type="button" onClick={handleClick} className="border-0 fs-5 fav-icon">{ isInFavs ? <FaHeart className='blue' /> : <FaRegHeart /> }</button>
     
   )
 }

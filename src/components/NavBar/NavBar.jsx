@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import LoginDialog from '../LoginDialog/LoginDialog';
-import { useContext} from 'react'
+import { useContext, useRef, useState } from 'react'
 import AuthContext from '../../context/AuthProvider';
 import Logout from '../Logout/Logout';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -8,9 +8,21 @@ import { BsBookmarkHeart } from 'react-icons/bs'
 import FavoritesDialog from '../FavoritesDialog/FavoritesDialog';
 
 
-function NavBar({ totalItems, favState, favDispatch }) {
+function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch }) {
   const { auth } = useContext(AuthContext);
+  
+  
+
+  const searchHandler = (e) => {
+    let str = e.target.value.toLowerCase();
+    setSearchTerms(str);
     
+  }
+
+  
+
+  
+  
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-3 sticky-top">
@@ -37,19 +49,19 @@ function NavBar({ totalItems, favState, favDispatch }) {
             ) : (
               <>
               <div className="nav-item">
-              <button className="btn__search px-3 py-1 text-light mx-5 fw-bold border border-light" type="button" data-bs-toggle="modal" data-bs-target="#loginDialog"> Sign In </button>
+              <button className="btn__search px-3 py-1 text-light rounded fw-bold border border-light" type="button" data-bs-toggle="modal" data-bs-target="#loginDialog"> Sign In </button>
              </div>
               </>
             )}
             <form className="d-flex align-items-center">
-              <input className="form-control mx-3" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn__search px-4 py-1 text-light ms-2 me-5 fw-bold border border-light" type="submit"> Go! </button>
+              <input className="form-control mx-5" type="search" placeholder="Search" aria-label="Search" onChange={searchHandler} />
+            </form>
               <button className="border-0 fw-bold fs-2 mb-2 mx-3 bg-transparent text-dark" type="button" data-bs-toggle="modal" data-bs-target="#favoritesDialog"><BsBookmarkHeart /> </button>
               <Link to='/checkout' className="d-flex nav-link align-items-center">
                 <div className="cart__icon text-dark fs-4 fw-bold"><FaShoppingCart /></div>
                 <div className="badge__items fw-bold">{totalItems}</div>
               </Link>
-            </form>
+            
           </div>
         </div>
       </nav>
