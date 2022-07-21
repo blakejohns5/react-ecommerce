@@ -96,7 +96,7 @@ box-sizing: border-box;
   border: 0.05rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
   background-color: hsla(0, 0%, 100%, 0.7);
-  min-height: 20rem;
+  
 }
 
 .btn__add {

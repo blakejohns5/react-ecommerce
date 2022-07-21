@@ -21,7 +21,6 @@ const FavoritesDialog = ({ favState, favDispatch }) => {
           </div>
         </div>
       </div>
-              3
     </>
   )
 }

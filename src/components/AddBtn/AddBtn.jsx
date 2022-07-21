@@ -8,7 +8,7 @@ function AddBtn(props) {
 
   return (
     <>
-      <button className="btn__add text-light font-weight-bold px-4 py-2 mb-2 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#cartDialog" onClick={() => addToStorage(product)} >Add to Cart</button>
+      <button className="btn__add text-light font-weight-bold px-4 py-2 fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#cartDialog" onClick={() => addToStorage(product)} >Add to Cart</button>
       {/* Shopping Cart Dialog */}
       {/* <CartDialog addtoStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} /> */}
     </>
