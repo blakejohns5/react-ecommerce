@@ -315,8 +315,8 @@ box-sizing: border-box;
 .product__fav-btn {
   z-index: 200;
   position: absolute;
-  top: .5rem;
-  right: 0.25rem;
+  top: -.5rem;
+  right: -0.5rem;
   padding: 0 0.7rem 0.3rem 0.7rem;
   background-color: white;
   border-radius: 50%;
