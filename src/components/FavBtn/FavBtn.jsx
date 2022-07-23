@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaRegHeart, FaHeart } from 'react-icons/fa'
-import { ACTIONS } from '../../helpers/favReducer';
+import { FAV_ACTIONS } from '../../helpers/favReducer';
 
 
 
@@ -18,13 +18,13 @@ const FavBtn = (props) => {
     // using this version makes click much faster, more effective
     if (!favorite) {     
       favDispatch({ 
-        type: ACTIONS.ADD, 
+        type: FAV_ACTIONS.ADD, 
         payload: clickedProduct
       }) 
     } else {
       
       favDispatch({ 
-        type: ACTIONS.REMOVE, 
+        type: FAV_ACTIONS.REMOVE, 
         payload: clickedProduct
       }) 
     }

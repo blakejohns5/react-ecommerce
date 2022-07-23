@@ -2,8 +2,9 @@ import ProductCard from "../ProductCard/ProductCard.jsx";
 
 const ProductDash = ({ products, searchTerms, addToStorage, removeFromStorage, totalItems, totalCost, favState, favDispatch }) => {
   const title = 'Top-selling Sneakers';
+  console.log(products)
 
-  console.log(searchTerms)
+  
   const filterResults = (products, searchTerms) => {
     if (!searchTerms) {
       return products;

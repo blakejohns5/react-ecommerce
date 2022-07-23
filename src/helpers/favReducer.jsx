@@ -1,17 +1,16 @@
 
 
-const ACTIONS = {
+const FAV_ACTIONS = {
   ADD: 'add item',
   REMOVE: 'remove item'
 }
 
-
 const favReducer = ( state = [], action ) => {
   
   switch ( action.type ) {
-    case ACTIONS.ADD: 
+    case FAV_ACTIONS.ADD: 
       return [...state, action.payload];
-    case ACTIONS.REMOVE:
+    case FAV_ACTIONS.REMOVE:
       return [...state.filter((product) => product.id !== action.payload.id) ]
     default:
       console.log('Error from fav Reducer?')
@@ -21,4 +20,4 @@ const favReducer = ( state = [], action ) => {
 
 
 export default favReducer;
-export { ACTIONS };
+export { FAV_ACTIONS };

@@ -14,9 +14,11 @@ import NotFound from './pages/NotFound/NotFound';
 import CartContext from './context/CartProvider';
 // Reducer
 import favReducer from './helpers/favReducer';
+// Fetch functions
+import { fetchData, PRODUCTS_URL, USERS_URL } from './helpers/apis.js'
 
 function App () {
-  const url = 'http://localhost:5000/products';
+  
   const [ products, setProducts ] = useState([]);
   const [ totalItems, setTotalItems ] = useState(0);
   const [ totalCost, setTotalCost ] = useState(0);  
@@ -26,31 +28,14 @@ function App () {
 
   const [ favState, favDispatch ] = useReducer( favReducer, [] )
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch(url);
-        const data = await res.json();        
-        setProducts(data);        
-      }
-      catch (error) {
-        console.log(error)
-      }
-    } 
-    fetchProducts();
-  }, [])
 
-  // Alternate useEffect for products array with fetcth then method
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       setProducts(data)
-  //       console.log(data)
-  //     })
-  // }, [])
+// IIFE to run async function from external js file
+  useEffect( () => {
+    (async () => {
+      setProducts(await fetchData(PRODUCTS_URL))
+    })()
+  }, [])
+  
 
   useEffect(() => {
     setCartQty(cart);

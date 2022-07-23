@@ -22,18 +22,18 @@ function ProductCard(props) {
               <div className="my-2 text-decoration-none ms-1">{name}</div>  
               {/* Add icon and sale price if item on sale */}
               <div className="d-flex align-items-center me-1">
-              {sale ? (   
+              {sale ? (
                 <>
                 <div className="blue me-2 fs-4 "><MdLocalOffer /></div>
-                <div ><s >{price.toFixed(2)}</s></div>                
+                <div ><s>{price.toFixed(2)}</s></div>
                 <div className="text-danger ms-2">{sale} {currency}</div>
                 </>
               ) : (
-                <div>{price.toFixed(2)} {currency}</div>  
+                <div>{price.toFixed(2)} {currency}</div> 
               )}
               </div>
             </div>
-            </Link>          
+            </Link>
             <div className="h-100 d-flex mt-2 ">
               <AddBtn key={id} {...props} />
             </div>
