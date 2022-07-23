@@ -96,6 +96,7 @@ box-sizing: border-box;
   border: 0.05rem solid;
   border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
   background-color: hsla(0, 0%, 100%, 0.7);
+  overflow: hidden;
   
 }
 
@@ -315,11 +316,11 @@ box-sizing: border-box;
 .product__fav-btn {
   z-index: 200;
   position: absolute;
-  top: -.5rem;
-  right: -0.5rem;
-  padding: 0 0.7rem 0.3rem 0.7rem;
+  top: .5rem;
+  right: -0.25rem;
+  padding: 0rem 0.7rem 0.25rem 0.5rem;
   background-color: white;
-  border-radius: 50%;
+  border-radius: 5%;
 }
  
 .fav-icon {
