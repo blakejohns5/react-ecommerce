@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
 import { Link } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { USERS_URL, fetchData  } from '../../helpers/apis';
 
 const Login = () => {
 
@@ -25,40 +26,31 @@ const Login = () => {
     setErrMsg('');
   }, [email, pwd])
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();   // prevent submission of form
-    const url = 'http://localhost:5000/users';
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      const user = data.find((obj) => obj.email === email)
-      
-      if (user === undefined) {
+    const users = await fetchData(USERS_URL);
+    const user = users.find((obj) => obj.email === email)      
+    
+    if (user === undefined) {
         setErrMsg('Login Failed');             
-      } 
-      if (user.password === pwd) {
-        const username = user.username;
-          setAuth({ email, username })
-          setEmail('');
-          setPwd('');
-        } else {
-          setErrMsg('Login Failed')
-        }
-    } catch (error) {
-      console.log(error);
-      if (!error?.response) {
-        setErrMsg('Login Failed');
-      }
-      errRef.current.focus();
-    }    
+    } 
+    
+    if (user.password === pwd) {
+      const username = user.username;
+        setAuth({ email, username })
+        setEmail('');
+        setPwd('');
+    } else {
+        setErrMsg('Login Failed')
+    }
+    errRef.current.focus();    
   }
 
   const togglePwd = () => {
       setPwdVisible(pwdVisible ? false : true);
-    }
-
-
+  }
 
   return (
     <>

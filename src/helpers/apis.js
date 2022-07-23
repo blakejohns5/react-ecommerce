@@ -3,12 +3,11 @@ export const PRODUCTS_URL = 'http://localhost:5000/products';
 export const USERS_URL = 'http://localhost:5000/users';
 
 
-// get products from json server
+// get data from json server, depending on url argument
 export const fetchData = async (url) => {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data)
     return data;
   }
   catch (error) {
@@ -17,7 +16,7 @@ export const fetchData = async (url) => {
 } 
 
 
-// get users from json server
+
 
 
 
