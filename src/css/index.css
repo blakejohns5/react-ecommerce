@@ -130,7 +130,7 @@ box-sizing: border-box;
 }
 
 .dash::-webkit-scrollbar {
-  width: 0.5rem
+  width: 0.35rem
 }
 
 .dash::-webkit-scrollbar-track {
@@ -139,7 +139,7 @@ box-sizing: border-box;
 }
 
 .dash::-webkit-scrollbar-thumb {
-  border: 2px solid #cfcfcf;
+  border: .005rem solid #cfcfcf;
   background-color: white;
   border-radius: 1rem;
 }

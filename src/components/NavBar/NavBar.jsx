@@ -11,17 +11,10 @@ import FavoritesDialog from '../FavoritesDialog/FavoritesDialog';
 function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch }) {
   const { auth } = useContext(AuthContext);
   
-  
-
   const searchHandler = (e) => {
     let str = e.target.value.toLowerCase();
-    setSearchTerms(str);
-    
+    setSearchTerms(str);  
   }
-
-  
-
-  
   
   return (
     <>
@@ -43,7 +36,7 @@ function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch
             </ul>
             {Object.keys(auth).length > 0 ? (
               <>
-              <div className='nav-item justify-self-end text-dark fs-5 fw-bold me-5'>Welcome, {auth.username[0].toUpperCase() + auth.username.substring(1)}!</div>
+              <div className='nav-item justify-self-end text-dark fs-5 fw-bold'>Welcome, {auth.username[0].toUpperCase() + auth.username.substring(1)}!</div>
               <Logout />
               </>
             ) : (
