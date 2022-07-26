@@ -17,7 +17,45 @@ export const fetchData = async (url) => {
 
 
 
-
-
-
 // post user to json server
+export const postUser = async (url, userObj) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userObj)
+  }
+
+  try {
+    const res = await fetch(url, options);
+    const data = await res.json();
+    console.log(data)
+    return data;
+  }
+  catch (error) {
+    console.log(error)
+  }
+}
+
+
+// replace partial user info
+export const putUser = async (url, newData) => {
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData)
+  }
+
+  try {
+    const res = await fetch(url, options);
+    const data = await res.json();
+    console.log(data)
+    return data;
+  }
+  catch (error) {
+    console.log(error)
+  }
+}

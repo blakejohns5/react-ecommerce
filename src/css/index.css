@@ -14,7 +14,7 @@
 
 .navbar {
   /* /* background-color: #2dd1ab; */
-  background: linear-gradient(to bottom, rgba(45, 209, 171, 0.9), rgba(124, 255, 224, 0.8) 95%);
+  background: linear-gradient(to top, rgba(9, 196, 187, 0.9),rgba(45, 209, 171, 0.9) 20%, rgba(124, 255, 224, 0.8) 95%);
   border-bottom: 0.15rem solid;
   border-image: linear-gradient(to right,  black 10%, #979797 25%,  #979797 75%, black 90%) 1;
 }
@@ -113,6 +113,9 @@ box-sizing: border-box;
 .btn__add, .btn__checkout, .btn__search {
   /* background-color: #2dd1ab; */
   background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
+  /* background: linear-gradient(to top, rgb(9, 196, 187) 10%, rgb(45, 209, 171) 40%, rgb(124, 255, 224) 84%);
+  background: linear-gradient(to top, rgb(9, 196, 187) 10%, rgb(45, 209, 171) 50%); */
+  
   box-shadow: 0.05rem 0.05rem 0.2rem #979797;
   
   border: none;

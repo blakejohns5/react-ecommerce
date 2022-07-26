@@ -1,8 +1,11 @@
-import React from 'react'
+import { useContext } from 'react'
 import Favorites from '../../components/Favorites/Favorites'
 import Registration from '../../components/Registration/Registration'
+import AuthContext from '../../context/AuthProvider'
+import UserDetails from '../../components/UserDetails/UserDetails'
 
 function User ({ favState, favDispatch }) {
+  const { auth, setAuth } = useContext(AuthContext);
  
   return (
     <>
@@ -16,7 +19,14 @@ function User ({ favState, favDispatch }) {
         
         <div className='col-5 px-3 ms-3'>
           <h2 >User Details:</h2>
+          { Object.keys(auth).length > 0 ? (
+            <UserDetails />
+          ) : (
           <Registration />
+          )}
+          
+          
+          
           {/* <h4>User Details</h4>
           <form>
             <label htmlFor="firstName"></label>
@@ -24,6 +34,9 @@ function User ({ favState, favDispatch }) {
             <label htmlFor="lastName"></label>
             <input type="text" />
           </form> */}
+
+
+
         </div>
       </div>
     </main>

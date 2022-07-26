@@ -27,11 +27,12 @@ function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch
           <div className="collapse navbar-collapse position-relative" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               
+              
               <li className="nav-item">
-                <Link to='/checkout' className="nav-link">Checkout</Link>
+                <Link to='/user' className="nav-link active" aria-current="page">Account</Link>
               </li>
               <li className="nav-item">
-                <Link to='/user' className="nav-link active" aria-current="page">User</Link>
+                <Link to='/checkout' className="nav-link">Shopping Cart</Link>
               </li>
             </ul>
             {Object.keys(auth).length > 0 ? (

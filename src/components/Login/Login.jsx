@@ -73,7 +73,7 @@ const Login = () => {
             </div>  
             {/* btn separate from form         */}
           </form>
-          <div className="modal-footer d-flex align-items-center justify-content-center mt-3">
+          <div className="modal-footer d-flex align-items-center justify-content-center mt-3">  
             <button type="submit" form="loginForm" className="btn__add px-5 py-1 fw-bold text-light me-5" data-bs-dismiss="modal">Sign In</button>
             <div className='d-flex gap-2'>
               <div>Not a customer yet?</div>
