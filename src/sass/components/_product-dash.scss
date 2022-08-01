@@ -1,0 +1,47 @@
+
+
+// product cards on dash
+.product__card {
+  /* border-radius: 0.25rem; */
+  font-size: 1rem;
+  border: 0.05rem solid;
+  border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
+  background-color: hsla(0, 0%, 100%, 0.7);
+  overflow: hidden;
+}
+
+
+.product__frame {
+  border: 0.15rem solid;
+  border-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2) 20%, #2dd1ab) 1 10%;
+  /* padding: 0; */
+  background-color: white;
+  /* height: 50%; */
+  margin-right: 3rem;
+  /* border-radius: 0.2rem; */
+}
+
+
+// product scrollbar
+.dash {
+  height: 80%;
+  overflow-y: scroll;
+  margin-left: -1rem;
+}
+
+.dash::-webkit-scrollbar {
+  width: 0.35rem
+}
+
+.dash::-webkit-scrollbar-track {
+  background-color: #979797;
+  border-radius: 1rem;
+}
+
+.dash::-webkit-scrollbar-thumb {
+  border: .005rem solid #cfcfcf;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* import fonts for testing */
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Oxygen&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 2% 8%;
+}
+
+body {
+  color: #444040;
+  font-weight: weight(regular);
+  background-image: url("../../../public/img/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(0deg, 0%, 100%, 0.7);
+  background-position: top right;
+  background-blend-mode: color-burn;
+}
+
+.navbar {
+  background: linear-gradient(to bottom left, rgba(10, 183, 174, 0.9), rgba(45, 209, 171, 0.9) 30%, rgba(124, 255, 224, 0.8) 90%);
+}
+
+.badge__items {
+  margin-top: -1.25rem;
+  margin-left: -0.75rem;
+  background-color: hwb(47 16% 0%);
+  color: rgba(10, 183, 174, 0.9);
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 0 0.5rem;
+}
+
+.home {
+  /* height: calc(100vh - 10.35rem) ; */
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+.user {
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+.errmsg {
+  color: #f32c5a;
+  background-color: #ffb9c9;
+}
+
+.opaque-bg {
+  background-color: hsla(0deg, 0%, 100%, 0.8);
+  border-radius: 3rem;
+  padding: 2rem 5rem;
+}
+
+.bg-green {
+  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
+}
+
+/*# sourceMappingURL=main.css.map */

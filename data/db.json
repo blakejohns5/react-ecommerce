@@ -89,6 +89,12 @@
       "username": "susan",
       "email": "susan@admin.com",
       "password": "12345"
+    },
+    {
+      "id": 4,
+      "username": "jimmy",
+      "email": "jimmy@admin.com",
+      "password": "123"
     }
   ]
 }

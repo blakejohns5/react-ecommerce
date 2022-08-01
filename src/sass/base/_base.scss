@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+
+main {
+  margin: 2% 8%;
+}
+
+
+body {
+ 
+  color: $text-dark;
+  font-weight: weight(regular);
+  background-image: url('../../../public/img/bg1.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(0, 0%, 100%, 0.7);
+  background-position: top right;
+  background-blend-mode: color-burn;
+  
+
+
+}

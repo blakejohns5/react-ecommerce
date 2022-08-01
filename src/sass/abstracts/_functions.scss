@@ -1,0 +1,4 @@
+// use function to compute /  return value
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}

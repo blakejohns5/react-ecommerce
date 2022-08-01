@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+.navbar {
+  background: linear-gradient(to bottom left, $accent-dark, $accent-mid 30%, $accent-light 90%);
+}
+
+
+.badge__items {
+  margin-top: -1.25rem;
+  margin-left: -.75rem;
+  background-color:hwb(47 16% 0%);
+  color: $accent-dark;
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 0 .5rem;
+  // resize: none;
+}

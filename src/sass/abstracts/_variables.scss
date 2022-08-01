@@ -1,0 +1,30 @@
+$primary: hsla(0, 0%, 100%, 0.8);
+$highlight: rgba(112, 65, 221, 0.846);
+$accent-dark: rgba(10, 183, 174, 0.9);
+$accent-mid: rgba(45, 209, 171, 0.9);
+$accent-light: rgba(124, 255, 224, 0.8);
+$trim-mid: #979797;
+$text-light: #ffffff;
+$text-dark: #444040;
+
+
+// map for font-weights
+$font-weight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+);
+
+
+$heading-size: (
+  "1": 2.5rem,
+  "2": 2rem,
+  "3": 1.8rem,
+  "4": 1.5rem,
+  "5": 1.2rem,
+)
+
+// @mixin $border-style ($size, $color) {
+  
+  
+// }

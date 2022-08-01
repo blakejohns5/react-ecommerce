@@ -1,0 +1,19 @@
+// to use, use @include flexCenter
+// mixins for defining styles
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin $border-style ($size, $color) {
+  border: solid $size $color;  
+}
+
+
+// use function to compute /  return value
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}

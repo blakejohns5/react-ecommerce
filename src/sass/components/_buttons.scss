@@ -1,0 +1,16 @@
+// buttons for dash page: add, checkout, search
+
+.btn__add {
+  align-self: end;
+  text-align: center;
+}
+
+.btn__add, .btn__checkout, .btn__search {  
+  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
+  box-shadow: 0.05rem 0.05rem 0.2rem #979797;  
+  border: none;
+}
+
+.btn__add:hover, .btn__checkout:hover, .btn__search:hover {
+  background-color: #3c9cc8;
+}

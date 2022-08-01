@@ -14,7 +14,7 @@ function ProductCard(props) {
       <div className="col-lg-4 col-md-12 col-sm-12 p-2 ">
         {/* extra div ensures card height with 1-3 results */}
         <div className="h-100">   
-          <div className="product__card col-lg-12 pb-2 d-flex flex-column align-items-center text-center position-relative">
+          <div className="cardtest product__card col-lg-12 pb-2 d-flex flex-column align-items-center text-center position-relative">
               <div className="product__fav-btn">
                 <FavBtn id={id} img={img} name={name} price={price} sale={sale} favState={favState} favDispatch={favDispatch}  />
               </div>

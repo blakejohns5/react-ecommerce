@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect, useContext, useReducer } from 'react';
 // Styles
-import './css/App.css';
+// import './sass/main.scss';
 // Components
 import NavBar from './components/NavBar/NavBar';
 // Pages
