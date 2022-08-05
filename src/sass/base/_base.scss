@@ -1,21 +1,23 @@
 @use '../abstracts/variables' as *;
 
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* import fonts for testing */
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Oxygen&display=swap');
+
 main {
-  margin: 2% 8%;
+  margin: 2% 10%;
 }
 
 
-body {
- 
+body { 
   color: $text-dark;
   font-weight: weight(regular);
   background-image: url('../../../public/img/bg1.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(0, 0%, 100%, 0.7);
+  background-color: hsla(0, 0%, 100%, 0.8);
   background-position: top right;
   background-blend-mode: color-burn;
-  
-
-
 }

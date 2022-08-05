@@ -23,20 +23,21 @@ function ShoppingCard(props) {
 
   if (!cartIsEmpty) {
     return (
-      <section className='shopping__card col-12 rounded-pill pe-4'>
-        <div className="my-2 d-flex gap-3">
-          <img src={img} className="col-4 cart__img rounded-end rounded-pill" alt="pair of shoes" />
-          <div className="col-8 d-flex flex-column justify-content-center">
+      <section className='cart-contents'>
+        <div className="shopping-card">
+          <img src={img} className="col-4 shopping-card__img" alt="pair of shoes" />
+          <div className="col-8 shopping-card__right">
             <div>{name}</div>
-            <div className='d-flex align-items-center'>
-            { sale ? ( 
-              <div className='col-4 text-danger'>{sale.toFixed(2)} {currency}</div>
-            ) : ( 
-              <div className='col-4'>{price.toFixed(2)} {currency}</div> 
-            )}            
-            <div className="mx-2 col-5 justify-self-end mb-1">
-            <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} /></div>
-            <DeleteBtn key={id} product={product}/>
+            <div className='shopping-card__details'>
+              { sale ? ( 
+                <div className='shopping-card__sale col-5'>{sale.toFixed(2)} {currency}</div>
+              ) : ( 
+                <div className='col-5'>{price.toFixed(2)} {currency}</div> 
+              )}            
+              <div className="col-5 shopping-card__counter">
+                <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
+              </div>
+              <DeleteBtn key={id} product={product}/>
             </div>
           </div>
         </div>

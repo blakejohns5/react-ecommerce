@@ -5,7 +5,7 @@ import { fetchData, putUser, USERS_URL } from '../../helpers/apis'
 
 
 function ChangePwdDialog() {
-  const { auth, setAuth } = useContext(AuthContext)
+  const { auth } = useContext(AuthContext)
   // const [ oldPwdRef ] = useRef();
   const [ oldPwd, setOldPwd ] = useState();
   const [ newPwd, setNewPwd ] = useState();
@@ -56,19 +56,19 @@ function ChangePwdDialog() {
                 <div className="row d-flex">
                   <label htmlFor="changePwdPassword" className="col-4">Current password:</label>
                   <input type={oldPwdVisible ? "text" : "password"} id="confirmPassword" className="col-7 w-50" onChange={(e) => setOldPwd(e.target.value)} required />
-                  <button type="button" onClick={toggleOldPwd} className="ms-2 col-1 fw-bold text-dark border-0 bg-transparent ">{oldPwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
+                  <button type="button" onClick={toggleOldPwd} className="btn-pw col-1">{oldPwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
                 </div>
                 <div className="row d-flex">
                   <label htmlFor="newPassword" className="col-4">New password:</label>
                   <input type={newPwdVisible ? "text" : "password"} id="newPassword" className="col-7 w-50" onChange={(e) => setNewPwd(e.target.value)}  required />
-                  <button type="button" onClick={toggleNewPwd} className="ms-2 col-1 fw-bold text-dark border-0 bg-transparent ">{newPwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
+                  <button type="button" onClick={toggleNewPwd} className="btn-pw col-1">{newPwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
                 </div>
               </form>
 
             </div>
             <div className="modal-footer d-flex align-items-center justify-content-center mt-3 gap-4">
-              <button type="submit" form="changePwdForm" className="btn__add px-5 py-1 fw-bold text-light" data-bs-dismiss="modal">Confirm change</ button>
-              <button type="button" className="btn__add px-5 py-1 fw-bold text-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" form="changePwdForm" className="btn-cart" data-bs-dismiss="modal">Confirm change</ button>
+              <button type="button" className="btn-cart" data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>
         </div>

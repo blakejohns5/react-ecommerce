@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { fetchData, postUser, USERS_URL } from '../../helpers/apis';
 
 function Registration() {
-  const {auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const [pwdVisible, setPwdVisible] = useState(false);
   
 
@@ -38,35 +38,35 @@ function Registration() {
   return (
     <>
       <section>
-        <div className='mt-5 py-5'>
+        <div className='registration'>
         { Object.keys(auth).length > 0 ? (
             <h1>{auth.email} is logged in.</h1>
           ) : (
             <>
-            <h2>You are not logged in.</h2>
-            <h5 className="mt-5">Would you like to register now?</h5>
+            <h4>You are not logged in.</h4>
+            <h4>Would you like to register now?</h4>
             </>
           ) 
         } 
         </div>
-        <form id="signupForm" onSubmit={handleSubmit} className="fs-5 ms-3 d-flex flex-column gap-3" >
+        <form id="signupForm" onSubmit={handleSubmit} className="registration__form"> 
           <div className="row">
-            <label htmlFor="signupEmail "className="py-1 col-3">Email:</label>
-            <input type="email" id="signupEmail" className="col-8 w-50" value={email} onChange={(e) => {setEmail(e.target.value)}} required />
+            <label htmlFor="signupEmail "className="col-3">Email:</label>
+            <input type="email" id="signupEmail" className="col-8" value={email} onChange={(e) => {setEmail(e.target.value)}} required />
           </div>
           
-          <div className="row d-flex">              
-            <label htmlFor="signupPassword" className="py-1 col-3">Password:</label>
-            <input type={pwdVisible ? "text" : "password"} id="signupPassword" className="col-8 w-50" value={pwd} onChange={(e) => {setPwd(e.target.value)}} required />
-            <button type="button" onClick={togglePwd} form="signupForm" className="ms-2 col-1 fw-bold text-dark border-0 bg-transparent ">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
+          <div className="row">              
+            <label htmlFor="signupPassword" className="col-3">Password:</label>
+            <input type={pwdVisible ? "text" : "password"} id="signupPassword" className="col-8" value={pwd} onChange={(e) => {setPwd(e.target.value)}} required />
+            <button type="button" onClick={togglePwd} form="signupForm" className="btn-pw col-1">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
           </div>            
-          <div className='mt-5'>
+          <footer>
           { Object.keys(auth).length > 0 ? (             
-            <button type="submit" form="passwordChangeForm" className="btn__add px-5 py-1 fw-bold text-light me-5" >Change password</button>
+            <button type="submit" form="passwordChangeForm" className="col-6 btn-cart" >Change password</button>
           ) : (
-            <button type="submit" form="signupForm" className="btn__add px-5 py-1 fw-bold text-light me-5">Sign Up</button>
+            <button type="submit" form="signupForm" className="col-6 btn-cart">Sign Up</button>
           )}
-          </div>
+          </footer>
         </form>
         <article>
 

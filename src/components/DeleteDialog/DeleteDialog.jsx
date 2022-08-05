@@ -10,11 +10,10 @@ function DeleteDialog({ product }) {
     
   }
 
-  return (
-  
+  return (  
     <>
       <div className="modal fade " id="deleteDialog" tabIndex="-1" aria-labelledby="deleteDialogLabel" aria-hidden="true">
-        <div className="modal-dialog dialog__login p-2">
+        <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deleteDialogLabel">You don't like these?</h5>
@@ -23,9 +22,9 @@ function DeleteDialog({ product }) {
             <div className="modal-body">
               <p>Are you sure you want to remove this item from your cart?</p>
             </div>
-            <div className="modal-footer d-flex justify-content-center align-items-center">
-              <button type="button" className="btn__add btn px-5 py-1 fw-bold text-light me-3" onClick={() => deleteItem(product)} data-bs-dismiss="modal">Yes, I'm sure</button>
-              <button type="button" className="btn__add btn px-5 py-1 fw-bold text-light me-3" data-bs-dismiss="modal">Cancel</button>
+            <div className="modal-footer delete-dialog__footer">
+              <button type="button" className="btn-cart" onClick={() => deleteItem(product)} data-bs-dismiss="modal">Yes, I'm sure</button>
+              <button type="button" className="btn-cart" data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>
         </div>

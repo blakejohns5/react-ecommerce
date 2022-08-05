@@ -1,0 +1,55 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+// user page, User.jsx, contains registration and user details components
+.user__main {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  margin-top: 6rem;
+  
+  h1 {
+    color: $highlight;    
+  }
+}
+
+
+.user {
+  @include flexCenter(row);
+  align-items: flex-start;
+  gap: 4rem;
+  margin: 3rem 0;
+
+  &__wishlist {
+    padding: 0 4rem;
+  }
+}
+
+
+// registration component
+
+.registration {
+  margin: 3rem 0;
+
+  h4:nth-child(2) {
+    margin-top: 1rem;
+    
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;    
+    gap: 0.5rem;
+    font-size: map-get($heading-size, '5');
+
+    input {
+      width: 60%;
+    }
+
+    footer {
+      margin: 3rem 0 0 3rem;
+    }
+  }
+
+}
+// user d-flex flex-column align-items-center col-10 mt-4

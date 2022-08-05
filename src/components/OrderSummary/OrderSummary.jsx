@@ -6,22 +6,29 @@ function OrderSummary(props) {
   
   if (totalItems === 0) {
     return (
-      <p className='fs-5 text-italic'>You currently have no items in your cart</p>
+      <>
+      <div className="order-total col-3" >
+        <h5>You currently have no items in your cart</h5>
+      </div>
+      </>
+      
     )
   }
   if (totalItems > 0) {
     return (
       <>
-        <div className="d-flex flex-column gap-2 ms-5 col-12" >
-          <h5 className="pt-5 fw-bold mb-3">Order Summary:</h5>
-            <div className="d-flex fs-5">
-              <p className="me-3">Total items:</p>
-              <p className="ms-3">{totalItems}</p>
-            </div>
-            <div className="d-flex fs-5">
-              <p className="me-5">Total:</p> 
-              <p className="ms-5">{totalCost.toFixed(2)} {currency}</p>
-            </div>
+        <div className="col-12" >
+          <h5>Order Summary:</h5>
+          <table className="col-12">
+            <tr>
+              <th className="col-5">Total items:</th>
+              <td className="col-7">{totalItems}</td>
+            </tr>
+            <tr>
+              <th>Total:</th>
+              <td>{totalCost.toFixed(2)} {currency}</td>
+            </tr>
+          </table>
         </div>
       </>
     )

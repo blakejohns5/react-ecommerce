@@ -8,7 +8,7 @@ function Home({ products, searchTerms, setSearchTerms, addToStorage, removeFromS
 
   return (    
       <>
-      <main className='home d-flex mt-5 pt-2'>
+      <main className='home d-flex'>
       <ProductDash products={products} searchTerms={searchTerms} setSearchTerms={setSearchTerms} addToStorage={addToStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch}  />
       <ShoppingCart addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />
       </main>

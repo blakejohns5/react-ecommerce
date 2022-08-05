@@ -1,0 +1,134 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// properties from ProductCard
+.product-card {
+  padding: 0.3rem;
+  
+  :hover {
+    border: 0.1rem solid transparent;
+    outline: 0.2rem solid $accent-mid;   
+
+  }
+  &__content {
+    @include flexCenter(column);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    @include product-border;
+    font-size: map-get($heading-size, '6');
+    background-color: $primary;
+    overflow: hidden;
+
+    :hover {
+      border: none;
+      outline: none;
+      color: $text-dark;
+    }   
+    
+    img {
+      margin-bottom: .25rem;
+    }
+
+    footer {
+      margin-top: 1rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-dark; 
+  }
+
+  &__text {
+    // width: 100%;  originally set to w-100 in bs
+    @include flexCenter(row);
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin: 0.5rem 0.5rem;
+    text-decoration: none;
+  }
+
+  &__price {
+    @include flexCenter(row);
+    margin-right: 0.5rem;
+  }
+
+  
+  &__sale-tag {
+    margin-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: map-get($heading-size, '4');
+  }
+
+  &__sale {
+    margin-left: 0.5rem;
+  }
+}
+
+// product dash properties from ProductDash
+.product-dash {
+    
+  &__title {
+    @include title-text;
+  }
+
+  &__items {
+    padding: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+    overflow-y: scroll;
+  
+    &::-webkit-scrollbar {
+    width: 0.35rem
+    }
+  
+    &::-webkit-scrollbar-track {
+    background-color: $trim-mid;
+    border-radius: 1rem;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+    border: .005rem solid #cfcfcf;
+    background-color: white;
+    border-radius: 1rem;
+    }
+  }
+}
+
+
+// product detail component
+
+.product-detail {
+  @include flexCenter(row);
+  align-self: flex-start;
+
+  &__frame {
+    position: relative;
+    margin-right: 3rem;
+    padding: 1rem 0;
+    @include flexCenter(column);
+    background-color: $primary;
+    @include product-border;
+
+    img {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: map-get($heading-size, '5');
+    }
+    
+  }
+}
+
+
+
+
+
+
+

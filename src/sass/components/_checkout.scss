@@ -1,77 +1,246 @@
-.checkout__progress {
-  position: relative;
-  max-width: 50%;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
+.checkout-table {
+  text-align: start;
+    
+  &__header {
+    border-bottom: solid 0.15rem $trim-mid;
+    font-size: map-get($heading-size, '5');
+
+  }
+
+  &__header-row {
+    th:nth-child(2) {
+    padding-left: 1rem;
+    }
+  }
+
+  &__row {
+    font-size: map-get($heading-size, '6');
+    td:nth-child(2), td:nth-child(3) {
+      padding-left: 1rem;
+    }
+
+    td:nth-child(5) {
+      padding-left: 3rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-dark;
+  };
+
+  &__img {
+    width: 100%;
+    margin-right: 1rem;
+  }
 }
 
-.checkout__progress ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
+// checkout process
+
+// order component if cart is empty
+.order-empty {
+  @include flexCenter(column);
+  margin-top: 8rem;
+  gap: 3rem;
+
+  h1 {
+    font-size: map-get($heading-size, '1');
+    @include checkout-heading;
+  }
+
+  h2 {
+    font-size: map-get($heading-size, '2');
+  }
+
+  button {
+    padding: 0.75rem 5rem;
+  }
 }
 
-.checkout__progress ul li {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: #979797;
-  z-index: 50;
-  position: relative;
+
+// checkout stage 1: order component if items in cart
+.order-summary {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  margin-top: 6rem;
+  // height: $screen-size;
+
+  h1 {
+    font-size: map-get($heading-size, '1');
+    @include checkout-heading;
+    margin-bottom: 2rem;
+  }
+
+  &__bg {
+    @include flexCenter(row);
+    background: $primary;
+    border: $accent-mid solid .01rem;
+    border-radius: 12rem;
+    padding: 5rem 0;
+
+    div {
+      display: flex;
+      // width: 100%;
+      // justify-content: center;
+    }
+  }
+
+  &__footer {
+    margin-top: 3rem;
+    @include flexCenter(row);
+    width: 100%;
+    gap: 3rem;
+
+    button {
+      padding: 0.25rem 4rem;
+    }
+
+  }
 }
 
-.checkout__progress ul li.done {
-  background-color: #25aceb;
+// checkout stage 1: order summary for cart items
+.order-total {
+  @include flexCenter(column);
+  align-items: flex-start;
+  margin: 0 0 0 5rem;
+
+  h5 {
+    font-weight: map-get($font-weights, 'bold');
+    margin-bottom: 2rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: map-get($heading-size, '5');
+    
+    p:nth-child(1) {
+      margin: 0 3rem 0 0 ;
+    }
+  }
 }
 
-.checkout__progress ul li::after {
-  position: absolute;
-  top: 1.75rem;
-  left: -0.3rem;
-  font-size: 0.85rem;
-  /* width: 5px; */
+// checkout stage 2: shipping
+
+.shipping {
+  @include flexCenter(column);
+
+  header {
+    margin-top: 2rem;
+  }
+
+  &__form {
+    margin-top: 1rem;
+
+    div {
+      gap: 1rem;
+    }
+    
+    div:nth-child(2n+1) {
+      margin-top: 0.5rem;
+    }
+
+    input {
+      margin-top: 0.15rem;
+      padding: 0.25rem;
+    }
+  }
+
+  
 }
 
-#step-1::after {
-  content: "Order";
-  justify-self: center;
-  left: -0.6rem;
+.shipping__footer {
+  display: flex;
+  justify-content: center;
 }
 
-#step-2::after {
-  content: "Shipping";
-  text-align: center;
+
+
+
+
+// checkout stage 3: payment
+
+.payment {
+  margin: 0 auto;  
+  margin-top: 5rem;  
+  
+
+  &__form {
+    display: flex;
+    gap: 4rem;
+  }
 }
 
-#step-3::after {
-  content: "Payment";
-  left: -1rem
+// properties shared between left-right columns
+%payment-shared {
+  padding: 0 1rem;
+  h2 {
+    margin-bottom: 2rem;
+    font-size: map-get($heading-size, '3');
+    font-weight: map-get($font-weights, 'regular');
+  }
+  div {
+    gap: 1rem;  // horiz gap between     
+    label {
+      padding-left: 0.25rem;
+    }
+    input {
+      margin-top: .25rem;
+    }
+  }
 }
 
-#step-4::after {
-  content: "Order Complete";
-  left: -1.25rem;
+.payment__left {
+  @extend %payment-shared;
+
+  div:nth-child(2n) {
+    margin-top: 1rem;
+  }  
 }
 
-.checkout__progress .progress {
-  height: 0.3rem;
-  width: 100%;
-  top: 1.9rem;
-  position: absolute;
-  background-color: #e0e0e0;
+.payment__right {
+  @extend %payment-shared;
+  
+  fieldset {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem auto 2.1rem auto;
+  }
 
-  border-radius: 2rem;
+  .row:nth-child(odd) {
+    margin-top: 1rem;
+  }
 }
 
-.progress-bar {
-  background-color: #25aceb;
-  /* width: 33.33%; */
+.payment__footer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
 }
 
-.blue {
-  /* color: #3c9cc8; */
-  color: #f32c5a;
 
+// checkout stage 4: order complete component
+.order-complete {
+  margin-top: 10rem;  
+  @include flexCenter(column);  
+  gap: 3rem;
+  color: $text-dark;
+
+  h1 {
+    color: $highlight;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-bottom: 5rem;
+  }
+
+  p {
+    font-size: map-get($heading-size, '2');
+  }
 }
+

@@ -1,16 +1,102 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 // buttons for dash page: add, checkout, search
 
-.btn__add {
+%btn-gen {  
+  padding: 0.25rem 2rem;
+  color: white;
+  background: $btn-gradient;
+  font-weight: map-get($font-weights, 'regular');
   align-self: end;
   text-align: center;
+  box-shadow: 0.05rem 0.05rem $trim-mid;  
+  border: none;
+
+  &:hover {
+    background: $highlight;  
+    color: $text-dark;
+  }
 }
 
-.btn__add, .btn__checkout, .btn__search {  
-  background: linear-gradient(to right bottom, rgb(45, 209, 171), rgb(90, 233, 200) 100%);
-  box-shadow: 0.05rem 0.05rem 0.2rem #979797;  
+.btn-cart, .btn-search {
+  @extend %btn-gen;
+}
+
+.btn-checkout {
+  @extend %btn-gen;
+  margin-top: 1.5rem;
+  padding: 0.1rem 6rem;
+  align-self: center;
+  font-size: map-get($heading-size, '4');
+}
+
+.btn-search {
+  @extend %btn-gen;
+  background: $btn-gradient-light;
+  // box-shadow: none;
+  color: $text-dark;
+  // font-weight: map-get($font-weights, 'regular');
+  // px-3 py-1 text-light rounded fw-bold border border-light
+}
+
+
+.btn-pw {
+  margin-left: 0.5rem;
+  background: transparent;
+  font-weight: map-get($font-weights, 'bold');
+  color: #000000;
   border: none;
 }
 
-.btn__add:hover, .btn__checkout:hover, .btn__search:hover {
-  background-color: #3c9cc8;
+
+.btn-bookmark {
+  background: transparent;
+  color: $text-dark;
+  border: none;
+  font-size: 1.85rem;
+  margin-bottom: 0.4rem;
+
+  &:hover {
+    font-weight: map-get($font-weights, 'bold');
+    color: white;
+  }
+}
+
+.product__fav-btn {
+  z-index: 200;
+  position: absolute;
+  top: .5rem;
+  right: -0.25rem;
+  padding: 0rem 0.7rem 0.25rem 0.5rem;
+  background-color: white;
+  border-radius: 5%;
+
+  & button {
+    background-color: white;
+  }
+}
+
+.detail__fav-btn {
+  position: absolute;
+  top: 3rem;
+  right: 9.5rem;
+  padding: 0 0.1rem 0.25rem 0.1rem;
+  transform: scale(1.4);
+  background-color: white;
+
+  & button {
+    background-color: white;
+  }
+}
+
+.btn-fav {
+  border: none;
+  font-size: 1.2rem;
+  background: white;
+}
+
+// toggle color when item is added to wishlist
+.faved {
+  color: darken($warning, 15%);
 }

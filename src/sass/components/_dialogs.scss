@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+
+// delete item from cart dialog
+.delete-dialog__footer {
+  @include flexCenter(row);
+  gap: 1rem;
+}
+
+// NOT IN USE. CART DIALOG
+.dialog__cart {
+  position: absolute;
+  top: 5vh;
+  right: 0;  
+}
+
+// wishlist dialog
+.dialog-favorites {  
+  position: absolute;
+  top: 5rem;
+  right: 1.5rem;
+
+  &__header {
+    background: nav-gradient(tt);  
+  }
+
+  &__title {
+    font-size: map-get($heading-size, '5');  
+  }
+
+  &__body {
+    margin: 1rem 0.25rem;
+  }
+}
+

@@ -1,6 +1,6 @@
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
-function CartDialog({ product, addToStorage, removeFromStorage, totalItems, totalCost }) {
+function CartDialog({ addToStorage, removeFromStorage, totalItems, totalCost }) {
   
 
   return (
@@ -17,7 +17,7 @@ function CartDialog({ product, addToStorage, removeFromStorage, totalItems, tota
               <ShoppingCart addtoStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />
             </div>
             <div className="modal-footer d-flex justify-content-center align-items-center">
-              <button type="button" className="btn__add btn px-5 py-1 fw-bold text-light me-3" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" className="btn-cart" data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>
         </div>

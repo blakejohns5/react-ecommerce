@@ -1,0 +1,71 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+.checkout-progress {
+  padding-top: 1.55rem;
+  position: relative;
+  max-width: 50%;
+  margin: 2rem auto;
+
+  ul {
+      @include flexCenter(row);
+      justify-content: space-between;  // override mixin
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+    li {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: $trim-mid;
+      z-index: 50;
+      position: relative;
+
+      &.done {
+        background-color: $highlight;
+      }
+
+      &::after {
+        position: absolute;
+        top: 1.75rem;
+        left: -0.3rem;
+        font-size: 1rem;
+      }
+
+      &:nth-child(1)::after {
+        content: "Order";
+        left: -0.85rem;
+      }
+
+      &:nth-child(2)::after {
+        content: "Shipping";
+        left: -1.4rem;
+      }
+
+      &:nth-child(3)::after {
+        content: "Payment";
+        left: -1.4rem;
+      }
+
+      &:nth-child(4)::after {
+        content: "Order Complete";
+        left: -1.6rem;
+      }
+    }
+  }
+
+  & .progress {
+    height: 0.3rem;
+    width: 100%;
+    top: 1.9rem;
+    position: absolute;
+    background-color: #e0e0e0;
+    border-radius: 2rem;
+  }
+
+  & .progress__bar {
+    background-color: $highlight;
+  }
+}

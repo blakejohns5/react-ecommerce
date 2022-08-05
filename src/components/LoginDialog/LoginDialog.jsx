@@ -10,7 +10,7 @@ function LoginDialog() {
   return (
     <>
     <div className="modal fade" id="loginDialog" tabIndex="-1" aria-labelledby="loginDialogLabel" aria-hidden="true">
-    <div className="modal-dialog dialog__login p-1 ">
+    <div className="modal-dialog dialog-login">
       <div className="modal-content ">
         <div className="modal-header">
           {Object.keys(auth).length === 0 &&

@@ -95,6 +95,12 @@
       "username": "jimmy",
       "email": "jimmy@admin.com",
       "password": "123"
+    },
+    {
+      "id": 5,
+      "username": "joe",
+      "email": "joe@joe.com",
+      "password": "123"
     }
   ]
 }

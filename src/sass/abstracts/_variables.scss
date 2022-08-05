@@ -1,20 +1,28 @@
+
 $primary: hsla(0, 0%, 100%, 0.8);
-$highlight: rgba(112, 65, 221, 0.846);
-$accent-dark: rgba(10, 183, 174, 0.9);
+$highlight: rgb(44, 206, 235);
+// $accent-dark: rgba(10, 183, 174, 0.9);
+$accent-dark: rgba(9, 197, 188, 0.9);
 $accent-mid: rgba(45, 209, 171, 0.9);
 $accent-light: rgba(124, 255, 224, 0.8);
 $trim-mid: #979797;
-$text-light: #ffffff;
 $text-dark: #444040;
+$warning: #ff84a1;
 
+
+$btn-gradient: linear-gradient(to right bottom, hsl(166, 65%, 55%) 25%, hsl(166, 100%, 50%) 95%);
+// $btn-gradient-light: linear-gradient(to right bottom, hsla(177, 91%, 60%, 0.9),hsla(166, 65%, 70%, 0.9) 15%, hsla(166, 100%, 94%, 0.8) 85%);
+$btn-gradient-light: linear-gradient(to right bottom, hsla(166, 65%, 75%, 0.9) 25%, hsla(166, 100%, 85%, 0.8) 95%);
+
+
+$screen-size: 80vh;
 
 // map for font-weights
-$font-weight: (
+$font-weights: (
   "regular": 400,
   "medium": 500,
   "bold": 700
 );
-
 
 $heading-size: (
   "1": 2.5rem,
@@ -22,9 +30,7 @@ $heading-size: (
   "3": 1.8rem,
   "4": 1.5rem,
   "5": 1.2rem,
+  "6": 1rem,
 )
 
-// @mixin $border-style ($size, $color) {
-  
-  
-// }
+

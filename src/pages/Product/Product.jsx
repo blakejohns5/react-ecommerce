@@ -11,7 +11,7 @@ function Product({ products, addToStorage, removeFromStorage, totalCost, totalIt
     
   return (
     <>
-      <main className='product__main vh-100 col-10 d-flex margin5'>
+      <main className='product__main col-10 d-flex'>
         <ProductDetail key={product.id} img={product.img} name={product.name} price={product.price} sale={product.sale} id={product.id} addToStorage={addToStorage} removeFromStorage={removeFromStorage} favState={favState} favDispatch={favDispatch} />
         <div className='product__cart col-10 px-3'>
         <ShoppingCart addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} />

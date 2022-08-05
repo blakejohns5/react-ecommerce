@@ -1,0 +1,34 @@
+@use '../abstracts/mixins' as *;
+
+// login form sections
+.login-form {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+ 
+
+  &__input {
+      width: 50%;
+  }
+
+ &__footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  @include flexCenter(row);
+  justify-content: space-between;
+ }
+
+ &__signup {
+  display: flex;
+  gap: 1rem;
+ }
+}
+
+// login dialog
+.dialog-login {
+  margin: 30vh auto;
+}
+
+

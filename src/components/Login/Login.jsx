@@ -61,21 +61,21 @@ const Login = () => {
       ) : (
         <section>
           <p ref={errRef} className={errMsg ? "errmsg fw-bold" : "offscreen"} aria-live="assertive">{errMsg}</p>
-          <form id="loginForm" onSubmit={handleSubmit} className="ms-3 d-flex flex-column gap-3" >
+          <form id="loginForm" onSubmit={handleSubmit} className="login-form" >
             <div className="row">
               <label htmlFor="loginEmail "className="col-3">Email:</label>
-              <input type="email" id="loginEmail" ref={emailRef} className="col-8 w-50  " onChange={(e) => setEmail(e.target.value)} value={email} required />
+              <input type="email" id="loginEmail" ref={emailRef} className="col-8 login-form__input" onChange={(e) => setEmail(e.target.value)} value={email} required />
             </div>
-            <div className="row d-flex">              
+            <div className="row">              
               <label htmlFor="loginPassword" className="col-3">Password:</label>
-              <input type={pwdVisible ? "text" : "password"} id="loginPassword" className="col-8 w-50" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
-              <button type="button" onClick={togglePwd} form="loginForm" className="ms-2 col-1 fw-bold text-dark border-0 bg-transparent ">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
+              <input type={pwdVisible ? "text" : "password"} id="loginPassword" className="col-8 login-form__input" onChange={(e) => setPwd(e.target.value)} value={pwd} required />
+              <button type="button" onClick={togglePwd} form="loginForm" className="col-1 btn-pw">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
             </div>  
             {/* btn separate from form         */}
           </form>
-          <div className="modal-footer d-flex align-items-center justify-content-center mt-3">  
-            <button type="submit" form="loginForm" className="btn__add px-5 py-1 fw-bold text-light me-5" data-bs-dismiss="modal">Sign In</button>
-            <div className='d-flex gap-2'>
+          <div className="modal-footer login-form__footer">  
+            <button type="submit" form="loginForm" className="btn-cart" data-bs-dismiss="modal">Sign In</button>
+            <div className='login-form__signup'>
               <div>Not a customer yet?</div>
               <Link to="/login" className="text-decoration-none"> Sign up here.</Link>
             </div>

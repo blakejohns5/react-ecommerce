@@ -1,32 +1,39 @@
-
-.product__fav-btn {
-  z-index: 200;
-  position: absolute;
-  top: .5rem;
-  right: -0.25rem;
-  padding: 0rem 0.7rem 0.25rem 0.5rem;
-  background-color: white;
-  border-radius: 5%;
-}
- 
-.fav-icon {
-  
-  background-color: white;
-  
-} 
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 
-.detail__fav-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  transform: scale(1.4);
-}
 
-.favorites__dialog {
-  
-  position: absolute;
-  top: 4.75rem;
-  right: 0.75rem;
-  width: 100%;
+
+
+
+.wishlist {
+  @include flexCenter(column);
+
+  &__msg {
+    font-size: map-get($heading-size, '5');
+    margin-top: 0.5rem;
+    padding: 0 2rem;
+  }
+
+  &__item {
+    margin-bottom: 0.2rem; 
+    @include flexCenter(row);
+    justify-content: flex-start;  // adjust mixin    
+  }
+
+  &__link {
+    @include flexCenter(row);
+    text-decoration: none;
+    color: $text-dark;
+    gap: 0.5rem;
+  }
+
+  &__price {
+    @include flexCenter(row);
+    justify-content: flex-end;
+    
+    div:nth-child(1) {
+      color: $warning;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+@use './variables' as *;
 // to use, use @include flexCenter
 // mixins for defining styles
 @mixin flexCenter($direction) {
@@ -7,13 +8,29 @@
   align-items: center;
 }
 
-
-@mixin $border-style ($size, $color) {
+@mixin border-style ($size, $color) {
   border: solid $size $color;  
 }
+
+@mixin title-text () {
+  font-weight: map-get($font-weights, 'regular');
+  margin-bottom: 2rem;
+}
+
+@mixin product-border ($border-width: 0.1rem) {
+  border: $border-width solid;
+  border-image: linear-gradient(to bottom, $trim-mid 20%, $accent-mid) 1 20%;
+}
+
+@mixin checkout-heading() {
+  font-weight: map-get($font-weights, 'bold');
+  color: $highlight;
+}
+
 
 
 // use function to compute /  return value
 @function weight($weight-name) {
   @return map-get($font-weight, $weight-name);
 }
+

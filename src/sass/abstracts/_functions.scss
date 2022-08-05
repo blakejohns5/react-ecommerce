@@ -1,4 +1,29 @@
+@use './variables' as *;
+
 // use function to compute /  return value
 @function weight($weight-name) {
   @return map-get($font-weight, $weight-name);
+}
+
+// full function for gradient to make testing colors easier
+@function nav-gradient($direction) {
+  $dir: null;
+  @if $direction == ttr {
+      $dir: to top right;
+  } @else if $direction == tbr {
+      $dir: to bottom right;
+  } @else if $direction == ttl {
+      $dir: to top left;
+  } @else if $direction == tbl {
+      $dir: to bottom left;
+  } @else if $direction == tl {
+      $dir: to left;
+  } @else if $direction == tr {
+      $dir: to right;
+  } @else if $direction == tt {
+      $dir: to top;
+  } @else if $direction == tb {
+      $dir: to bottom;
+  }
+  @return linear-gradient($dir, $accent-dark, $accent-mid 15%, $accent-light 85%);
 }

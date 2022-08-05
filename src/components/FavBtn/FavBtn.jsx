@@ -37,7 +37,7 @@ const FavBtn = (props) => {
  
   return (
     
-      <button type="button" onClick={handleClick} className="border-0 fs-5 fav-icon">{ isInFavs ? <FaHeart className='blue' /> : <FaRegHeart /> }</button>
+      <button type="button" onClick={handleClick} className="btn-fav">{ isInFavs ? <FaHeart className='faved' /> : <FaRegHeart /> }</button>
     
   )
 }
