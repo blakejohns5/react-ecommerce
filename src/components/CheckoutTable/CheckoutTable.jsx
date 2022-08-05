@@ -15,7 +15,7 @@ function CheckoutTable({ addToStorage, removeFromStorage }) {
         <thead className="checkout-table__header">
           <tr className="checkout-table__header-row">
             <th className="col-1"></th>
-            <th className="col-4 ms-2">Product</th>
+            <th className="col-4">Product</th>
             <th className="col-1">Qty</th>
             <th className="col-1">Price</th>
             <th className="col-2"></th>

@@ -66,7 +66,6 @@
   @include flexCenter(column);
   justify-content: flex-start;
   margin-top: 6rem;
-  // height: $screen-size;
 
   h1 {
     font-size: map-get($heading-size, '1');
@@ -83,8 +82,6 @@
 
     div {
       display: flex;
-      // width: 100%;
-      // justify-content: center;
     }
   }
 
@@ -149,8 +146,6 @@
       padding: 0.25rem;
     }
   }
-
-  
 }
 
 .shipping__footer {

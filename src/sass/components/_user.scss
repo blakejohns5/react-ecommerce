@@ -52,4 +52,32 @@
   }
 
 }
-// user d-flex flex-column align-items-center col-10 mt-4
+
+
+// from userDetails.jsc component
+
+.user-details {
+
+  &__msg {
+    h3 {
+      margin: 3rem 0;
+    }   
+  }
+
+  &__info {
+    margin-bottom: 5rem;
+
+    dl {
+      display: block;
+      font-size: map-get($heading-size, '5');
+    }
+
+    dt, dd {
+      float: left;
+    }
+  }
+
+  footer {
+    padding: 4rem 0 0 2rem;
+  }
+}

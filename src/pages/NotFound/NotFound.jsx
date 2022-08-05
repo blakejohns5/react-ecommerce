@@ -11,15 +11,16 @@ function NotFound() {
   // useEffect(() => {
       setTimeout(() => {
         navigate('/')
-    }, 3000);
+    }, 4000);
   // });
 
   return (
     <>
-    <main className='d-flex flex-column align-items-center pt-5 mt-5 vh-100'>
+    <main className='not-found'>
         <h1>404 Error</h1>
         <h3>This page cannot be found</h3>
-        <div className='fs-1 mt-5'>{icon}</div>
+        <div>{icon}</div>
+        <h3>You are being redirected to the home page</h3>
       </main>
       </>
   ) 

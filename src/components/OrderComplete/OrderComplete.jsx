@@ -7,7 +7,7 @@ const OrderComplete = ({ setCheckoutStage }) => {
   const { setCartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(6);
 
   useEffect(() => {
     if (count > 0) {

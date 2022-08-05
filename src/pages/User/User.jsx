@@ -7,7 +7,6 @@ import UserDetails from '../../components/UserDetails/UserDetails'
 function User ({ favState, favDispatch }) {
   const { auth } = useContext(AuthContext);
 
- 
   return (
     <>
     <main className='user__main col-10'>
@@ -22,7 +21,7 @@ function User ({ favState, favDispatch }) {
 
       <section className='user col-10'>
         <article className='user__wishlist col-7'>
-        <h2 className="mb-4">Your Wishlist</h2>
+        <h2>Your Wishlist</h2>
           <Favorites favState={favState} favDispatch={favDispatch} />
         </article>
         <article className='user__details col-5'>

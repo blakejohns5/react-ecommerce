@@ -10,9 +10,10 @@
   @include flexCenter(column);
 
   &__msg {
-    font-size: map-get($heading-size, '5');
-    margin-top: 0.5rem;
-    padding: 0 2rem;
+    font-size: map-get($heading-size, '3');
+    margin-top: 3rem;
+    padding-right: 2rem;
+    
   }
 
   &__item {

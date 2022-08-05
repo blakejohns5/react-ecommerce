@@ -18,7 +18,7 @@ const ShoppingCart = ({ addToStorage, removeFromStorage, totalItems, totalCost }
           <OrderSummary totalItems={totalItems} totalCost={totalCost} />
         </div>
         <footer>
-        <CheckoutBtn />
+          <CheckoutBtn />
         </footer>
       </section>
     </>

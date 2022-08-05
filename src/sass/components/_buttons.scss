@@ -34,10 +34,8 @@
 .btn-search {
   @extend %btn-gen;
   background: $btn-gradient-light;
-  // box-shadow: none;
   color: $text-dark;
-  // font-weight: map-get($font-weights, 'regular');
-  // px-3 py-1 text-light rounded fw-bold border border-light
+  
 }
 
 

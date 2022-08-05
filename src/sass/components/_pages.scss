@@ -1,0 +1,24 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.home {
+  display: flex;
+}
+
+.not-found {
+  @include flexCenter(column);
+  margin-top: 5rem;
+
+  div {
+    font-size: map-get($heading-size, '1');
+    margin: 5rem 0 3rem 0;
+    
+  }
+
+}
+
+.product-page {
+  display: flex;
+  margin-top: 5rem;
+
+}

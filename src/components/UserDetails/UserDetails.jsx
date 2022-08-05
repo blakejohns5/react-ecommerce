@@ -3,28 +3,30 @@ import AuthContext from "../../context/AuthProvider"
 import ChangePwdDialog from "../ChangePwdDialog/ChangePwdDialog";
 
 function UserDetails() {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
 
   return (
     <>
-    <div>
-    { Object.keys(auth).length > 1 ? (
-      <h3 className="my-5">You are currently logged in as {auth.email}</h3>
-    ) : (
-      <h3 className="my-5">You are not logged in.</h3>
+    <div className="user-details">
+      <div className="user-details__msg">
+      { Object.keys(auth).length > 1 ? (
+        <h3>You are currently logged in as {auth.email}</h3>
+      ) : (
+        <h3>You are not logged in.</h3>
 
+        
+      )}
+      </div>
+      <div className="user-details__info">
+        <dl>
+          <dt className="col-lg-3 col-sm-12">Email:</dt>
+          <dd className="col-lg-9 col-sm-12">{auth.email}</dd>
+        </dl>
+      </div>
       
-    )}
-    </div>
-    <div className="pb-5">
-      <dl className="d-block fs-5">
-        <dt className=" col-lg-3 col-sm-12 float-start">Email:</dt>
-        <dd className="col-lg-9 col-sm-12 float-start ">{auth.email}</dd>
-      </dl>
-    </div>
-    
-    <div className='pt-5'>
-      <button type="button" className="btn__add px-5 py-1 fw-bold text-light me-5" data-bs-toggle="modal" data-bs-target="#changePwdDialog" >Change password</button>
+      <footer>
+        <button type="button" className="btn-cart" data-bs-toggle="modal" data-bs-target="#changePwdDialog" >Change password</button>
+      </footer>
     </div>
     <ChangePwdDialog /> 
     </>
