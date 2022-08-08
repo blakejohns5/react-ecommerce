@@ -1,4 +1,3 @@
-import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect, useContext, useReducer } from 'react';
 // Styles
 // import './sass/main.scss';

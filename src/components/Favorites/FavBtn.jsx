@@ -30,14 +30,14 @@ const FavBtn = (props) => {
     // if (favorite === false) {
     // using this version makes click much faster, more effective
     if (!favorite) {    
-      updateUserWishlist(); 
+      // updateUserWishlist(); 
       favDispatch({ 
         type: FAV_ACTIONS.ADD, 
         payload: clickedProduct
       }) 
       
     } else {      
-      updateUserWishlist();
+      // updateUserWishlist();
       favDispatch({ 
         type: FAV_ACTIONS.REMOVE, 
         payload: clickedProduct
