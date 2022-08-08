@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductDash from '../../components/ProductDash/ProductDash';
+import ProductDash from './ProductDash';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 
 

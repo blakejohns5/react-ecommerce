@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import FavBtn from '../FavBtn/FavBtn';
+import FavBtn from './FavBtn';
 
 
 const Favorites = ({ favState, favDispatch }) => {
@@ -25,10 +25,10 @@ const Favorites = ({ favState, favDispatch }) => {
             </Link>
             <div className='col-5 wishlist__price'>
               { item.sale ? ( 
-                <div className='col-4'>{item.sale.toFixed(2)} {currency}</div>
+                <div className='col-4 wishlist__sale'>{item.sale.toFixed(2)} {currency}</div>
               ) : ( 
                 <div className='col-4'>{item.price.toFixed(2)} {currency}</div> 
-              )}              
+              )}
               <FavBtn className="col-1" key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} sale={item.sale} favState={favState} favDispatch={favDispatch}  />
             </div>
           </li>

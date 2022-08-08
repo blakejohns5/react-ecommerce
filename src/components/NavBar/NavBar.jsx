@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import LoginDialog from '../LoginDialog/LoginDialog';
 import { useContext } from 'react'
-import AuthContext from '../../context/AuthProvider';
-import Logout from '../Logout/Logout';
 import { BsBookmarkHeart, BsCart3 } from 'react-icons/bs'
-import FavoritesDialog from '../FavoritesDialog/FavoritesDialog';
+import AuthContext from '../../context/AuthProvider';
+import LoginDialog from '../Login/LoginDialog';
+import Logout from '../Logout/Logout';
+import FavoritesDialog from '../Favorites/FavoritesDialog';
+
+
 
 
 function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch }) {
@@ -25,8 +27,6 @@ function NavBar({ searchTerms, setSearchTerms, totalItems, favState, favDispatch
           </button>
           <div className="collapse navbar-collapse position-relative" id="navbarSupportedContent">
             <ul className="navbar-nav navbar__list">
-              
-              
               <li className="nav-item">
                 <Link to='/user' className="nav-link active navbar__link" aria-current="page">Account</Link>
               </li>

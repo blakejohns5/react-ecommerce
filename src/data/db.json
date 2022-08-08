@@ -76,31 +76,25 @@
       "id": 1,
       "username": "admin",
       "email": "admin@admin.com",
-      "password": "12345"
+      "password": "12345",
+      "favorites": null,
+      "active": true
     },
     {
       "id": 2,
       "username": "jason",
       "email": "jason@admin.com",
-      "password": "678910"
+      "password": "678910",
+      "favorites": null,
+      "active": true
     },
     {
       "id": 3,
       "username": "susan",
       "email": "susan@admin.com",
-      "password": "12345"
-    },
-    {
-      "id": 4,
-      "username": "jimmy",
-      "email": "jimmy@admin.com",
-      "password": "123"
-    },
-    {
-      "id": 5,
-      "username": "joe",
-      "email": "joe@joe.com",
-      "password": "123"
+      "password": "12345",
+      "favorites": null,
+      "active": true
     }
   ]
 }

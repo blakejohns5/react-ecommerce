@@ -3,17 +3,31 @@
 
 
 // properties from ProductCard
-.product-card {
+.product-wrapper__outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 0.3rem;
+  max-height: 20.25rem;
   
+  
+}
+
+.product-wrapper__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   :hover {
     border: 0.1rem solid transparent;
     outline: 0.2rem solid $accent-mid;   
-
   }
-  &__content {
+}
+
+
+.product-card {
     @include flexCenter(column);
-    text-align: center;
+    // width: 100%;
     position: relative;
     padding-bottom: 1rem;
     @include product-border;
@@ -32,42 +46,53 @@
     }
 
     footer {
-      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+      height: 100%;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $text-dark;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__text {
+      // width: 100%;  originally set to w-100 in bs
+      @include flexCenter(column);
+      padding: 0 0.2rem;
+    }
+  
+    &__name {
+      // margin: 0.5rem 0.5rem;
+      text-decoration: none;
+      text-align: left;
+      flex-wrap: wrap;
+    }
+  
+    &__price {
+      @include flexCenter(row);
+      
+    }
+  
+    
+    &__sale-tag {
+      margin-right: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: map-get($heading-size, '4');
+    }
+  
+    &__sale {
+      margin-left: 0.5rem;
+    }
+
+    &__reg {
+      padding-top: 0.5rem;
     }
   }
-
-  &__link {
-    text-decoration: none;
-    color: $text-dark; 
-  }
-
-  &__text {
-    // width: 100%;  originally set to w-100 in bs
-    @include flexCenter(row);
-    justify-content: space-between;
-  }
-
-  &__name {
-    margin: 0.5rem 0.5rem;
-    text-decoration: none;
-  }
-
-  &__price {
-    @include flexCenter(row);
-    margin-right: 0.5rem;
-  }
-
-  
-  &__sale-tag {
-    margin-right: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: map-get($heading-size, '4');
-  }
-
-  &__sale {
-    margin-left: 0.5rem;
-  }
-}
 
 // product dash properties from ProductDash
 .product-dash {

@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import CheckoutBtn from "../CheckoutBtn/CheckoutBtn";
-import OrderSummary from "../OrderSummary/OrderSummary";
+import OrderSummary from "../../pages/Checkout/OrderSummary";
 import ShoppingCard from "../ShoppingCard/ShoppingCard";
 import CartContext from "../../context/CartProvider";
 

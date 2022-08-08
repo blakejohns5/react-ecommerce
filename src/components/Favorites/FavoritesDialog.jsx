@@ -1,4 +1,4 @@
-import Favorites from "../Favorites/Favorites";
+import Favorites from "./Favorites";
 
 
 

@@ -15,6 +15,7 @@
 
 
 .user {
+  height: $screen-size;
   @include flexCenter(row);
   align-items: flex-start;
   gap: 4rem;
@@ -55,7 +56,6 @@
 
 
 // from userDetails.jsc component
-
 .user-details {
 
   &__msg {

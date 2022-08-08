@@ -1,4 +1,4 @@
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import ShoppingCart from './ShoppingCart';
 
 function CartDialog({ addToStorage, removeFromStorage, totalItems, totalCost }) {
   

@@ -2,10 +2,6 @@
 @use '../abstracts/mixins' as *;
 
 
-
-
-
-
 .wishlist {
   @include flexCenter(column);
 
@@ -20,6 +16,10 @@
     margin-bottom: 0.2rem; 
     @include flexCenter(row);
     justify-content: flex-start;  // adjust mixin    
+
+    :hover {
+      color: $text-dark;
+    }
   }
 
   &__link {
@@ -32,9 +32,14 @@
   &__price {
     @include flexCenter(row);
     justify-content: flex-end;
-    
+
     div:nth-child(1) {
-      color: $warning;
+      margin-right: 0.5rem;
     }
   }
+
+  &__sale {
+    color: $warning;
+  }
+  
 }

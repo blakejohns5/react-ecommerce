@@ -4,18 +4,13 @@ import { useState, useEffect, useContext, useReducer } from 'react';
 // import './sass/main.scss';
 // Components
 import NavBar from './components/NavBar/NavBar';
-// Pages
-import Home from './pages/Home/Home';
-import Checkout from './pages/Checkout/Checkout';
-import Product from './pages/Product/Product';
-import User from './pages/User/User';
-import NotFound from './pages/NotFound/NotFound';
+import Router from './components/Router/Router';
 // Context
 import CartContext from './context/CartProvider';
 // Reducer
 import favReducer from './helpers/favReducer';
 // Fetch functions
-import { fetchData, PRODUCTS_URL, USERS_URL } from './helpers/apis.js'
+import { fetchData, PRODUCTS_URL } from './helpers/apis.js'
 
 function App () {
   
@@ -77,13 +72,7 @@ function App () {
   return (
       <>
       <NavBar searchTerms={searchTerms} setSearchTerms={setSearchTerms} products={products} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />
-      <Routes>
-        <Route path='/' element={<Home products={products} searchTerms={searchTerms} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} />} exact />
-        <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />}  />
-        <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
-        <Route path='/user/' element={<User favState={favState} favDispatch={favDispatch} />}  />
-        <Route path='*' element={<NotFound />}  />
-      </Routes>
+      <Router products={products} searchTerms={searchTerms} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />
       </>
   )
 }

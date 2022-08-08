@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import Favorites from '../../components/Favorites/Favorites'
 import Registration from '../../components/Registration/Registration'
 import AuthContext from '../../context/AuthProvider'
-import UserDetails from '../../components/UserDetails/UserDetails'
+import UserDetails from './UserDetails'
 
 function User ({ favState, favDispatch }) {
   const { auth } = useContext(AuthContext);

@@ -1,14 +1,8 @@
-// import { useState } from 'react';
-
-// import CheckoutTable from "../../components/CheckoutTable/CheckoutTable";
-// import OrderSummary from "../../components/OrderSummary/OrderSummary";
-// import CartContext from '../../context/CartProvider';
-
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import Order from '../../components/Order/Order';
-import Shipping from '../../components/Shipping/Shipping';
-import Payment from '../../components/Payment/Payment';
-import OrderComplete from '../../components/OrderComplete/OrderComplete';
+import Breadcrumbs from './Breadcrumbs';
+import Order from './Order';
+import Shipping from './Shipping';
+import Payment from './Payment';
+import OrderComplete from './OrderComplete';
 
 function Checkout ({ addToStorage, removeFromStorage, totalItems, totalCost, checkoutStage, setCheckoutStage }) {
 

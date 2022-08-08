@@ -1,4 +1,4 @@
-import ProductCard from "../ProductCard/ProductCard.jsx";
+import ProductCard from "./ProductCard.jsx";
 
 const ProductDash = ({ products, searchTerms, addToStorage, removeFromStorage, totalItems, totalCost, favState, favDispatch }) => {
   const title = 'Top-selling Sneakers';

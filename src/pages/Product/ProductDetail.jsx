@@ -1,5 +1,5 @@
-import AddBtn from "../AddBtn/AddBtn";
-import FavBtn from "../FavBtn/FavBtn";
+import AddBtn from "../../components/AddBtn/AddBtn";
+import FavBtn from "../../components/Favorites/FavBtn";
 
 function ProductDetail (props) {
   const {img, name, price, id, sale, addToStorage, removeFromStorage, favState, favDispatch} = props;

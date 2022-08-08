@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import AuthContext from "../../context/AuthProvider"
-import ChangePwdDialog from "../ChangePwdDialog/ChangePwdDialog";
+import ChangePwdDialog from "../../components/ChangePwdDialog/ChangePwdDialog";
 
 function UserDetails() {
   const { auth } = useContext(AuthContext);

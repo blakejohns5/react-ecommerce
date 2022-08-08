@@ -1,8 +1,7 @@
 
 import { useParams } from 'react-router-dom';
-
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart.jsx';
-import ProductDetail from '../../components/ProductDetail/ProductDetail';
+import ProductDetail from './ProductDetail';
 
 
 function Product({ products, addToStorage, removeFromStorage, totalCost, totalItems, favState, favDispatch }) {

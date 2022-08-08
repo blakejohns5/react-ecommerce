@@ -30,7 +30,9 @@ function Registration() {
       id: lastId + 1,
       username: email.slice(0, email.indexOf('@')),
       email: email,
-      password: pwd
+      password: pwd,
+      favorites: null,
+      active: true
     }
     postUser(USERS_URL, newUser);
   }
