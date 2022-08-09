@@ -20,7 +20,7 @@ function App () {
   const { cart, setCartItems } = useContext(CartContext);
   const [ searchTerms, setSearchTerms ] = useState();
 
-  const [ favState, favDispatch ] = useReducer( favReducer, [] )
+  const [ favState, favDispatch ] = useReducer(favReducer, [])
 
 
 // IIFE to run async function from external js file

@@ -8,15 +8,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0.3rem;
-  max-height: 20.25rem;
-  
-  
 }
 
 .product-wrapper__inner {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  
 
   :hover {
     border: 0.1rem solid transparent;
@@ -27,7 +25,7 @@
 
 .product-card {
     @include flexCenter(column);
-    // width: 100%;
+    
     position: relative;
     padding-bottom: 1rem;
     @include product-border;
