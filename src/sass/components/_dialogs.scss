@@ -4,9 +4,15 @@
 
 
 // delete item from cart dialog
-.delete-dialog__footer {
+.delete-dialog {
+  top: 16rem;
+  margin: 0 auto;
+
+
+  &__footer {
   @include flexCenter(row);
   gap: 1rem;
+  }
 }
 
 

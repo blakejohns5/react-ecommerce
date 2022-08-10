@@ -410,6 +410,10 @@ body {
   border-radius: 50%;
 }
 
+.delete-dialog {
+  top: 16rem;
+  margin: 0 auto;
+}
 .delete-dialog__footer {
   display: flex;
   flex-direction: row;
@@ -503,6 +507,20 @@ body {
 
 .dialog-login {
   margin: 30vh auto;
+}
+
+.signup-msg {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.warning {
+  color: #ff1e53;
+}
+
+.success {
+  color: rgba(36, 167, 137, 0.9);
 }
 
 .home {
@@ -823,17 +841,6 @@ body {
   border: solid 1px white;
   border-radius: 50%;
   padding: 0 0.5rem;
-}
-
-.errmsg {
-  color: #f32c5a;
-  background-color: #ffb9c9;
-}
-
-.opaque-bg {
-  background-color: hsla(0deg, 0%, 100%, 0.8);
-  border-radius: 3rem;
-  padding: 2rem 5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

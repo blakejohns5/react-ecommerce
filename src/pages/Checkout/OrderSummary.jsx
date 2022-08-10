@@ -7,7 +7,7 @@ function OrderSummary(props) {
   if (totalItems === 0) {
     return (
       <>
-      <div className="order-total col-3" >
+      <div>
         <h5>You currently have no items in your cart</h5>
       </div>
       </>

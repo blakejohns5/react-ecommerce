@@ -13,7 +13,7 @@ function DeleteDialog({ product }) {
   return (  
     <>
       <div className="modal fade " id="deleteDialog" tabIndex="-1" aria-labelledby="deleteDialogLabel" aria-hidden="true">
-        <div className="modal-dialog">
+        <div className="modal-dialog delete-dialog">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deleteDialogLabel">You don't like these?</h5>

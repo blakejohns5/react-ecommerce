@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard.jsx";
-import { FAV_ACTIONS } from "../../helpers/favReducer.jsx";
+import { FAV_ACTIONS } from "../../helpers/favReducer.js";
 import { useEffect } from "react";
 
 const ProductDash = ({ products, searchTerms, addToStorage, removeFromStorage, totalItems, totalCost, favState, favDispatch, wishlistInit }) => {

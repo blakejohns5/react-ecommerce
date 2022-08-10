@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
-import { FAV_ACTIONS } from '../../helpers/favReducer';
+import { FAV_ACTIONS } from '../../helpers/favReducer.js';
 
 const Logout = ({ favDispatch}) => {
   const { setAuth } = useContext(AuthContext);

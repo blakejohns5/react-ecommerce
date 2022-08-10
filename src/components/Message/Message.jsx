@@ -3,15 +3,17 @@ import MessageContext from '../../context/MessageProvider';
 
 
 function Message() {
-  const { Message } = useContext(MessageContext);
-console.log(Message)
+  const { message, setMessage, messageType } = useContext(MessageContext);
+
+  setTimeout(() => {
+    setMessage(null);
+  }, 7000);
 
   return (
     <>
-    <div>{Message}</div>
+    <div className={messageType === 'warning' ? `warning` : `success`}>{message}</div>
     </>
-    
   )
 }
 
-export default Message
+export default Message;

@@ -21,12 +21,10 @@ const Login = () => {
     emailRef.current.focus();
   }, [])
 
-
   useEffect(() => {
     setErrMsg('');
   }, [email, pwd])
 
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();   // prevent submission of form

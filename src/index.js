@@ -15,9 +15,9 @@ root.render (
   <Router>
     <AuthProvider>
       <CartProvider>
-        {/* <MessageProvider> */}
+        <MessageProvider>
           <App />
-        {/* </MessageProvider> */}
+        </MessageProvider>
       </CartProvider>
     </AuthProvider>
   </Router>

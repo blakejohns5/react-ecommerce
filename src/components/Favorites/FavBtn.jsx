@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { FaRegHeart, FaHeart } from 'react-icons/fa'
 import AuthContext from '../../context/AuthProvider';
-import { FAV_ACTIONS } from '../../helpers/favReducer';
+import { FAV_ACTIONS } from '../../helpers/favReducer.js';
 import { updateUserWishlist } from '../../helpers/wishlist'
 
 

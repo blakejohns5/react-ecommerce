@@ -9,26 +9,16 @@
 @use './components/dialogs' as *;
 @use './components/favorites' as *;
 @use './components/login' as *;
+@use './components/message' as *;
 @use './components/pages' as *;
 @use './components/product' as *;
 @use './components/shopping-cart' as *;
 @use './components/user' as *;
 
-
 @use './layout/nav.scss' as *;
 
 
 
-.errmsg {
-  color: #f32c5a;
-  background-color: #ffb9c9;
-}
 
-.opaque-bg {
-  background-color: hsla(0, 0%, 100%, 0.8);
-  border-radius:3rem;
-  padding: 2rem 5rem;
-
-}
 
 

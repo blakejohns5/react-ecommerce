@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as *;
+
+
+.signup-msg {
+  margin-top: 2rem;
+  font-size: map-get($heading-size, '5');  
+  font-weight: map-get($font-weights, 'bold');
+}
+
+
+
+
+.warning {
+  color: darken($warning, 20%);
+  
+}
+
+.success {
+  color: darken($accent-mid, 10%);
+}

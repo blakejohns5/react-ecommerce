@@ -7,11 +7,11 @@ import Router from './components/Router/Router';
 // Context
 import CartContext from './context/CartProvider';
 // Helpers
-import favReducer from './helpers/favReducer';
+import favReducer from './helpers/favReducer.js';
 import { fetchData, PRODUCTS_URL } from './helpers/apis'
 import { getUserWishlist } from './helpers/wishlist';
 import AuthContext from './context/AuthProvider';
-import { FAV_ACTIONS} from './helpers/favReducer'
+import { FAV_ACTIONS} from './helpers/favReducer.js'
 
 
 function App () {

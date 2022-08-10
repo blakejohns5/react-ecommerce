@@ -79,7 +79,9 @@
       "password": "012",
       "favorites": [
         1002,
-        1008
+        1008,
+        1001,
+        1003
       ],
       "active": true
     },
@@ -110,5 +112,21 @@
       "favorites": null,
       "active": true
     },
+    {
+      "id": 5,
+      "username": "user",
+      "email": "user@user.com",
+      "password": "123",
+      "favorites": null,
+      "active": true
+    },
+    {
+      "id": 6,
+      "username": "user",
+      "email": "user@user2.com",
+      "password": "123",
+      "favorites": null,
+      "active": true
+    }
   ]
 }
