@@ -76,15 +76,18 @@
       "id": 1,
       "username": "admin",
       "email": "admin@admin.com",
-      "password": "12345",
-      "favorites": [],
+      "password": "012",
+      "favorites": [
+        1002,
+        1008
+      ],
       "active": true
     },
     {
       "id": 2,
       "username": "jason",
       "email": "jason@admin.com",
-      "password": "678910",
+      "password": "123",
       "favorites": [],
       "active": true
     },
@@ -92,8 +95,43 @@
       "id": 3,
       "username": "susan",
       "email": "susan@admin.com",
-      "password": "12345",
-      "favorites": [],
+      "password": "234",
+      "favorites": [
+        1006,
+        1009
+      ],
+      "active": true
+    },
+    {
+      "id": 4,
+      "username": "user",
+      "email": "user@admin.com",
+      "password": "345",
+      "favorites": null,
+      "active": true
+    },
+    {
+      "id": 5,
+      "username": "susan",
+      "email": "susan@admin.com",
+      "password": "234",
+      "favorites": null,
+      "active": true
+    },
+    {
+      "id": 6,
+      "username": "susan",
+      "email": "susan@admin.com",
+      "password": "234",
+      "favorites": null,
+      "active": true
+    },
+    {
+      "id": 7,
+      "username": "susan",
+      "email": "susan@admin.com",
+      "password": "234",
+      "favorites": null,
       "active": true
     }
   ]

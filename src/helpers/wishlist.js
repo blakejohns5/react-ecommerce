@@ -1,28 +1,24 @@
 import { fetchData, USERS_URL, putUser } from "./apis";
 
 
-
-export const updateUserWishlist = async (authEmail, clickedProduct, action) => {
+export const updateUserWishlist = async (authEmail, productId, action) => {
   const users = await fetchData(USERS_URL)
   const user = users.find((user) => user.email === authEmail);
-  console.log(users, user);
-  let userFavs;
   
+  let userFavs;
+    
   if (!user) {
     return;
-  }
-  
-  if (user) {
-    userFavs = user.favorites
   } else {
-    userFavs = [];
+    userFavs = user.favorites
+    console.log(userFavs)
   }
 
-  if (action === 'add') {
-    userFavs.push(clickedProduct.id)
-   } else {
-    userFavs.filter((product) => product.id === clickedProduct.id);
-   }
+  if (userFavs.includes(productId)) {
+    userFavs = userFavs.filter((id) => id !== productId);
+  } else {
+    userFavs.push(productId);    
+  }
 
   const changedUser = {
     id: user.id,
@@ -34,5 +30,26 @@ export const updateUserWishlist = async (authEmail, clickedProduct, action) => {
   }
   
   putUser(`${USERS_URL}/${user.id}`, changedUser)
+}
+
+
+export const getUserWishlist = async (authEmail, products) => {   
+  const users = await fetchData(USERS_URL)
+  const user = users.find((user) => user.email === authEmail);
+ 
+  if (!user) {
+    return
+  } 
+
+  const userFavs = user.favorites;
+  if (userFavs.length === 0) {
+    return;
+  }
+
+  const favsArray = userFavs.map(storedId => {
+    return products.find(product => product.id === storedId)
+  })
+
+  return favsArray;
 }
 

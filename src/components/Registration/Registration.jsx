@@ -1,14 +1,15 @@
 
 import { useContext, useState } from 'react';
 import AuthContext from '../../context/AuthProvider';
+import MessageContext from '../../context/MessageProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { fetchData, postUser, USERS_URL } from '../../helpers/apis';
+import Message from '../Message/Message';
 
 function Registration() {
   const { auth } = useContext(AuthContext);
+  const { setMessage } = useContext(MessageContext);
   const [pwdVisible, setPwdVisible] = useState(false);
-  
-
   const [ email, setEmail ] = useState('');
   const [ pwd, setPwd ] = useState('');
   
@@ -21,7 +22,8 @@ function Registration() {
     const users = await fetchData(USERS_URL);    
     const userExists = users.find(user => user.email === email);
     if (userExists) {
-      return;
+      setMessage('Sorry, but this user already exists.')
+console.log(Message)
     }
     const lastId = users.reduce((previous, current) => {
       return Math.max(previous.id, current.id)
@@ -68,6 +70,9 @@ function Registration() {
           ) : (
             <button type="submit" form="signupForm" className="col-6 btn-cart">Sign Up</button>
           )}
+          <section className="msg__fail">
+            <Message />
+          </section>
           </footer>
         </form>
         <article>

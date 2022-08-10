@@ -1,10 +1,15 @@
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
+import { FAV_ACTIONS } from '../../helpers/favReducer';
 
-const Logout = () => {
+const Logout = ({ favDispatch}) => {
   const { setAuth } = useContext(AuthContext);
   const logoutUser = () => {
     setAuth({});
+    favDispatch({
+      type: FAV_ACTIONS.RESET
+      // no payload, reset only
+    })
   }
 
   return (

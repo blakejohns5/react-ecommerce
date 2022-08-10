@@ -7,7 +7,7 @@ import FavBtn from "../../components/Favorites/FavBtn";
 function ProductCard(props) {
   const price = props.price;
   const currency = '€';
-  const {id, img, name, sale, favState, favDispatch} = props;
+  const {id, img, name, sale, favState, favDispatch, wishlistInit} = props;
 
   return (
     <>
@@ -15,7 +15,7 @@ function ProductCard(props) {
         <div className='product-wrapper__inner'>
           <div className="product-card col-lg-12">
             <div className="product__fav-btn">
-              <FavBtn id={id} img={img} name={name} price={price} sale={sale} favState={favState} favDispatch={favDispatch}  />
+              <FavBtn id={id} img={img} name={name} price={price} sale={sale} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />
             </div>
             <Link to={`/product/${id}`} className="product-card__link">
               <img src={img} alt="shoes_01" className="img-fluid" />

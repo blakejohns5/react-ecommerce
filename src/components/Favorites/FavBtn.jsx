@@ -5,27 +5,26 @@ import { FAV_ACTIONS } from '../../helpers/favReducer';
 import { updateUserWishlist } from '../../helpers/wishlist'
 
 
-
 const FavBtn = (props) => {
-  const {id, img, name, price, sale, favState, favDispatch} = props; 
+  const {id, img, name, price, sale, favState, favDispatch, wishlistInit} = props; 
   const clickedProduct =  {id: id, img: img, name: name, price: price, sale: sale } 
-  const isInFavs = favState.find(item => item.id === clickedProduct.id);   
   const { auth } = useContext(AuthContext);
-  
+
   // gives toggle to visual affect with icons for fav
-  const [ favorite, setFavorite ] = useState(isInFavs);     
+  const isInFavs = favState.find(item => item.id === clickedProduct.id);   
+  const [ favorite, setFavorite ] = useState(isInFavs);    
 
   const manageReducer = () => {
     // if (favorite === false) {
     // using this version makes click much faster, more effective
     if (!favorite) {    
-      updateUserWishlist(auth.email, clickedProduct, 'add')
+      updateUserWishlist(auth.email, clickedProduct.id)
       favDispatch({ 
         type: FAV_ACTIONS.ADD, 
         payload: clickedProduct
       }) 
     } else {      
-      updateUserWishlist(auth.email, clickedProduct, 'remove')
+      updateUserWishlist(auth.email, clickedProduct.id)
       favDispatch({ 
         type: FAV_ACTIONS.REMOVE, 
         payload: clickedProduct
@@ -38,10 +37,8 @@ const FavBtn = (props) => {
     manageReducer();
   }
  
-  return (
-    
+  return (    
       <button type="button" onClick={handleClick} className="btn-fav">{ isInFavs ? <FaHeart className='faved' /> : <FaRegHeart /> }</button>
-    
   )
 }
 
