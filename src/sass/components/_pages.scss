@@ -3,7 +3,62 @@
 
 .home {
   display: flex;
+  flex-direction: column;
+  // gap: 3rem;
   height: 80vh;
+
+
+}
+
+.home-header {
+  position: relative;
+  text-align: center;
+  color: $text-dark;
+  height: 25rem;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  @include flexCenter(row);
+  
+
+  &__img01 {
+    height: 100%;
+    background-image: url('../../../public/img/home_04.jpg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $primary;
+    background-position: bottom;
+    // background-blend-mode: color-burn; 
+  }
+
+  &__img03 {
+    height: 100%;
+    background-image: url('../../../public/img/home_01.jpg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $primary;
+    background-position: bottom;
+    // background-blend-mode: color-burn;    
+  }
+
+  &__img02 {
+    height: 100%;
+    background-image: url('../../../public/img/home_02.jpg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $primary;
+    background-position: bottom;
+    background-blend-mode: darken;
+    
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 20%;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+  }
 }
 
 .not-found {
@@ -13,9 +68,7 @@
   div {
     font-size: map-get($heading-size, '1');
     margin: 5rem 0 3rem 0;
-    
   }
-
 }
 
 .product-page {

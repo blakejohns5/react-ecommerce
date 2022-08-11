@@ -27,17 +27,20 @@ function ShoppingCard(props) {
         <div className="shopping-card">
           <img src={img} className="col-4 shopping-card__img" alt="pair of shoes" />
           <div className="col-8 shopping-card__right">
-            <div>{name}</div>
-            <div className='shopping-card__details'>
+            <div className='col-8'>{name}</div>
+            <div className='shopping-card__details col-4'>
               { sale ? ( 
-                <div className='shopping-card__sale col-5'>{sale.toFixed(2)} {currency}</div>
+                <div className='shopping-card__price-sale col-12'>{sale.toFixed(2)}{currency}</div>
               ) : ( 
-                <div className='col-5'>{price.toFixed(2)} {currency}</div> 
+                <div className='shopping-card__price'>{price.toFixed(2)}{currency}</div> 
               )}            
-              <div className="col-5 shopping-card__counter">
+              {/* <div className="col-5 shopping-card__counter">
                 <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
               </div>
+              <div>
               <DeleteBtn key={id} product={product}/>
+              </div> */}
+                
             </div>
           </div>
         </div>

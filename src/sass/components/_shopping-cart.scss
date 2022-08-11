@@ -10,40 +10,32 @@
   align-items: center;
   background-color: $primary;
   border-radius: 0.25rem;
-  padding-right: 1rem;
-
+  
   .shopping-card {
-    height: 4.5rem;
-    margin: 1rem 0;
+    width: 100%;
+    height: 4.5rem;  
     display: flex;
     align-items: center;
+    margin-bottom: 0.25rem;
 
     &__img {
       height: 5rem;
       border-top-left-radius: 0.25rem; 
       border-bottom-left-radius: 0.25rem;
+      margin-right: 0.5rem;
     }
     &__right {
-      padding: 0 0.5rem;
       display: flex;
-      flex-direction: column
+      justify-content: space-between;
     }
 
     &__details {
-      margin-top: -.5rem;
       display: flex;  
-      align-items: center;
+      
     }
 
-    &__sale {
+    &__price-sale {
       color: $warning;
-    }
-
-    &__counter {
-      margin: 0 0.2rem;
-      justify-self: flex-end;
-      margin-bottom: 0.4rem;
-
     }
 
   }
@@ -54,24 +46,23 @@
 
 // shopping cart component
 .shopping-cart {
-  margin-left: 1rem;
   
   h1 {
-    @include title-text;
-    margin-bottom: 3.15rem;
+    font-weight: map-get($font-weights, 'bold');
+    font-size: map-get($heading-size, '4');
+    margin-bottom: 2rem;
   }
+
   &__summary {
     margin-top: 2rem;
   }
+
   footer {
-    padding-bottom: 3rem;
+    padding-top: 0.5rem;
   }
 }
 
 
 
-.product__cart {
-  margin-left: 3rem;
-}
 
 

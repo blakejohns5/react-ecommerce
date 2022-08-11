@@ -3,10 +3,12 @@
 @use '../abstracts/functions' as *;
 
 .navbar {
+  width: 100%;
   background: nav-gradient(ttl);  
-  padding: 0.75rem 0.5rem;
+  padding: 0 0.5rem;
   position: sticky;
   top: 0;
+  z-index: 1;
   
   &__link {
     color: $text-dark;

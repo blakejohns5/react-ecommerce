@@ -7,9 +7,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&family=Oxygen&display=swap');
 
 main {
-  margin: 2% 10%;
+  margin: auto;
 }
-
 
 body { 
   color: $text-dark;
@@ -17,7 +16,7 @@ body {
   background-image: url('../../../public/img/bg1.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: hsla(0, 0%, 100%, 0.8);
+  background-color: $primary;
   background-position: top right;
   background-blend-mode: color-burn;
 }

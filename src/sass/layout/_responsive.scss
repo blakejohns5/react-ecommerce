@@ -1,0 +1,19 @@
+
+
+
+
+$breakpoint-mobile: 540px;
+$breakpont-table: 720px;
+
+
+@media (max-width: $breakpoint-mobile) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .main {
+    margin: 2% 5%;
+  }
+}

@@ -25,5 +25,5 @@
   } @else if $direction == tb {
       $dir: to bottom;
   }
-  @return linear-gradient($dir, $accent-dark, $accent-mid 15%, $accent-light 85%);
+  @return linear-gradient($dir, $accent-mid 15%, $accent-light 65%);
 }

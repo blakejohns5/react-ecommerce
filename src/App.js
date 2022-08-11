@@ -55,6 +55,7 @@ function App () {
         setCartItems([...cart, {...product, qty: 1}]);
     }
     localStorage.setItem('cart',JSON.stringify(cart));
+    console.log('adding')
   }
   
   const removeFromStorage = (product) => {
@@ -65,6 +66,7 @@ function App () {
     } else {
       setCartItems(cart.map((item) => item.id === product.id ? {...isInCart, qty: isInCart.qty - 1 } : item));
     };
+    console.log('removing')
   };
 
   const setCartQty = (cart) => {

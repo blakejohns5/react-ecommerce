@@ -4,7 +4,7 @@ function CheckoutBtn() {
   
   return (
     <>
-     <Link to='/checkout' ><button className="btn-checkout">Checkout</button></Link>
+     <Link to='/checkout' ><button className="btn-checkout" data-bs-dismiss="modal">Checkout</button></Link>
     </>    
   )
 }

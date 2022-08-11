@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductDash from './ProductDash';
-import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
+import Header from './Header';
+// import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 
 
 function Home(props) {
@@ -10,8 +11,9 @@ function Home(props) {
   return (    
     <>
       <main className='home'>
-      <ProductDash products={products} searchTerms={searchTerms} setSearchTerms={setSearchTerms} addToStorage={addToStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />
-      <ShoppingCart addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />
+        <Header />
+        <ProductDash products={products} searchTerms={searchTerms} setSearchTerms={setSearchTerms} addToStorage={addToStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />
+        {/* <ShoppingCart addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} /> */}
       </main>
     </>
   )

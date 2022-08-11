@@ -11,7 +11,7 @@ function ProductCard(props) {
 
   return (
     <>
-      <div className="product-wrapper__outer col-lg-4 col-md-12 col-sm-12">  
+      <div className="product-wrapper__outer col-lg-4 col-md-6 col-sm-12">  
         <div className='product-wrapper__inner'>
           <div className="product-card col-lg-12">
             <div className="product__fav-btn">

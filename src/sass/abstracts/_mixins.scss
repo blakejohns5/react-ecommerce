@@ -1,4 +1,15 @@
 @use './variables' as *;
+
+@mixin bg-primary {
+  background-image: url('../../../public/img/bg1.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $primary;
+  background-position: top right;
+  background-blend-mode: color-burn;
+}
+
+
 // to use, use @include flexCenter
 // mixins for defining styles
 @mixin flexCenter($direction) {
@@ -18,8 +29,8 @@
 }
 
 @mixin product-border ($border-width: 0.1rem) {
-  border: $border-width solid;
-  border-image: linear-gradient(to bottom, $trim-mid 20%, $accent-mid) 1 20%;
+  border: $border-width solid $trim-mid;
+  // border-image: linear-gradient(to bottom, $trim-mid 20%, $accent-mid) 1 20%;
 }
 
 @mixin checkout-heading() {

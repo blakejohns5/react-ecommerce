@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0.3rem;
+  padding: 1rem;  // gap between cards
 }
 
 .product-wrapper__inner {
@@ -94,17 +94,20 @@
 
 // product dash properties from ProductDash
 .product-dash {
-    
+  @include bg-primary;
+  padding: 3% 6%;
+  margin: 0 auto;
+  
   &__title {
     @include title-text;
   }
 
   &__items {
-    padding: 1.2rem;
+    // padding: 1.2rem;
     display: flex;
     flex-wrap: wrap;
     height: 80%;
-    overflow-y: scroll;
+    // overflow-x: scroll;
   
     &::-webkit-scrollbar {
     width: 0.35rem
@@ -133,7 +136,6 @@
   &__frame {
     position: relative;
     margin-right: 3rem;
-    padding: 1rem 0;
     @include flexCenter(column);
     background-color: $primary;
     @include product-border;
