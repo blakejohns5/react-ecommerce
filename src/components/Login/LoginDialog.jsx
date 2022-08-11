@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import AuthContext from '../../context/AuthProvider';
 
 function LoginDialog() {
-  const { auth } = useContext(AuthContext);
+  const { loggedIn, user } = useContext(AuthContext);
 
 
   return (
@@ -13,7 +13,7 @@ function LoginDialog() {
     <div className="modal-dialog dialog-login">
       <div className="modal-content ">
         <div className="modal-header">
-          {Object.keys(auth).length === 0 &&
+          {user &&
          <>
          <h5 className="modal-title" id="loginDialogLabel">Already a customer?</h5>
          </>

@@ -30,9 +30,9 @@
     },
     {
       "id": 1005,
-      "name": "New Balance X-90",
-      "price": 99,
-      "img": "/img/img_05.jpg",
+      "name": "Puma X-Ray Colourblock Low",
+      "price": 65,
+      "img": "/img/img_17.jpg",
       "sale": null
     },
     {
@@ -69,7 +69,49 @@
       "price": 86,
       "img": "/img/img_10.jpg",
       "sale": null
-    }
+    },
+    {
+      "id": 1011,
+      "name": "New Balance 574",
+      "price": 116.99,
+      "img": "/img/img_14.jpg",
+      "sale": 110
+    },
+    {
+      "id": 1012,
+      "name": "Reebok Zig Dynamica",
+      "price": 122.00,
+      "img": "/img/img_15.jpg",
+      "sale": null
+    },
+    {
+      "id": 1013,
+      "name": "Nike Air Jordan 5 Retro Sail",
+      "price": 275,
+      "img": "/img/img_10.jpg",
+      "sale": null
+    },
+    {
+      "id": 1014,
+      "name": "New Balance 327",
+      "price": 129,
+      "img": "/img/img_16.jpg",
+      "sale": 120
+    }, 
+    {
+      "id": 1015,
+      "name": "Adidas Superstar Vegan",
+      "price": 101,
+      "img": "/img/img_11.jpg",
+      "sale": 89
+    }, 
+    {
+      "id": 1016,
+      "name": "Reebok Club C Revenge",
+      "price": 85,
+      "img": "/img/img_05.jpg",
+      "sale": null
+    }   
   ],
   "users": [
     {

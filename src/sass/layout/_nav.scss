@@ -2,17 +2,26 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/functions' as *;
 
+.cursive {
+  font-family: 'Pacifico', cursive;
+  font-size: map-get($heading-size, '4');
+  letter-spacing: 0.05rem;
+  transform: rotate(-10deg);
+
+}
 .navbar {
   width: 100%;
   background: nav-gradient(ttl);  
   padding: 0 0.5rem;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 500;
   
   &__link {
     color: $text-dark;
   }
+
+  
 
   &__list {
     margin-right: auto;

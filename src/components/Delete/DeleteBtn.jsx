@@ -1,5 +1,5 @@
 import React from 'react'
-import DeleteDialog from '../DeleteDialog/DeleteDialog'
+import DeleteDialog from './DeleteDialog'
 
 function DeleteBtn ({ id, product }) {
 

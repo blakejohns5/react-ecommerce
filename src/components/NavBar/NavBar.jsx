@@ -10,20 +10,20 @@ import FavoritesDialog from '../Favorites/FavoritesDialog';
 
 
 function NavBar({ setSearchTerms, totalItems, favState, favDispatch }) {
-  const { auth } = useContext(AuthContext);
-  
+  const { user } = useContext(AuthContext);
+  // const { username } = user;
+
   const searchHandler = (e) => {
     let str = e.target.value.toLowerCase();
     setSearchTerms(str);  
   }
 
   
-  
   return (
     <>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link to='/' className="navbar-brand navbar__link"><strong>Spring Catalog</strong></Link>
+          <Link to='/' className="navbar-brand navbar__link cursive"><strong>Sneaker Soul</strong></Link>
           <button className="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -36,9 +36,9 @@ function NavBar({ setSearchTerms, totalItems, favState, favDispatch }) {
                 <Link to='/checkout' className="nav-link navbar__link">Shopping Cart</Link>
               </li>
             </ul>
-            {Object.keys(auth).length > 0 ? (
+            {user ? (
               <>
-              <div className='nav-item navbar__welcome'>Welcome, {auth.username[0].toUpperCase() + auth.username.substring(1)}!</div>
+              <div className='nav-item navbar__welcome'>Welcome, {user.username}!</div>
               <Logout favDispatch={favDispatch} />
               </>
             ) : (

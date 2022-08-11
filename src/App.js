@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useReducer } from 'react';
+import { useState, useRef, useEffect, useContext, useReducer } from 'react';
 // Styles
 // import './sass/main.scss';
 // Components
@@ -11,8 +11,6 @@ import favReducer from './helpers/favReducer.js';
 import { fetchData, PRODUCTS_URL } from './helpers/apis'
 import { getUserWishlist } from './helpers/wishlist';
 import AuthContext from './context/AuthProvider';
-import { FAV_ACTIONS} from './helpers/favReducer.js'
-
 
 function App () {
   
@@ -22,7 +20,10 @@ function App () {
   const [ checkoutStage, setCheckoutStage ] = useState('order');
   const { cart, setCartItems } = useContext(CartContext);
   const [ searchTerms, setSearchTerms ] = useState();
-  const { auth } = useContext(AuthContext)
+  const { loggedIn, user } = useContext(AuthContext)
+  
+  
+  
     
   const [ wishlistInit, setWishlistInit ] = useState([]);
 // IIFE to run async function from external js file
@@ -32,11 +33,11 @@ function App () {
     })()
   }, [])
 
-  useEffect( () => {
-    (async () => {      
-      setWishlistInit(await getUserWishlist(auth.email, products))    
-    })()
-  }, [auth.email, products])
+  // useEffect( () => {
+  //   (async () => {      
+  //     user.email  && setWishlistInit(await getUserWishlist(user.email, products))    
+  //   })()
+  // }, [user.email, products])
 
   useEffect(() => {
     setCartQty(cart);

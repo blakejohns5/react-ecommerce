@@ -5,7 +5,7 @@ import React from 'react'
 
 function Header() {
 
-  const title = 'Top-selling Sneakers';
+  const title = '- Fall Catalog -';
 
   return (
     <>

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* import fonts for testing */
 @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 main {
   margin: auto;
 }
@@ -643,6 +644,7 @@ body {
 }
 .product-card img {
   margin-bottom: 0.25rem;
+  border-bottom: solid #979797 0.05rem;
 }
 .product-card footer {
   display: flex;
@@ -848,13 +850,20 @@ body {
   padding: 4rem 0 0 2rem;
 }
 
+.cursive {
+  font-family: "Pacifico", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  transform: rotate(-10deg);
+}
+
 .navbar {
   width: 100%;
   background: linear-gradient(to top left, rgb(45, 209, 171) 15%, rgb(124, 255, 224) 65%);
   padding: 0 0.5rem;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 500;
 }
 .navbar__link {
   color: #444040;
