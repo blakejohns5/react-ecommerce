@@ -1,6 +1,4 @@
 import { useContext } from 'react';
-import Counter from '../Counter/Counter';
-import DeleteBtn from '../DeleteBtn/DeleteBtn';
 import CartContext from '../../context/CartProvider';
 
 function ShoppingCard(props) {

@@ -14,7 +14,7 @@
   position: relative;
   text-align: center;
   color: $text-dark;
-  height: 25rem;
+  height: 24rem;
   width: 100%;
   margin: 0%;
   padding: 0%;
@@ -23,7 +23,7 @@
 
   &__img01 {
     height: 100%;
-    background-image: url('../../../public/img/home_04.jpg');    
+    background-image: url('../../../public/img/home_09.jpg');    
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $primary;
@@ -31,9 +31,9 @@
     // background-blend-mode: color-burn; 
   }
 
-  &__img03 {
+  &__img02 {
     height: 100%;
-    background-image: url('../../../public/img/home_01.jpg');    
+    background-image: url('../../../public/img/home_08.jpg');    
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $primary;
@@ -41,9 +41,9 @@
     // background-blend-mode: color-burn;    
   }
 
-  &__img02 {
+  &__img03 {
     height: 100%;
-    background-image: url('../../../public/img/home_02.jpg');    
+    background-image: url('../../../public/img/home_07.jpg');    
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $primary;
@@ -54,7 +54,7 @@
 
   h1 {
     position: absolute;
-    bottom: 20%;
+    bottom: 1rem;
     color: white;
     font-size: 3rem;
     font-weight: bold;
