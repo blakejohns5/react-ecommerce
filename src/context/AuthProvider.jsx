@@ -22,8 +22,8 @@ export const AuthProvider = ({ children }) => {
       }
     }
     dispatch(action);
-    // localStorage.setItem('user', userObj);
-    // localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('user', userObj);
+    localStorage.setItem('loggedIn', 'true');
   }
 
   return (   

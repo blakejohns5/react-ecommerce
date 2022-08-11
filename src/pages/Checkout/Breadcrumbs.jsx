@@ -21,8 +21,6 @@ function Breadcrumbs({ checkoutStage }) {
       style = { width: "0%" };
     
   }    
-  
-console.log(style)
 
   return (
     <>

@@ -7,7 +7,7 @@ import { fetchData, postUser, USERS_URL } from '../../helpers/apis';
 import Message from '../Message/Message';
 
 function Registration() {
-  const { auth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { setMessage, setMessageType } = useContext(MessageContext);
   const [ pwdVisible, setPwdVisible ] = useState(false);
   const [ email, setEmail ] = useState('');
@@ -56,8 +56,8 @@ function Registration() {
     <>
       <section>
         <div className='registration'>
-        { Object.keys(auth).length > 0 ? (
-            <h1>{auth.email} is logged in.</h1>
+        { user ? (
+            <h1>{user.user.email} is logged in.</h1>
           ) : (
             <>
             <h4>You are not logged in.</h4>
@@ -77,7 +77,7 @@ function Registration() {
             <button type="button" onClick={togglePwd} form="signupForm" className="btn-pw col-1">{pwdVisible ? <FaEyeSlash /> : <FaEye />}</button>
           </div>
           <footer>
-          { Object.keys(auth).length > 0 ? (
+          { user ? (
             <button type="submit" form="passwordChangeForm" className="col-6 btn-cart" >Change password</button>
           ) : (
             <button type="submit" form="signupForm" className="col-6 btn-cart">Sign Up</button>

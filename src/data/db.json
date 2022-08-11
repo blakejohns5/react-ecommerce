@@ -80,7 +80,7 @@
     {
       "id": 1012,
       "name": "Reebok Zig Dynamica",
-      "price": 122.00,
+      "price": 122,
       "img": "/img/img_15.jpg",
       "sale": null
     },
@@ -97,76 +97,46 @@
       "price": 129,
       "img": "/img/img_16.jpg",
       "sale": 120
-    }, 
+    },
     {
       "id": 1015,
       "name": "Adidas Superstar Vegan",
       "price": 101,
       "img": "/img/img_11.jpg",
       "sale": 89
-    }, 
+    },
     {
       "id": 1016,
       "name": "Reebok Club C Revenge",
       "price": 85,
       "img": "/img/img_05.jpg",
       "sale": null
-    }   
+    }
   ],
   "users": [
     {
       "id": 1,
       "username": "admin",
       "email": "admin@admin.com",
-      "password": "012",
+      "password": "123",
       "favorites": [
-        1002,
-        1008,
-        1001,
-        1003
+        1011
       ],
       "active": true
     },
     {
       "id": 2,
-      "username": "jason",
-      "email": "jason@admin.com",
+      "username": "susan",
+      "email": "susan@admin.com",
       "password": "123",
       "favorites": [],
       "active": true
     },
     {
       "id": 3,
-      "username": "susan",
-      "email": "susan@admin.com",
-      "password": "234",
-      "favorites": [
-        1006,
-        1009
-      ],
-      "active": true
-    },
-    {
-      "id": 4,
-      "username": "user",
-      "email": "user@admin.com",
-      "password": "345",
-      "favorites": null,
-      "active": true
-    },
-    {
-      "id": 5,
-      "username": "user",
-      "email": "user@user.com",
-      "password": "123",
-      "favorites": null,
-      "active": true
-    },
-    {
-      "id": 6,
-      "username": "user",
-      "email": "user@user2.com",
-      "password": "123",
+      "username": "jason",
+      "email": "jason@json.json",
+      "password": "json",
       "favorites": null,
       "active": true
     }

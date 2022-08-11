@@ -22,11 +22,8 @@ function ChangePwdDialog() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    console.log('hello world')
     const users = await fetchData(USERS_URL)
     const user = users.find((user) => user.email === auth.email);
-    console.log(users, user)
     const changedUser = {
       id: user.id,
       username: user.username,

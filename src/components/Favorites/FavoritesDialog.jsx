@@ -1,8 +1,6 @@
 import Favorites from "./Favorites";
 
 
-
-
 const FavoritesDialog = ({ favState, favDispatch }) => {
 
   return (

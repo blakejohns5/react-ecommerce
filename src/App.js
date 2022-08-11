@@ -33,11 +33,11 @@ function App () {
     })()
   }, [])
 
-  // useEffect( () => {
-  //   (async () => {      
-  //     user.email  && setWishlistInit(await getUserWishlist(user.email, products))    
-  //   })()
-  // }, [user.email, products])
+  useEffect( () => {
+    (async () => {      
+      user  && setWishlistInit(await getUserWishlist(user.user.email, products))    
+    })()
+  }, [])
 
   useEffect(() => {
     setCartQty(cart);
@@ -56,7 +56,6 @@ function App () {
         setCartItems([...cart, {...product, qty: 1}]);
     }
     localStorage.setItem('cart',JSON.stringify(cart));
-    console.log('adding')
   }
   
   const removeFromStorage = (product) => {
@@ -67,7 +66,6 @@ function App () {
     } else {
       setCartItems(cart.map((item) => item.id === product.id ? {...isInCart, qty: isInCart.qty - 1 } : item));
     };
-    console.log('removing')
   };
 
   const setCartQty = (cart) => {

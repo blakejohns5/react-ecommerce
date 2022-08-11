@@ -8,10 +8,10 @@ import AuthContext from "../../context/AuthProvider";
 
 const Order = ({ addToStorage, removeFromStorage, totalCost, totalItems, setCheckoutStage }) => {
   const { cart } = useContext(CartContext);
-  const { auth } = useContext(AuthContext);
+  const { loggedIn, user } = useContext(AuthContext);
   
   
-  if (cart.length === 0) {
+  if (user) {
     return (
       <>             
         <main className='order-empty'>
@@ -40,7 +40,7 @@ const Order = ({ addToStorage, removeFromStorage, totalCost, totalItems, setChec
         </section>
         <section className='order-summary__footer'>
         
-        {Object.keys(auth).length > 0 ? (          
+        {user ? (          
 
           <button type="button" className='btn-checkout' onClick={() => setCheckoutStage('shipping')}>Continue Checkout</button>
         ) : (

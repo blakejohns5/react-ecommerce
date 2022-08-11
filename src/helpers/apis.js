@@ -30,7 +30,6 @@ export const postUser = async (url, userObj) => {
   try {
     const res = await fetch(url, options);
     const data = await res.json();
-    console.log(data)
     return data;
   }
   catch (error) {
@@ -52,7 +51,6 @@ export const putUser = async (url, newData) => {
   try {
     const res = await fetch(url, options);
     const data = await res.json();
-    console.log(data)
     return data;
   }
   catch (error) {

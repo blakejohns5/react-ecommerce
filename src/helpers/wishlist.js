@@ -11,7 +11,6 @@ export const updateUserWishlist = async (authEmail, productId, action) => {
     return;
   } else {
     userFavs = user.favorites
-    console.log(userFavs)
   }
 
   if (userFavs.includes(productId)) {

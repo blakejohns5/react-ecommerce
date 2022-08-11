@@ -38,7 +38,7 @@ function NavBar({ setSearchTerms, totalItems, favState, favDispatch }) {
             </ul>
             {user ? (
               <>
-              <div className='nav-item navbar__welcome'>Welcome, {user.username}!</div>
+              <div className='nav-item navbar__welcome'>Welcome, {user.user.username[0].toUpperCase() + user.user.username.substring(1)}!</div>
               <Logout favDispatch={favDispatch} />
               </>
             ) : (

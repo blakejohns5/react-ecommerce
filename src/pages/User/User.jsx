@@ -5,15 +5,15 @@ import AuthContext from '../../context/AuthProvider'
 import UserDetails from './UserDetails'
 
 function User ({ favState, favDispatch }) {
-  const { auth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <>
     <main className='user__main col-10'>
-      { Object.keys(auth).length > 0 ? (
+      { user > 0 ? (
         <>
         <h1>My Account:</h1>
-        <h3> - logged in as {auth.email} - </h3>
+        <h3> - logged in as {user.user.email} - </h3>
         </>
       ) : (
         <h1>Just visiting? Or would you like to create an account?</h1>
@@ -26,7 +26,7 @@ function User ({ favState, favDispatch }) {
         </article>
         <article className='user__details col-5'>
           <h2>User Details</h2>
-          { Object.keys(auth).length > 0 ? (
+          { user ? (
             <UserDetails />
           ) : (
             <Registration />
