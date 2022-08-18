@@ -83,7 +83,8 @@
   &__content {
     @include flexCenter(row);
     background: $primary;
-    box-shadow: 0.1rem 0.1rem 0.1rem 0 $accent-mid;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem lighten($text-dark, 50%);
+    padding: 2rem 3rem;
   }
 
   &__footer {
@@ -104,6 +105,10 @@
   flex-direction: column;
   align-items: flex-start;
   // margin: 0 0 0 5rem;
+
+  div {
+    display: flex;
+  }
 
   h5 {
     font-weight: map-get($font-weights, 'bold');

@@ -242,7 +242,8 @@ body {
   justify-content: center;
   align-items: center;
   background: hsla(0deg, 0%, 100%, 0.9);
-  box-shadow: 0.1rem 0.1rem 0.1rem 0 rgb(45, 209, 171);
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #c3c0c0;
+  padding: 2rem 3rem;
 }
 .order-summary__footer {
   margin-top: 2rem;
@@ -261,6 +262,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.order-total div {
+  display: flex;
 }
 .order-total h5 {
   font-weight: 700;

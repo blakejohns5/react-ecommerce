@@ -9,8 +9,8 @@ function OrderSummary(props) {
     return (
       <>
         <section className="order-total col-12" >
-          <h5>Order Summary:</h5>
-          <div>
+          <h5>Order Total:</h5>
+          <div className='col-12'>
             <article className='col-7'>
               <p>Total items:</p>
               <p>Total:</p>
@@ -22,9 +22,7 @@ function OrderSummary(props) {
           </div>
         </section>
       </>
-    )
-  // }
-  
+    )  
 }
 
 
