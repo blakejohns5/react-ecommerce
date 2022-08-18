@@ -1,17 +1,14 @@
-import React from 'react'
-import DeleteDialog from './DeleteDialog'
+import DeleteDialog from "./DeleteDialog";
 
-function DeleteBtn ({ id, product }) {
 
+function DeleteBtn ({ product }) {
 
   return (
-    <>
-      <div>      
-        <button className="btn__delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteDialog">X</button>
-      </div>
-      {/* Delete modal */}
-      <DeleteDialog key={id} product={product} />
+    <>      
+        <button className="btn__delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteDialog" >X</button>
+        <DeleteDialog product={product} />
     </>
+    
   )
 
 

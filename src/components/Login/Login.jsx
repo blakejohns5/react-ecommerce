@@ -6,7 +6,7 @@ import { checkLogin } from '../../helpers/loginCheck';
 
 const Login = () => {
 
-  const { login, loggedIn, username } = useContext(AuthContext);
+  const { login, loggedIn } = useContext(AuthContext);
   const emailRef = useRef();
   const errRef = useRef();
   const [email, setEmail] = useState('');

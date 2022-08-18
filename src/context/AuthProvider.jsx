@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react';
 import { authReducer, AUTH_ACTIONS } from '../helpers/authReducer';
-import { checkLogin } from '../helpers/loginCheck';
+
 
 const AuthContext = createContext({});
 

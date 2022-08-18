@@ -3,7 +3,7 @@ import { FAV_ACTIONS } from "../../helpers/favReducer.js";
 import { useEffect } from "react";
 
 
-const ProductDash = ({ products, searchTerms, addToStorage, removeFromStorage, totalItems, totalCost, favState, favDispatch, wishlistInit }) => {
+const ProductDash = ({ products, searchTerms, favState, favDispatch, wishlistInit }) => {
   
 
   // set fav status for items when dispatch or wishlistInit change
@@ -34,7 +34,7 @@ const ProductDash = ({ products, searchTerms, addToStorage, removeFromStorage, t
       <section className="product-dash col-12">
         {/* <h1 className="product-dash__title">{ title }</h1>         */}
         <article className="product-dash__items">
-          {filteredProducts.map((product) => <ProductCard key={product.id} id={product.id} img={product.img} name={product.name} price={product.price} sale={product.sale} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />)}
+          {filteredProducts.map((product) => <ProductCard key={product.id} id={product.id} img={product.img} name={product.name} price={product.price} sale={product.sale} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />)}
         </article>
       </section>
       

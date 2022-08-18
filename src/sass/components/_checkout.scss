@@ -2,40 +2,48 @@
 @use '../abstracts/variables' as *;
 
 .checkout-table {
-  text-align: start;
-    
+  
   &__header {
-    border-bottom: solid 0.15rem $trim-mid;
+    display: flex;
     font-size: map-get($heading-size, '5');
-
+    margin-bottom: 1rem;
+    border-bottom: solid 0.2rem $trim-mid;
+    line-height: 3rem;
   }
 
-  &__header-row {
-    th:nth-child(2) {
-    padding-left: 1rem;
-    }
+  &__body {
+    display: flex;
+    flex-direction: column;
   }
 
   &__row {
-    font-size: map-get($heading-size, '6');
-    td:nth-child(2), td:nth-child(3) {
-      padding-left: 1rem;
-    }
-
-    td:nth-child(5) {
-      padding-left: 3rem;
-    }
+    @include flexCenter(row); 
+    justify-content: space-evenly;
+    width: 100%;
   }
 
   &__link {
+    @include flexCenter(row);
+    justify-content: flex-start;
     text-decoration: none;
-    color: $text-dark;
-  };
+    color: $text-dark;    
 
-  &__img {
-    width: 100%;
-    margin-right: 1rem;
+    &:hover {
+      color: $text-dark;  
+      
+    }
+    
   }
+
+  &__cell:nth-child(1) {
+    padding-right: 1rem;
+  }
+
+  &__cell:nth-child(4) {
+    padding-right: 2rem;
+  }
+
+
 }
 
 // checkout process
@@ -63,26 +71,19 @@
 
 // checkout stage 1: order component if items in cart
 .order-summary {
-  @include flexCenter(column);
-  justify-content: flex-start;
-  margin-top: 4rem;
 
   h1 {
+    @include flexCenter(row);
     font-size: map-get($heading-size, '1');
     @include checkout-heading;
+    margin-top: 6rem;
     margin-bottom: 2rem;
   }
 
-  &__bg {
+  &__content {
     @include flexCenter(row);
     background: $primary;
-    border: $accent-mid solid .01rem;
-    border-radius: 0.25rem;
-    padding: 2rem 0;
-
-    div {
-      display: flex;
-    }
+    box-shadow: 0.1rem 0.1rem 0.1rem 0 $accent-mid;
   }
 
   &__footer {
@@ -94,31 +95,31 @@
     button {
       padding: 0.25rem 4rem;
     }
-
   }
 }
 
 // checkout stage 1: order summary for cart items
 .order-total {
-  @include flexCenter(column);
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  margin: 0 0 0 5rem;
+  // margin: 0 0 0 5rem;
 
   h5 {
     font-weight: map-get($font-weights, 'bold');
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
+  article {
+    @include flexCenter(column);
     align-items: flex-start;
     font-size: map-get($heading-size, '5');
-    
-    p:nth-child(1) {
-      margin: 0 3rem 0 0 ;
-    }
   }
+
+  article:nth-child(2) {
+    margin-left: 1rem;
+  }
+
 }
 
 // checkout stage 2: shipping
@@ -136,7 +137,7 @@
     div {
       gap: 1rem;
     }
-    
+
     div:nth-child(2n+1) {
       margin-top: 0.5rem;
     }
@@ -160,9 +161,9 @@
 // checkout stage 3: payment
 
 .payment {
-  margin: 0 auto;  
-  margin-top: 5rem;  
-  
+  margin: 0 auto;
+  margin-top: 5rem;
+
 
   &__form {
     display: flex;
@@ -179,7 +180,7 @@
     font-weight: map-get($font-weights, 'regular');
   }
   div {
-    gap: 1rem;  // horiz gap between     
+    gap: 1rem;  // horiz gap between
     label {
       padding-left: 0.25rem;
     }
@@ -194,12 +195,12 @@
 
   div:nth-child(2n) {
     margin-top: 1rem;
-  }  
+  }
 }
 
 .payment__right {
   @extend %payment-shared;
-  
+
   fieldset {
     display: flex;
     justify-content: space-evenly;
@@ -220,8 +221,8 @@
 
 // checkout stage 4: order complete component
 .order-complete {
-  margin-top: 10rem;  
-  @include flexCenter(column);  
+  margin-top: 10rem;
+  @include flexCenter(column);
   gap: 3rem;
   color: $text-dark;
 

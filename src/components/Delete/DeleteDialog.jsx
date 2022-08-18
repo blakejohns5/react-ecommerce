@@ -4,15 +4,14 @@ import CartContext from '../../context/CartProvider';
 function DeleteDialog({ product }) {
   const { cart, setCartItems } = useContext(CartContext);
 
-  function deleteItem (product) {
-    
-    setCartItems(cart.filter((item) => item.id !== product.id));
-    
+  function deleteItem (product, e) {    
+    e.preventDefault();
+    setCartItems(cart.filter((item) => item.id !== product.id));    
   }
 
   return (  
     <>
-      <div className="modal fade " id="deleteDialog" tabIndex="-1" aria-labelledby="deleteDialogLabel" aria-hidden="true">
+      <div className="modal fade " id="deleteDialog" tabIndex="-1s" aria-labelledby="deleteDialogLabel" aria-hidden="true">
         <div className="modal-dialog delete-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -23,7 +22,7 @@ function DeleteDialog({ product }) {
               <p>Are you sure you want to remove this item from your cart?</p>
             </div>
             <div className="modal-footer delete-dialog__footer">
-              <button type="button" className="btn-cart" onClick={() => deleteItem(product)} data-bs-dismiss="modal">Yes, I'm sure</button>
+              <button type="button" className="btn-cart" onClick={(e) => deleteItem(product, e)} data-bs-dismiss="modal">Yes, I'm sure</button>
               <button type="button" className="btn-cart" data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>

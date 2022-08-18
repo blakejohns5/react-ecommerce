@@ -8,7 +8,7 @@ import { updateUserWishlist } from '../../helpers/wishlist'
 
 
 const FavBtn = (props) => {
-  const {id, img, name, price, sale, favState, favDispatch, wishlistInit} = props; 
+  const {id, img, name, price, sale, favState, favDispatch } = props; 
   const clickedProduct =  {id: id, img: img, name: name, price: price, sale: sale } 
   const { user } = useContext(AuthContext);
   

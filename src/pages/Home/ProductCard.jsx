@@ -4,6 +4,7 @@ import AddBtn from "../../components/AddBtn/AddBtn";
 import FavBtn from "../../components/Favorites/FavBtn";
 
 
+
 function ProductCard(props) {
   const price = props.price;
   const currency = '€';

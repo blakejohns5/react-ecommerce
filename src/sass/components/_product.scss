@@ -28,7 +28,7 @@
     
     position: relative;
     padding-bottom: 1rem;
-    @include product-border;
+    // @include product-border;
     font-size: map-get($heading-size, '6');
     background-color: $primary;
     overflow: hidden;

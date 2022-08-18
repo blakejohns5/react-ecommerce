@@ -1,6 +1,7 @@
+import CartContext from '../../context/CartProvider';
 import ShoppingCart from './ShoppingCart';
 
-function CartDialog({ addToStorage, removeFromStorage, totalItems, totalCost }) {
+function CartDialog() {
   
 
   return (
@@ -14,7 +15,7 @@ function CartDialog({ addToStorage, removeFromStorage, totalItems, totalCost }) 
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body col-12">
-              <ShoppingCart addtoStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} />
+              <ShoppingCart />
             </div>
           </div>
         </div>

@@ -9,14 +9,14 @@ import NotFound from '../../pages/NotFound/NotFound';
 import React from 'react'
 
 function Router(props) {
-const { products, searchTerms, addToStorage, removeFromStorage, totalItems, totalCost, favState, favDispatch, checkoutStage, setCheckoutStage, wishlistInit } = props;
+const { products, searchTerms, favState, favDispatch, checkoutStage, setCheckoutStage, wishlistInit } = props;
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home products={products} searchTerms={searchTerms} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />} exact />
-        <Route path='/product/:id' element={<Product products={products} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalCost={totalCost} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />}  />
-        <Route path='/checkout' element={<Checkout addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
+        <Route path='/' element={<Home products={products} searchTerms={searchTerms} favState={favState} favDispatch={favDispatch} wishlistInit={wishlistInit} />} exact />
+        <Route path='/product/:id' element={<Product products={products} favState={favState} favDispatch={favDispatch} />}  />
+        <Route path='/checkout' element={<Checkout checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} />}  />
         <Route path='/user/' element={<User favState={favState} favDispatch={favDispatch} />}  />
         <Route path='*' element={<NotFound />}  />
       </Routes>

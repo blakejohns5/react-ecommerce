@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import CartContext from '../../context/CartProvider';
 
 function ShoppingCard(props) {
-  const { cart  } = useContext(CartContext);
-  const { id, img, name, qty, price, sale, addToStorage, removeFromStorage } = props;
+  const { cart } = useContext(CartContext);
+  const { id, img, name, qty, price, sale } = props;
   const product = {
     id: id,
     name: name,
@@ -31,14 +31,7 @@ function ShoppingCard(props) {
                 <div className='shopping-card__price-sale col-12'>{sale.toFixed(2)}{currency}</div>
               ) : ( 
                 <div className='shopping-card__price'>{price.toFixed(2)}{currency}</div> 
-              )}            
-              {/* <div className="col-5 shopping-card__counter">
-                <Counter key={id} product={product} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
-              </div>
-              <div>
-              <DeleteBtn key={id} product={product}/>
-              </div> */}
-                
+              )}
             </div>
           </div>
         </div>

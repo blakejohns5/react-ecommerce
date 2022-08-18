@@ -2,7 +2,7 @@ import AddBtn from "../../components/AddBtn/AddBtn";
 import FavBtn from "../../components/Favorites/FavBtn";
 
 function ProductDetail (props) {
-  const {img, name, price, id, sale, addToStorage, removeFromStorage, favState, favDispatch} = props;
+  const {img, name, price, id, sale, favState, favDispatch} = props;
   const currency = "€";
 
   return (
@@ -16,7 +16,7 @@ function ProductDetail (props) {
           <h4><strong>{name}</strong></h4>
           <p>{price.toFixed(2)} {currency}</p>
           <div>
-          <AddBtn key={id} id={id} name={name} price={price} img={img} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />
+          <AddBtn key={id} id={id} name={name} price={price} img={img} />
           </div>
        
         </div>

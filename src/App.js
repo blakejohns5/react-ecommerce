@@ -15,12 +15,13 @@ import AuthContext from './context/AuthProvider';
 function App () {
   
   const [ products, setProducts ] = useState([]);
-  const [ totalItems, setTotalItems ] = useState(0);
-  const [ totalCost, setTotalCost ] = useState(0);  
+  // const [ totalItems, setTotalItems ] = useState(0);
+  // const [ totalCost, setTotalCost ] = useState(0);  
   const [ checkoutStage, setCheckoutStage ] = useState('order');
-  const { cart, setCartItems } = useContext(CartContext);
+  // const { cart, setCartItems } = useContext(CartContext);
   const [ searchTerms, setSearchTerms ] = useState();
   const { loggedIn, user } = useContext(AuthContext)
+  const { cart, totalItems, setTotalItems, totalCost, setTotalCost } = useContext(CartContext);
   
   
   
@@ -48,25 +49,25 @@ function App () {
 
   const [ favState, favDispatch ] = useReducer(favReducer, []) 
   
-  const addToStorage = (product) => {
-    const isInCart = cart.find((item) => item.id === product.id);    
-    if (isInCart) {
-        setCartItems(cart.map(item => item.id === product.id ? {...isInCart, qty: isInCart.qty + 1 } : item));
-    } else {
-        setCartItems([...cart, {...product, qty: 1}]);
-    }
-    localStorage.setItem('cart',JSON.stringify(cart));
-  }
+  // const addToStorage = (product) => {
+  //   const isInCart = cart.find((item) => item.id === product.id);    
+  //   if (isInCart) {
+  //       setCartItems(cart.map(item => item.id === product.id ? {...isInCart, qty: isInCart.qty + 1 } : item));
+  //   } else {
+  //       setCartItems([...cart, {...product, qty: 1}]);
+  //   }
+  //   localStorage.setItem('cart',JSON.stringify(cart));
+  // }
   
-  const removeFromStorage = (product) => {
-    const isInCart = cart.find((item) => item.id === product.id);
+  // const removeFromStorage = (product) => {
+  //   const isInCart = cart.find((item) => item.id === product.id);
     
-    if (isInCart.qty === 1) {
-      setCartItems(cart.filter((item) => item.id !== product.id));
-    } else {
-      setCartItems(cart.map((item) => item.id === product.id ? {...isInCart, qty: isInCart.qty - 1 } : item));
-    };
-  };
+  //   if (isInCart.qty === 1) {
+  //     setCartItems(cart.filter((item) => item.id !== product.id));
+  //   } else {
+  //     setCartItems(cart.map((item) => item.id === product.id ? {...isInCart, qty: isInCart.qty - 1 } : item));
+  //   };
+  // };
 
   const setCartQty = (cart) => {
     setTotalItems(cart.reduce(function (accumulator, currentItem) {
@@ -82,8 +83,8 @@ function App () {
 
   return (
       <>
-      <NavBar searchTerms={searchTerms} setSearchTerms={setSearchTerms} products={products} totalItems={totalItems} favState={favState} favDispatch={favDispatch} />
-      <Router products={products} searchTerms={searchTerms} addToStorage={addToStorage} removeFromStorage={removeFromStorage} totalItems={totalItems} totalCost={totalCost} favState={favState} favDispatch={favDispatch} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} wishlistInit={wishlistInit} />
+      <NavBar searchTerms={searchTerms} setSearchTerms={setSearchTerms} products={products} favState={favState} favDispatch={favDispatch} />
+      <Router products={products} searchTerms={searchTerms} favState={favState} favDispatch={favDispatch} checkoutStage={checkoutStage} setCheckoutStage={setCheckoutStage} wishlistInit={wishlistInit} />
       </>
   )
 }

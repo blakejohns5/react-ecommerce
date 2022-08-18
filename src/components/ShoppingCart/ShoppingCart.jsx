@@ -1,11 +1,11 @@
 import {useContext} from 'react';
 import CheckoutBtn from "../CheckoutBtn/CheckoutBtn";
-import OrderSummary from "../../pages/Checkout/OrderSummary";
+import OrderTotal from "../../pages/Checkout/OrderTotal";
 import ShoppingCard from "./ShoppingCard";
 import CartContext from "../../context/CartProvider";
 
 
-const ShoppingCart = ({ addToStorage, removeFromStorage, totalItems, totalCost }) => {
+const ShoppingCart = () => {
   const { cart } = useContext(CartContext);
   const title = 'Shopping Cart';
  
@@ -14,9 +14,9 @@ const ShoppingCart = ({ addToStorage, removeFromStorage, totalItems, totalCost }
     <>
       <section className="shopping-cart">
         <h1>{ title }</h1>        
-        {cart.map((cartItem) => <ShoppingCard key={cartItem.id} id={cartItem.id} img={cartItem.img} name={cartItem.name} price={cartItem.price} sale={cartItem.sale} qty={cartItem.qty} addToStorage={addToStorage} removeFromStorage={removeFromStorage} />)}
+        {cart.map((cartItem) => <ShoppingCard key={cartItem.id} id={cartItem.id} img={cartItem.img} name={cartItem.name} price={cartItem.price} sale={cartItem.sale} qty={cartItem.qty} />)}
         <div className="shopping-cart__summary col-12">
-          <OrderSummary totalItems={totalItems} totalCost={totalCost} />
+          <OrderTotal />
         </div>
         <footer>
           <CheckoutBtn />
