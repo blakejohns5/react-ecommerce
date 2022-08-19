@@ -15,14 +15,11 @@ import AuthContext from './context/AuthProvider';
 function App () {
   
   const [ products, setProducts ] = useState([]);
-  // const [ totalItems, setTotalItems ] = useState(0);
-  // const [ totalCost, setTotalCost ] = useState(0);  
   const [ checkoutStage, setCheckoutStage ] = useState('order');
-  // const { cart, setCartItems } = useContext(CartContext);
   const [ searchTerms, setSearchTerms ] = useState();
   const { loggedIn, user } = useContext(AuthContext)
   const { cart, totalItems, setTotalItems, totalCost, setTotalCost } = useContext(CartContext);
-  
+  user && console.log(user.user.email)
   
   
     
@@ -36,9 +33,9 @@ function App () {
 
   useEffect( () => {
     (async () => {      
-      user  && setWishlistInit(await getUserWishlist(user.user.email, products))    
+      user && setWishlistInit(await getUserWishlist(user.user.email, products))    
     })()
-  }, [])
+  }, [user, products])
 
   useEffect(() => {
     setCartQty(cart);

@@ -3,7 +3,7 @@ import { USERS_URL, fetchData } from "./apis";
 
 
 export const checkLogin = async (email, password) => {
-  console.log('hello from checkLogin')
+
   const users = await fetchData(USERS_URL);
   const storedUser = users.find((obj) => obj.email === email)      
 

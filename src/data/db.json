@@ -120,10 +120,7 @@
       "email": "admin@admin.com",
       "password": "123",
       "favorites": [
-        1011,
-        1008,
-        1002,
-        1001
+        1002
       ],
       "active": true
     },

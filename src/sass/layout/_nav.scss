@@ -9,6 +9,10 @@
   transform: rotate(-12deg);
   position: relative;
   top: 1.5rem;
+  margin-right: 2rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.01rem;
+  -webkit-text-stroke-color: $text-dark;
 
 
 }
@@ -23,12 +27,6 @@
   &__link {
     color: $text-dark;
   }
-
-  
-  
-  
-
-  
 
   &__list {
     margin-right: auto;

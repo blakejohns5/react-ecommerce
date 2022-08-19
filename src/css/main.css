@@ -300,64 +300,66 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: flex-start;
 }
 .shipping header {
   margin-top: 2rem;
 }
 .shipping__form {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem div;
+  gap-text-align: left;
 }
-.shipping__form div {
+.shipping__row {
+  display: flex;
   gap: 1rem;
 }
-.shipping__form div:nth-child(2n+1) {
-  margin-top: 0.5rem;
+.shipping label {
+  margin-top: 1rem;
 }
-.shipping__form input {
-  margin-top: 0.15rem;
-  padding: 0.25rem;
+.shipping input {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .shipping__footer {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
+.shipping__footer button:disabled {
+  opacity: 0.4;
+}
 
 .payment {
-  margin: 0 auto;
-  margin-top: 5rem;
-}
-.payment__form {
+  margin-top: 8rem;
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.payment__wrapper .payment__form {
+  display: flex;
 }
 
 .payment__right, .payment__left {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 .payment__right h2, .payment__left h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 1em;
   font-size: 1.8rem;
   font-weight: 400;
 }
-.payment__right div, .payment__left div {
-  gap: 1rem;
-}
-.payment__right div label, .payment__left div label {
-  padding-left: 0.25rem;
-}
 .payment__right div input, .payment__left div input {
-  margin-top: 0.25rem;
-}
-
-.payment__left div:nth-child(2n) {
-  margin-top: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .payment__right fieldset {
   display: flex;
   justify-content: space-evenly;
-  margin: 3rem auto 2.1rem auto;
+  margin: 3rem auto 1.5rem auto;
 }
 .payment__right .row:nth-child(odd) {
   margin-top: 1rem;
@@ -387,6 +389,16 @@ body {
 }
 .order-complete p {
   font-size: 2rem;
+}
+
+.input-error {
+  border: 0.15rem solid rgb(44, 206, 235);
+  background: #f4fdfe;
+}
+.input-error__msg {
+  color: rgb(44, 206, 235);
+  font-size: 0.9rem;
+  font-weight: bolder;
 }
 
 .counter {
@@ -896,6 +908,10 @@ body {
   transform: rotate(-12deg);
   position: relative;
   top: 1.5rem;
+  margin-right: 2rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.01rem;
+  -webkit-text-stroke-color: #444040;
 }
 
 .navbar {

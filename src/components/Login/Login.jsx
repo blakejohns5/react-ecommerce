@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
 import { Link } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
@@ -13,9 +13,8 @@ const Login = () => {
 
     
   const handleSubmit = async (e) => {    
-    console.log('hello')
     e.preventDefault();
-    console.log('hello')
+    
     const user = await checkLogin(email, pwd);
     if (user) {
       login(user)

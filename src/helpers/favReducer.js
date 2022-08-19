@@ -1,8 +1,6 @@
 
 
 
-
-
 const FAV_ACTIONS = {
   ADD: 'add item',
   REMOVE: 'remove item',
@@ -18,7 +16,7 @@ const favReducer = ( state = [], action ) => {
     case FAV_ACTIONS.RESET:
       return [];
     default:
-      console.log('Error from fav Reducer?')
+      console.log('Error from fav Reducer')
       return state;    
   }
 }

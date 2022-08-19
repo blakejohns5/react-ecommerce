@@ -131,6 +131,9 @@
 
 .shipping {
   @include flexCenter(column);
+  // align-items: flex-start;
+  text-align: flex-start;
+  
 
   header {
     margin-top: 2rem;
@@ -138,25 +141,41 @@
 
   &__form {
     margin-top: 1rem;
-
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem
     div {
-      gap: 1rem;
-    }
-
-    div:nth-child(2n+1) {
-      margin-top: 0.5rem;
-    }
-
-    input {
-      margin-top: 0.15rem;
-      padding: 0.25rem;
+      // gap: 1rem;
+      text-align: left;
     }
   }
+
+  &__row {
+    // margin-bottom: 12rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  label {
+    margin-top: 1rem;
+  }
+
+  input {
+    max-height: 100%;
+    max-width: 100%;;
+  }
+ 
 }
 
+
 .shipping__footer {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
+
+  button:disabled {
+    opacity: 0.4;
+  }
 }
 
 
@@ -166,41 +185,35 @@
 // checkout stage 3: payment
 
 .payment {
-  margin: 0 auto;
-  margin-top: 5rem;
+  // margin: 0 auto;
+  margin-top: 8rem;
+  @include flexCenter(column);
 
-
+  &__wrapper
   &__form {
     display: flex;
-    gap: 4rem;
   }
 }
 
 // properties shared between left-right columns
 %payment-shared {
-  padding: 0 1rem;
+  padding: 0 2rem;
+  
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1em;
     font-size: map-get($heading-size, '3');
     font-weight: map-get($font-weights, 'regular');
   }
+
   div {
-    gap: 1rem;  // horiz gap between
-    label {
-      padding-left: 0.25rem;
-    }
     input {
-      margin-top: .25rem;
+      margin-bottom: .25rem;
     }
   }
 }
 
 .payment__left {
   @extend %payment-shared;
-
-  div:nth-child(2n) {
-    margin-top: 1rem;
-  }
 }
 
 .payment__right {
@@ -209,7 +222,7 @@
   fieldset {
     display: flex;
     justify-content: space-evenly;
-    margin: 3rem auto 2.1rem auto;
+    margin: 3rem auto 1.5rem auto;
   }
 
   .row:nth-child(odd) {
@@ -245,3 +258,15 @@
   }
 }
 
+.input-error {
+  border: 0.15rem solid $highlight;
+  background: lighten($highlight, 43%);
+
+  &__msg {
+    color: $highlight;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    // margin-bottom: 0.5rem;
+  }
+  
+}

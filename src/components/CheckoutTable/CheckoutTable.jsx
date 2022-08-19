@@ -8,8 +8,6 @@ import DeleteBtn from '../Delete/DeleteBtn';
 
 function CheckoutTable() {
   const { cart } = useContext(CartContext);
-  console.log('checkout table: ' + {cart})
-  cart.map(item =>  console.log(item))
   const currency = '€';
 
   return (
