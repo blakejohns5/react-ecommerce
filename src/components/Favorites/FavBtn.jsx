@@ -3,6 +3,8 @@ import { FaRegHeart, FaHeart } from 'react-icons/fa'
 import AuthContext from '../../context/AuthProvider';
 import { FAV_ACTIONS } from '../../helpers/favReducer.js';
 import { updateUserWishlist } from '../../helpers/wishlist'
+import MessageContext from '../../context/MessageProvider'
+import MessageDialog from '../Message/MessageDialog';
 
 
 
@@ -11,6 +13,7 @@ const FavBtn = (props) => {
   const {id, img, name, price, sale, favState, favDispatch } = props; 
   const clickedProduct =  {id: id, img: img, name: name, price: price, sale: sale } 
   const { user } = useContext(AuthContext);
+  const { setMessage, setMessageType } = useContext(MessageContext);
   
 
   // gives toggle to visual affect with icons for fav
@@ -38,21 +41,27 @@ const FavBtn = (props) => {
   }
 
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (user) {
       setFavorite(favorite === true ? false : true);  // toggle fav icon
       manageReducer();
     } else {
-      console.log('You have to be logged in to access your wishlist')
+      setMessage('You must be logged in to see your wishlist')
+      setMessageType('warning')
     }
     
   }
  
-  return (    
-      <>
+  return (
+    <>
+    {user ? (
       <button type="button" onClick={handleClick} className="btn-fav">{ isInFavs ? <FaHeart className='faved' /> : <FaRegHeart /> }</button>
-      
-      </>
+    ) : (
+      <button type="button" onClick={handleClick} data-bs-toggle='modal' data-bs-target='#messageModal' className="btn-fav">{ isInFavs ? <FaHeart className='faved' /> : <FaRegHeart /> }</button>
+    )}    
+    { !user && ( <MessageDialog /> )} 
+    </>
   )
 }
 

@@ -11,8 +11,10 @@ function Product({ products, favState, favDispatch }) {
   return (
     <>
       <main className='product-page col-10'>
+        <div className="col-9">
         <ProductDetail key={product.id} img={product.img} name={product.name} price={product.price} sale={product.sale} id={product.id} favState={favState} favDispatch={favDispatch} />
-        <div className='product-page__cart col-10'>
+        </div>
+        <div className='product-page__cart col-3'>
         <ShoppingCart />
         </div>
       </main>

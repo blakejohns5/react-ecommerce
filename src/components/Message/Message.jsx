@@ -3,11 +3,7 @@ import MessageContext from '../../context/MessageProvider';
 
 
 function Message() {
-  const { message, setMessage, messageType } = useContext(MessageContext);
-
-  setTimeout(() => {
-    setMessage(null);
-  }, 7000);
+  const { message, messageType } = useContext(MessageContext);
 
   return (
     <>

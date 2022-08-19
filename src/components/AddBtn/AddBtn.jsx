@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../../context/CartProvider";
 import CartDialog from "../ShoppingCart/CartDialog";
+import { BsFillBagPlusFill } from 'react-icons/bs'
 
 
 function AddBtn(props) {
@@ -11,7 +12,7 @@ function AddBtn(props) {
 
   return (
     <>
-      <button className="btn-cart" type="button" data-bs-toggle="modal" data-bs-target="#cartDialog" onClick={() => addToCart(product)} >Add to Cart</button>
+      <button className="icon-add" type="button" data-bs-toggle="modal" data-bs-target="#cartDialog" onClick={() => addToCart(product)} ><BsFillBagPlusFill /></button>
       {/* Shopping Cart Dialog  */}
       <CartDialog totalItems={totalItems} totalCost={totalCost} />
     </>

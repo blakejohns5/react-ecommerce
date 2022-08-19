@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     user: undefined
   }
   
-  const [ auth, dispatch ] = useReducer(authReducer, initialState)
+  const [ auth, authDispatch ] = useReducer(authReducer, initialState)
 
   const login = (userObj) => {
     const action = {
@@ -21,14 +21,22 @@ export const AuthProvider = ({ children }) => {
         user: userObj
       }
     }
-    dispatch(action);
-    localStorage.setItem('user', userObj);
-    localStorage.setItem('loggedIn', 'true');
+    authDispatch(action);
+  }
+
+  const logout = () => {
+    const action = {
+      type: AUTH_ACTIONS.LOGOUT,
+      payload: {
+        loggedIn: false,
+        user: {}
+      }
+    }
+    authDispatch(action);
   }
 
   return (   
-    // <AuthContext.Provider value={{ auth, setAuth }}>
-    <AuthContext.Provider value={{ ...auth, login: login }}>
+    <AuthContext.Provider value={{ ...auth, login: login, logout: logout }}>
       {children}
     </AuthContext.Provider>   
   )

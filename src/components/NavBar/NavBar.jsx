@@ -3,15 +3,16 @@ import { useContext } from 'react'
 import { BsBookmarkHeart, BsCart3 } from 'react-icons/bs'
 import AuthContext from '../../context/AuthProvider';
 import LoginDialog from '../Login/LoginDialog';
-import Logout from '../Logout/Logout';
+import Logout from '../Login/Logout';
 import FavoritesDialog from '../Favorites/FavoritesDialog';
+import CartContext from '../../context/CartProvider';
 
 
 
 
-function NavBar({ setSearchTerms, totalItems, favState, favDispatch }) {
+function NavBar({ setSearchTerms, favState, favDispatch }) {
   const { user } = useContext(AuthContext);
-  // const { username } = user;
+  const { totalItems } = useContext(CartContext);
 
   const searchHandler = (e) => {
     let str = e.target.value.toLowerCase();
@@ -23,7 +24,7 @@ function NavBar({ setSearchTerms, totalItems, favState, favDispatch }) {
     <>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link to='/' className="navbar-brand navbar__link cursive"><strong>Sneaker Soul</strong></Link>
+          <Link to='/' className="navbar-brand navbar__link navbar__title cursive"><strong>Sneaker Soul</strong></Link>
           <button className="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

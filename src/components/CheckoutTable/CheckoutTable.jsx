@@ -25,7 +25,7 @@ function CheckoutTable() {
       </header>
       <section className='checkout-table__body'>
         {cart.map((cartItem, index) => (
-          <div className="checkout-table__row ">
+          <div key={index} className="checkout-table__row ">
             <div className="checkout-table__cell">
               <Link to={`/product/${cartItem.id}`} className="checkout-table__link">
                 <img src={cartItem.img} alt={`cart product of ${cartItem.name}`} className="checkout-table__img img-fluid img-thumbnail" />

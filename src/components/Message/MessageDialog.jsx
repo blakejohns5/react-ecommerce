@@ -4,7 +4,7 @@ import Message from './Message';
 const MessageDialog = () => {
   return (
     <>
-    <div className="modal " id="messageModal" tabIndex="1000" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div className="modal fade" id="messageModal" tabIndex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
       <div className="modal-dialog dialog-message">
         <div className="modal-content">
           <div className="modal-header">       

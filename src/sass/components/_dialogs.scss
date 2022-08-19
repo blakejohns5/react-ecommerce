@@ -56,3 +56,19 @@
   }
 }
 
+.dialog-message {
+  // position: relative;
+  // margin-left: auto;
+  // top: 30%;
+  // transform: translateY(-50%);
+
+  .modal-header {
+    @include flexCenter(row);
+    font-size: 1.3rem;
+  }
+
+  .modal-footer {
+    @include flexCenter(row);
+  }
+
+}

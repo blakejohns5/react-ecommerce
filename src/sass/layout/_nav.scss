@@ -4,9 +4,12 @@
 
 .cursive {
   font-family: 'Pacifico', cursive;
-  font-size: map-get($heading-size, '4');
-  letter-spacing: 0.05rem;
-  transform: rotate(-10deg);
+  font-size: map-get($heading-size, '1');
+  letter-spacing: 0.1rem;
+  transform: rotate(-12deg);
+  position: relative;
+  top: 1.5rem;
+
 
 }
 .navbar {
@@ -15,11 +18,15 @@
   padding: 0 0.5rem;
   position: sticky;
   top: 0;
-  z-index: 500;
-  
+  z-index: 50;
+
   &__link {
     color: $text-dark;
   }
+
+  
+  
+  
 
   
 
@@ -53,8 +60,8 @@
   }
 
   &__cart-badge {
-    margin-top: -1.75rem;
-    margin-left: -.75rem;
+    margin-top: -1.25rem;
+    margin-left: -0.75rem;
     background-color:hwb(47 16% 0%);
     color: $text-dark;
     border: solid 1px white;

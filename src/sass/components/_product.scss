@@ -29,6 +29,7 @@
     position: relative;
     padding-bottom: 1rem;
     // @include product-border;
+    box-shadow: 0.01rem 0.01rem 0.01rem 0.01rem $text-dark;
     font-size: map-get($heading-size, '6');
     background-color: $primary;
     overflow: hidden;
@@ -44,52 +45,58 @@
       border-bottom: solid $trim-mid 0.05rem;
     }
 
+    &__bottom {
+      width: 100%;
+      @include flexCenter(row);
+      justify-content: space-between;
+    }
+
     footer {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      @include flexCenter(column);
       margin-top: 0.5rem;
-      height: 100%;
+
     }
 
     &__link {
       text-decoration: none;
       color: $text-dark;
       display: flex;
-      flex-direction: column;
+      height: 100%;
+    }
+    
+    &__link-text {
+      text-decoration: none;
+      color: $text-dark;      
+      display: flex;
+      margin-left: 1rem;
     }
   
     &__text {
-      // width: 100%;  originally set to w-100 in bs
-      @include flexCenter(column);
-      padding: 0 0.2rem;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.2rem;      
     }
   
     &__name {
-      // margin: 0.5rem 0.5rem;
+      margin: 0.5rem 0;
       text-decoration: none;
-      text-align: left;
       flex-wrap: wrap;
     }
   
     &__price {
-      @include flexCenter(row);
-      
+      display: flex;
+      align-items: center;
     }
   
     
     &__sale-tag {
       margin-right: 0.5rem;
-      padding-bottom: 0.5rem;
       font-size: map-get($heading-size, '4');
     }
   
     &__sale {
       margin-left: 0.5rem;
-    }
-
-    &__reg {
-      padding-top: 0.5rem;
+      
     }
   }
 
@@ -140,6 +147,7 @@
     @include flexCenter(column);
     background-color: $primary;
     @include product-border;
+    padding-bottom: 2rem;
 
     img {
       margin-bottom: 1rem;
@@ -148,7 +156,6 @@
     p {
       font-size: map-get($heading-size, '5');
     }
-    
   }
 }
 

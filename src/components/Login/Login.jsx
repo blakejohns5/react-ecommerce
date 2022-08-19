@@ -6,31 +6,22 @@ import { checkLogin } from '../../helpers/loginCheck';
 
 const Login = () => {
 
-  const { login, loggedIn } = useContext(AuthContext);
-  const emailRef = useRef();
-  const errRef = useRef();
+  const { login, loggedIn } = useContext(AuthContext);  
   const [email, setEmail] = useState('');
-  const [pwd, setPwd] = useState('');
-  const [errMsg, setErrMsg] = useState(false);
-  const [pwdVisible, setPwdVisible] = useState(false);
-  
-  
-  // Ref doesn't seem to work in this case, error
-  useEffect(() => {
-    emailRef.current.focus();
-  }, [])
-
-  useEffect(() => {
-    setErrMsg('');
-  }, [email, pwd])
+  const [pwd, setPwd] = useState('');  
+  const [pwdVisible, setPwdVisible] = useState(false);  
 
     
-  const handleSubmit = async (e) => {
-    e.preventDefault();   // prevent submission of 
+  const handleSubmit = async (e) => {    
+    console.log('hello')
+    e.preventDefault();
+    console.log('hello')
     const user = await checkLogin(email, pwd);
     if (user) {
       login(user)
     } 
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('loggedIn', 'true');
   }
 
   const togglePwd = () => {
@@ -45,11 +36,11 @@ const Login = () => {
         </section>
       ) : (
         <section>
-          <p ref={errRef} className={errMsg ? "errmsg fw-bold" : "offscreen"} aria-live="assertive">{errMsg}</p>
+          
           <form id="loginForm" onSubmit={handleSubmit} className="login-form" >
             <div className="row">
               <label htmlFor="loginEmail "className="col-3">Email:</label>
-              <input type="email" id="loginEmail" ref={emailRef} className="col-8 login-form__input" onChange={(e) => setEmail(e.target.value)} value={email} required />
+              <input type="email" id="loginEmail" className="col-8 login-form__input" onChange={(e) => setEmail(e.target.value)} value={email} required />
             </div>
             <div className="row">
               <label htmlFor="loginPassword" className="col-3">Password:</label>

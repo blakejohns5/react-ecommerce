@@ -19,6 +19,21 @@
   }
 }
 
+.icon-add {
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  background: $btn-gradient;
+  border-radius: 50%;
+  padding: 0 0.6rem 0.6rem 0.6rem;
+  margin-right: 1rem;
+
+  &:hover {
+    background: $highlight; 
+    color: white;
+  }
+}
+
 .btn-cart, .btn-search {
   @extend %btn-gen;
 }
@@ -61,7 +76,7 @@
 }
 
 .product__fav-btn {
-  z-index: 200;
+  // z-index: 200;s
   position: absolute;
   top: .5rem;
   right: -0.25rem;
@@ -74,12 +89,12 @@
   }
 }
 
-.detail__fav-btn {
+.product-detail__fav-btn {
   position: absolute;
-  top: 3rem;
-  right: 9.5rem;
+  top: 1rem;
+  right: 1rem;
   padding: 0 0.1rem 0.25rem 0.1rem;
-  transform: scale(1.4);
+  transform: scale(1.6);
   background-color: white;
 
   & button {

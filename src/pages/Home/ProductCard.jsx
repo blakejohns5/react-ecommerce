@@ -20,25 +20,29 @@ function ProductCard(props) {
             </div>
             <Link to={`/product/${id}`} className="product-card__link">
               <img src={img} alt="shoes_01" className="img-fluid" />
-              <div className="product-card__text">
-                <div className="product-card__name">{name}</div>  
-                {/* Add icon and sale price if item on sale */}
-                <div className="product-card__price">
-                {sale ? (
-                  <>
-                  <div className="product-card__sale-tag faved"><MdLocalOffer /></div>
-                  <div ><s>{price.toFixed(2)}</s></div>
-                  <div className="product-card__sale faved">{sale} {currency}</div>
-                  </>
-                ) : (
-                  <div className="product-card__reg">{price.toFixed(2)} {currency}</div> 
-                )}
-                </div>
-              </div>
             </Link>
+            <div className='product-card__bottom'>
+              <Link to={`/product/${id}`} className="product-card__link-text">
+                <div className="product-card__text">
+                  <div className="product-card__name">{name}</div>  
+                  {/* Add icon and sale price if item on sale */}
+                  <div className="product-card__price">
+                    {sale ? (
+                      <>
+                      <div className="product-card__sale-tag faved"><MdLocalOffer /></div>
+                      <div ><s>{price.toFixed(2)}</s></div>
+                      <div className="product-card__sale faved">{sale} {currency}</div>
+                      </>
+                    ) : (
+                      <div className="product-card__reg">{price.toFixed(2)} {currency}</div> 
+                    )}                  
+                  </div>
+                </div>
+              </Link>              
             <footer>
               <AddBtn key={id} {...props} />
             </footer>
+            </div>
           </div>        
         </div>
       </div>
