@@ -3,6 +3,11 @@ import { actions } from 'react-table';
 import { paymentSchema } from '../../helpers/formValidation';
 import InputCustom from './InputCustom'
 import RadioCustom from './RadioCustom'
+import { createCheckoutSession } from '../../helpers/stripeAPI';
+import { useContext } from 'react';
+
+import CartContext from '../../context/CartProvider';
+
 
 
 // NOTE ON FORMIK
@@ -10,27 +15,39 @@ import RadioCustom from './RadioCustom'
 // code more concise than with useFormik hook, see Shipping component for example
 
 const Payment = ({ setCheckoutStage }) => {
+  const { cart } = useContext(CartContext);
+  
 
   const onSubmit = async (values, actions) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    const stripeRes = await createCheckoutSession(cart);
+    const stripeURL = stripeRes.url
+    window.location=stripeURL;
     actions.resetForm();
-    setCheckoutStage('complete');
+    // setCheckoutStage('complete');
+  }
+
+  let initialFormValues = {
+    firstName: "",
+    lastName: "",
+    emailBilling: "",
+    addressBilling: "",
+    cityBilling: "",
+    state: "",
+    country: "",
+    postCode: "",
+    payMethod: "",
+    nameCard: "",
+    cardNumber: "",
+    expiry: "",
+    cvv: "",
   }
 
   return (
     <>
     <main className="payment col-8">  
       <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          emailBilling: "",
-          addressBilling: "",
-          cityBilling: "",
-          state: "",
-          country: "",
-          postCode: ""
-        }}
+        initialValues={initialFormValues}
         validationSchema={paymentSchema}
         onSubmit={onSubmit}
         >
@@ -128,11 +145,6 @@ const Payment = ({ setCheckoutStage }) => {
     </main>
     </>
   )
-    
-      // <form id="billingForm" onSubmit={() => setCheckoutStage('complete')} className="payment__form">
-     
-
-  
 }
 
 

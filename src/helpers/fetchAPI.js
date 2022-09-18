@@ -2,6 +2,7 @@
 export const PRODUCTS_URL = 'http://localhost:5000/products';
 export const USERS_URL = 'http://localhost:5000/users';
 
+
 // get data from json server, depending on url argument
 export const fetchData = async (url) => {
   try {
@@ -13,6 +14,8 @@ export const fetchData = async (url) => {
     console.log(error)
   }
 } 
+
+
 
 // post user to json server
 export const postUser = async (url, userObj) => {
@@ -33,6 +36,7 @@ export const postUser = async (url, userObj) => {
     console.log(error)
   }
 }
+
 
 // replace partial user info
 export const putUser = async (url, newData) => {

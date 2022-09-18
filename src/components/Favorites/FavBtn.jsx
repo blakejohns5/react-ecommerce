@@ -7,14 +7,11 @@ import MessageContext from '../../context/MessageProvider'
 import MessageDialog from '../Message/MessageDialog';
 
 
-
-
 const FavBtn = (props) => {
   const {id, img, name, price, sale, favState, favDispatch } = props; 
   const clickedProduct =  {id: id, img: img, name: name, price: price, sale: sale } 
   const { user } = useContext(AuthContext);
   const { setMessage, setMessageType } = useContext(MessageContext);
-  
 
   // gives toggle to visual affect with icons for fav
   const isInFavs = favState.find(item => item.id === clickedProduct.id);   
@@ -36,7 +33,6 @@ const FavBtn = (props) => {
           type: FAV_ACTIONS.REMOVE, 
           payload: clickedProduct
         }) 
-    
     }    
   }
 

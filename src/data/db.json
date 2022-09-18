@@ -119,9 +119,7 @@
       "username": "admin",
       "email": "admin@admin.com",
       "password": "123",
-      "favorites": [
-        1002
-      ],
+      "favorites": [],
       "active": true
     },
     {

@@ -27,7 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/Sass:src/Css --watch"
+    "sass": "sass src/Sass:src/Css --watch",
+    "dev": "start npm run start && start npm run sass && start npm run json:server"
   },
   "eslintConfig": {
     "extends": [
